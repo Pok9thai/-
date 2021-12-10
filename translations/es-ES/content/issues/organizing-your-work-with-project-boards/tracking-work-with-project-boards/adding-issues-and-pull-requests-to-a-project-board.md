@@ -10,7 +10,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - Pull requests
 shortTitle: Agrega propuestas & solicitudes de cambio a un tablero

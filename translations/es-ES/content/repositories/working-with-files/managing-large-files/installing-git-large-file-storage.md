@@ -10,7 +10,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 shortTitle: Instalar el LFS de Git
 ---
 

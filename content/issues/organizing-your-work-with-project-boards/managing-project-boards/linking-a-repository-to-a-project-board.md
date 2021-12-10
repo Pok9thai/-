@@ -9,7 +9,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - Pull requests
 shortTitle: Link repository to board

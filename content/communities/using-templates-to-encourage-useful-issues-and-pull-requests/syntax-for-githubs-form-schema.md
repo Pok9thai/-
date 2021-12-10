@@ -3,7 +3,6 @@ title: Syntax for GitHub's form schema
 intro: 'You can use {% data variables.product.company_short %}''s form schema to configure forms for supported features.'
 versions:
   fpt: '*'
-  ghec: '*'
 miniTocMaxHeadingLevel: 3
 topics:
   - Community

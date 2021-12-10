@@ -7,7 +7,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 type: tutorial
 defaultPlatform: linux
 shortTitle: Ejecutar la app del ejecutor al inicio

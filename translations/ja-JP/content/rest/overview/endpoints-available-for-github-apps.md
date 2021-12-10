@@ -8,7 +8,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - API
 shortTitle: GitHub APIが有効なエンドポイント

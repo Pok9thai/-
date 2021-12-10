@@ -7,7 +7,6 @@ redirect_from:
   - /github/building-a-strong-community/limiting-interactions-in-your-organization
 versions:
   fpt: '*'
-  ghec: '*'
 permissions: Organization owners can limit interactions in an organization.
 topics:
   - Community
@@ -42,4 +41,4 @@ Organization のオーナーは、特定の期間だけユーザをブロック�
 - [悪用あるいはスパムのレポート](/communities/maintaining-your-safety-on-github/reporting-abuse-or-spam)
 - [Organizationのリポジトリへの個人のアクセスの管理](/articles/managing-an-individual-s-access-to-an-organization-repository)
 - [ユーザアカウントのリポジトリ権限レベル](/articles/permission-levels-for-a-user-account-repository)
-- "[Repository roles for an organization](/organizations/managing-access-to-your-organizations-repositories/repository-roles-for-an-organization)"
+- [Organization のリポジトリ権限レベル](/articles/repository-permission-levels-for-an-organization)

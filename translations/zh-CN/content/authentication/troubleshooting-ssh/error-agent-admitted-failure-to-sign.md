@@ -10,7 +10,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - SSH
 shortTitle: 代理签名失败

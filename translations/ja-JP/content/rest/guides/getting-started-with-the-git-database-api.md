@@ -5,7 +5,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - API
 shortTitle: 始めましょう - GitデータベースAPI

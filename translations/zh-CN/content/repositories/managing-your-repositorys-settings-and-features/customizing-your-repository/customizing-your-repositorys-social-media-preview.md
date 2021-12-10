@@ -9,7 +9,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - Repositories
 shortTitle: 社交媒体预览

@@ -9,7 +9,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - Repositories
 shortTitle: Configurar la combinación de confirmaciones

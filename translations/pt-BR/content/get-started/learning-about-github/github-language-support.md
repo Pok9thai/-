@@ -5,7 +5,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - GitHub
 redirect_from:

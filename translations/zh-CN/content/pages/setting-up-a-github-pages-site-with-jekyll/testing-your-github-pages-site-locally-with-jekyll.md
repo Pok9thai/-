@@ -11,7 +11,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - Pages
 shortTitle: 使用 Jekyll 本地测试站点

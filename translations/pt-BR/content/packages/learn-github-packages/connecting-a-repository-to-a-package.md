@@ -7,7 +7,6 @@ redirect_from:
   - /packages/guides/connecting-a-repository-to-a-container-image
 versions:
   fpt: '*'
-  ghec: '*'
 shortTitle: Conectar um repositório
 ---
 

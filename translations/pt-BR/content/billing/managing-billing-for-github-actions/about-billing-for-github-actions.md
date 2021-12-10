@@ -1,12 +1,12 @@
 ---
 title: Sobre a cobrança do GitHub Actions
 intro: 'Se você quiser usar {% data variables.product.prodname_actions %} além do armazenamento ou dos minutos incluídos em sua conta, você será cobrado pelo uso adicional.'
+product: '{% data reusables.gated-features.actions %}'
 redirect_from:
   - /github/setting-up-and-managing-billing-and-payments-on-github/about-billing-for-github-actions
   - /github/setting-up-and-managing-billing-and-payments-on-github/managing-billing-for-github-actions/about-billing-for-github-actions
 versions:
   fpt: '*'
-  ghec: '*'
 type: overview
 topics:
   - Actions
@@ -20,13 +20,11 @@ shortTitle: Cobrança para o GitHub Actions
 
 {% data reusables.github-actions.actions-spending-limit-brief %} Para obter mais informações, consulte "[Sobre limites de gastos](#about-spending-limits)".
 
-{% ifversion ghec %}
-Se você comprou {% data variables.product.prodname_enterprise %} por meio de um Contrato da Microsoft Enterprise, você pode conectar o ID da sua assinatura do Azure à sua conta corporativa para habilitar e pagar pelo uso de {% data variables.product.prodname_actions %} além dos valores incluindo na sua conta. Para obter mais informações, consulte "[Conectar uma assinatura do Azure à sua empresa](/billing/managing-billing-for-your-github-account/connecting-an-azure-subscription-to-your-enterprise)".
-{% endif %}
+Se você comprou {% data variables.product.prodname_enterprise %} por meio de um Contrato da Microsoft Enterprise, você pode conectar o ID da sua assinatura do Azure à sua conta corporativa para habilitar e pagar pelo uso de {% data variables.product.prodname_actions %} além dos valores incluindo na sua conta. Para obter mais informações, consulte "[Conectar uma assinatura do Azure à sua empresa](/github/setting-up-and-managing-your-enterprise/connecting-an-azure-subscription-to-your-enterprise)".
 
 Os minutos são reiniciados todos os meses, mas o uso do armazenamento não.
 
-### Armazenamento e minutos incluídos
+### Included storage and minutes
 
 | Produto                                                             | Armazenamento | Minutos (por mês) |
 | ------------------------------------------------------------------- | ------------- | ----------------- |
@@ -38,7 +36,7 @@ Os minutos são reiniciados todos os meses, mas o uso do armazenamento não.
 
 Os trabalhos que são executados em Windows e macOS runners que o {% data variables.product.prodname_dotcom %} hospeda consomem minutos na proporção de 2 a 10 vezes a taxa que os trabalhos em Linux consomem. Por exemplo, usar 1.000 minutos do Windows consumiria 2.000 minutos incluídos em sua conta. O uso de 1.000 minutos no macOS consumiria 10.000 minutos incluídos em sua conta.
 
-### Multiplicadores de minutos
+### Minute multipliers
 
 | Sistema operacional | Multiplicador de minutos |
 | ------------------- | ------------------------ |
@@ -48,7 +46,7 @@ Os trabalhos que são executados em Windows e macOS runners que o {% data variab
 
 O armazenamento usado por um repositório é o armazenamento total usado por artefatos {% data variables.product.prodname_actions %} e {% data variables.product.prodname_registry %}. Seu custo de armazenamento é o uso total de todos os repositórios de sua conta. Para obter mais informações sobre preços para  {% data variables.product.prodname_registry %}, consulte "[Sobre cobrança para {% data variables.product.prodname_registry %}](/billing/managing-billing-for-github-packages/about-billing-for-github-packages)."
 
- Se o uso da sua conta ultrapassar esses limites e você definir um limite de gastos acima de US$ 0, você pagará US$ 0,25 por GB de armazenamento por mês e uso por minuto, dependendo do sistema operacional usado pelo executor hospedado em {% data variables.product.prodname_dotcom %}. {% data variables.product.prodname_dotcom %} arredonda os minutos que cada trabalho usa até o minuto mais próximo.
+ If your account's usage surpasses these limits and you have set a spending limit above $0 USD, you will pay $0.25 USD per GB of storage per month and per-minute usage depending on the operating system used by the {% data variables.product.prodname_dotcom %}-hosted runner. {% data variables.product.prodname_dotcom %} arredonda os minutos que cada trabalho usa até o minuto mais próximo.
 
 {% note %}
 
@@ -56,9 +54,9 @@ O armazenamento usado por um repositório é o armazenamento total usado por art
 
 {% endnote %}
 
-### Taxa por minuto
+### Per-minute rates
 
-| Sistema operacional | Taxa por minuto (USD) |
+| Sistema operacional | Per-minute rate (USD) |
 | ------------------- | --------------------- |
 | Linux               | $0,008                |
 | macOS               | $0,08                 |
@@ -70,21 +68,19 @@ O número de trabalhos que você pode executar simultaneamente em todos os repos
 
 ## Calculando minutos e gastos de armazenamento
 
-{% data reusables.dotcom_billing.pricing_cal %}
-
 No final do mês, {% data variables.product.prodname_dotcom %} calcula o custo de minutos e armazenamento usado sobre o valor incluído em sua conta.
 
-### Cálculo de custo de amostra em minutos
+### Sample minutes cost calculation
 
-Por exemplo, se sua organização usa {% data variables.product.prodname_team %} e permite gastos ilimitados, usando 15.000 minutos, poderia ter um custo total de armazenamento e custo médio de minuto de US$ 56,00, dependendo dos sistemas operacionais usados para executar trabalhos.
+For example, if your organization uses {% data variables.product.prodname_team %} and allows unlimited spending, using 15,000 minutes could have a total storage and minute overage cost of $56 USD, depending on the operating systems used to run jobs.
 
-- 5.000 (3.000 Linux e 2.000 Windows) minutos = US$ 56 (US$ 24 + US$ 32).
-  - 3.000 minutos de Linux por US$ 0,008 por minuto = US$ 24.
-  - 2.000 Windows minutos com US$ 0,016 por minuto = US$ 32.
+- 5,000 (3,000 Linux and 2,000 Windows) minutes = $56 USD ($24 USD + $32 USD).
+  - 3,000 Linux minutes at $0.008 USD per minute = $24 USD.
+  - 2,000 Windows minutes at $0.016 USD per minute = $32 USD.
 
 O {% data variables.product.prodname_dotcom %} calcula seu uso do armazenamento para cada mês com base no uso por hora durante aquele mês.
 
-### Cálculo de custo de armazenamento
+### Sample storage cost calculation
 
 Por exemplo, se você usar 3 GB de armazenamento por 10 dias de março e 12 GB durante 21 dias de março, seu uso de armazenamento seria:
 

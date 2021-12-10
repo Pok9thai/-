@@ -7,7 +7,6 @@ redirect_from:
   - /github/setting-up-and-managing-organizations-and-teams/restricting-access-to-your-organizations-data
 versions:
   fpt: '*'
-  ghec: '*'
 topics:
   - Organizations
   - Teams

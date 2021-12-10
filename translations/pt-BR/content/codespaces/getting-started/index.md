@@ -4,7 +4,6 @@ intro: 'Aprenda como dar os primeiros passos com {% data variables.product.prodn
 product: '{% data reusables.gated-features.codespaces %}'
 versions:
   fpt: '*'
-  ghec: '*'
 children:
   - /quickstart
   - /deep-dive

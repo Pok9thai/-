@@ -1,11 +1,10 @@
 ---
-title: Configurando seu projeto em Python para Codespaces
-shortTitle: Configurando seu projeto Python
+title: Setting up your Python project for Codespaces
+shortTitle: Setting up your Python project
 intro: 'Dê os primeiros passos com seu projeto Python em {% data variables.product.prodname_codespaces %} criando um contêiner de desenvolvimento personalizado.'
 product: '{% data reusables.gated-features.codespaces %}'
 versions:
   fpt: '*'
-  ghec: '*'
 redirect_from:
   - /codespaces/getting-started-with-codespaces/getting-started-with-your-python-project-in-codespaces
 type: tutorial
@@ -28,11 +27,11 @@ Este guia mostra como configurar seu projeto Python em {% data variables.product
 
 ## Etapa 1: Abra o seu projeto em um codespace
 
-1. No nome do repositório, use o menu suspenso **Código de {% octicon "code" aria-label="The code icon" %}** e na aba **Codespaces** de código, clique em {% octicon "plus" aria-label="The plus icon" %} **Novo codespace**.
+1. Under the repository name, use the **{% octicon "code" aria-label="The code icon" %} Code** drop-down menu, and in the **Codespaces** tab, click {% octicon "plus" aria-label="The plus icon" %} **New codespace**.
 
   ![Botão de codespace novo](/assets/images/help/codespaces/new-codespace-button.png)
 
-  Se você não vir esta opção, significa que {% data variables.product.prodname_codespaces %} não está disponível para o seu projeto. Consulte [Acesso a {% data variables.product.prodname_codespaces %}](/codespaces/developing-in-codespaces/creating-a-codespace#access-to-codespaces) para mais informações.
+  If you don’t see this option, {% data variables.product.prodname_codespaces %} isn't available for your project. See [Access to {% data variables.product.prodname_codespaces %}](/codespaces/developing-in-codespaces/creating-a-codespace#access-to-codespaces) for more information.
 
 
 
@@ -124,7 +123,7 @@ O arquivo recém-adicionado `devcontainer.json` define algumas propriedades que 
   - **Terminal.integrated.shell.linux** - Embora o bash seja o padrão, você pode usar outros shells do terminal, fazendo a modificação.
 - **Extensões** - Estas são extensões incluídas por padrão.
   - **ms-python. ython** - A extensão Microsoft Python fornece um amplo suporte para a linguagem do Python (para todas as versões ativamente compatíveis da linguagem: >=3.), incluindo recursos como IntelliSense, linting, depuração, navegação de código, formatação de código, refatoração, explorador de variáveis, explorador de teste e muito mais.
-- **forwardPorts** - Todas as portas listadas aqui serão encaminhadas automaticamente. Para obter mais informações, consulte "[Encaminhando portas no seu codespace](/codespaces/developing-in-codespaces/forwarding-ports-in-your-codespace)".
+- **forwardPorts** - Todas as portas listadas aqui serão encaminhadas automaticamente.
 - **postCreateCommand** - Se você quiser executar qualquer coisa depois de pousar no seu codespace, isso não está definido no arquivo Docker como `pip3 install -r requirements`. Você pode fazer isso aqui.
 - **remoteUser** - Por padrão, você está executando como usuário do `vscode`, mas, opcionalmente, você pode definir isso como `root`.
 
@@ -161,7 +160,7 @@ Com o seu contêiner de desenvolvimento adicionado e um entendimento básico do 
 
 1. No Explorador, expanda a pasta `.devcontainer` e selecione o arquivo `devcontainer.json` a partir da árvore para abri-lo.
 
-  ![Arquivo devcontainer.json no Explorador](/assets/images/help/codespaces/devcontainers-options.png)
+  ![devcontainer.json file in the Explorer](/assets/images/help/codespaces/devcontainers-options.png)
 
 2. Atualize a lista de extensões `` no seu arquivo `devcontainer.json` para adicionar algumas extensões que são úteis ao trabalhar com seu projeto.
 

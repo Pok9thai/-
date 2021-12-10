@@ -12,7 +12,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 shortTitle: Gradle registry
 ---
 
@@ -57,7 +56,7 @@ publishing {
     repositories {
         maven {
             name = "GitHubPackages"
-            url = uri("https://{% ifversion fpt or ghec %}maven.pkg.github.com{% else %}<em>REGISTRY-URL</em>{% endif %}/<em>OWNER</em>/<em>REPOSITORY</em>")
+            url = uri("https://{% ifversion fpt %}maven.pkg.github.com{% else %}<em>REGISTRY-URL</em>{% endif %}/<em>OWNER</em>/<em>REPOSITORY</em>")
             credentials {
                 username = project.findProperty("gpr.user") ?: System.getenv("<em>USERNAME</em>")
                 password = project.findProperty("gpr.key") ?: System.getenv("<em>TOKEN</em>")
@@ -84,7 +83,7 @@ subprojects {
         repositories {
             maven {
                 name = "GitHubPackages"
-                url = uri("https://{% ifversion fpt or ghec %}maven.pkg.github.com{% else %}<em>REGISTRY-URL</em>{% endif %}/<em>OWNER</em>/<em>REPOSITORY</em>")
+                url = uri("https://{% ifversion fpt %}maven.pkg.github.com{% else %}<em>REGISTRY-URL</em>{% endif %}/<em>OWNER</em>/<em>REPOSITORY</em>")
                 credentials {
                     username = project.findProperty("gpr.user") ?: System.getenv("<em>USERNAME</em>")
                     password = project.findProperty("gpr.key") ?: System.getenv("<em>TOKEN</em>")
@@ -110,7 +109,7 @@ publishing {
     repositories {
         maven {
             name = "GitHubPackages"
-            url = uri("https://{% ifversion fpt or ghec %}maven.pkg.github.com{% else %}<em>REGISTRY-URL</em>{% endif %}/<em>OWNER</em>/<em>REPOSITORY</em>")
+            url = uri("https://{% ifversion fpt %}maven.pkg.github.com{% else %}<em>REGISTRY-URL</em>{% endif %}/<em>OWNER</em>/<em>REPOSITORY</em>")
             credentials {
                 username = project.findProperty("gpr.user") as String? ?: System.getenv("<em>USERNAME</em>")
                 password = project.findProperty("gpr.key") as String? ?: System.getenv("<em>TOKEN</em>")
@@ -137,7 +136,7 @@ subprojects {
         repositories {
             maven {
                 name = "GitHubPackages"
-                url = uri("https://{% ifversion fpt or ghec %}maven.pkg.github.com{% else %}<em>REGISTRY-URL</em>{% endif %}/<em>OWNER</em>/<em>REPOSITORY</em>")
+                url = uri("https://{% ifversion fpt %}maven.pkg.github.com{% else %}<em>REGISTRY-URL</em>{% endif %}/<em>OWNER</em>/<em>REPOSITORY</em>")
                 credentials {
                     username = project.findProperty("gpr.user") as String? ?: System.getenv("<em>USERNAME</em>")
                     password = project.findProperty("gpr.key") as String? ?: System.getenv("<em>TOKEN</em>")
@@ -192,7 +191,7 @@ To use a published package from {% data variables.product.prodname_registry %}, 
   ```shell
   repositories {
       maven {
-          url = uri("https://{% ifversion fpt or ghec %}maven.pkg.github.com{% else %}<em>REGISTRY-URL</em>{% endif %}/<em>OWNER</em>/<em>REPOSITORY</em>")
+          url = uri("https://{% ifversion fpt %}maven.pkg.github.com{% else %}<em>REGISTRY-URL</em>{% endif %}/<em>OWNER</em>/<em>REPOSITORY</em>")
           credentials {
               username = project.findProperty("gpr.user") ?: System.getenv("<em>USERNAME</em>")
               password = project.findProperty("gpr.key") ?: System.getenv("<em>TOKEN</em>")
@@ -204,7 +203,7 @@ To use a published package from {% data variables.product.prodname_registry %}, 
   ```shell
   repositories {
       maven {
-          url = uri("https://{% ifversion fpt or ghec %}maven.pkg.github.com{% else %}<em>REGISTRY-URL</em>{% endif %}/<em>OWNER</em>/<em>REPOSITORY</em>")
+          url = uri("https://{% ifversion fpt %}maven.pkg.github.com{% else %}<em>REGISTRY-URL</em>{% endif %}/<em>OWNER</em>/<em>REPOSITORY</em>")
           credentials {
               username = project.findProperty("gpr.user") as String? ?: System.getenv("<em>USERNAME</em>")
               password = project.findProperty("gpr.key") as String? ?: System.getenv("<em>TOKEN</em>")
@@ -216,4 +215,4 @@ To use a published package from {% data variables.product.prodname_registry %}, 
 ## Further reading
 
 - "[Working with the Apache Maven registry](/packages/working-with-a-github-packages-registry/working-with-the-apache-maven-registry)"
-- "{% ifversion fpt or ghes > 3.0 or ghec %}[Deleting and restoring a package](/packages/learn-github-packages/deleting-and-restoring-a-package){% elsif ghes < 3.1 or ghae %}[Deleting a package](/packages/learn-github-packages/deleting-a-package){% endif %}"
+- "{% ifversion fpt or ghes > 3.0 %}[Deleting and restoring a package](/packages/learn-github-packages/deleting-and-restoring-a-package){% elsif ghes < 3.1 or ghae %}[Deleting a package](/packages/learn-github-packages/deleting-a-package){% endif %}"

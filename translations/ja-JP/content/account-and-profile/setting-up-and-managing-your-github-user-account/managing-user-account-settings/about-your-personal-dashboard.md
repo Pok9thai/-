@@ -11,7 +11,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - Accounts
 shortTitle: Your personal dashboard
@@ -45,10 +44,10 @@ shortTitle: Your personal dashboard
 
 ニュースフィードでは、あなたがフォローしているユーザが以下のことをした場合に更新情報が示されます:
 - リポジトリに Star を付ける。
-- 別のユーザをフォローする。{% ifversion fpt or ghes or ghec %}
+- Follows another user.{% ifversion fpt or ghes %}
 - パブリックリポジトリを作成する{% endif %}
 - あなたが Watch しているリポジトリ上で "help wanted" あるいは "good first issue" のラベルを付けた Issue あるいはプルリクエストをオープンする。
-- Pushes commits to a repository you watch.{% ifversion fpt or ghes or ghec %}
+- Pushes commits to a repository you watch.{% ifversion fpt or ghes %}
 - パブリックリポジトリをフォークする。{% endif %}
 - Publishes a new release.
 
@@ -56,7 +55,7 @@ shortTitle: Your personal dashboard
 
 ## 推奨されているリポジトリを調べる
 
-ダッシュボードの右側にある [Explore repositories] セクションでは、コミュニティで推奨されているリポジトリを調べることができます。 推奨は、Star を付けたりアクセスしたりしたリポジトリ、フォローしているユーザ、アクセスしたリポジトリ内のアクティビティに基づいています。{% ifversion fpt or ghec %}詳細は、「[{% data variables.product.prodname_dotcom %} でオープンソースにコントリビュートする方法を見つける](/github/getting-started-with-github/finding-ways-to-contribute-to-open-source-on-github)」を参照してください。{% endif %}
+ダッシュボードの右側にある [Explore repositories] セクションでは、コミュニティで推奨されているリポジトリを調べることができます。 推奨は、Star を付けたりアクセスしたりしたリポジトリ、フォローしているユーザ、アクセスしたリポジトリ内のアクティビティに基づいています。{% ifversion fpt %}詳細は、「[{% data variables.product.prodname_dotcom %} でオープンソースにコントリビュートする方法を見つける](/github/getting-started-with-github/finding-ways-to-contribute-to-open-source-on-github)」を参照してください。{% endif %}
 
 ## 参考リンク
 

@@ -9,7 +9,6 @@ redirect_from:
 versions:
   fpt: '*'
   ghes: '*'
-  ghec: '*'
 topics:
   - Profiles
 shortTitle: 固定项目

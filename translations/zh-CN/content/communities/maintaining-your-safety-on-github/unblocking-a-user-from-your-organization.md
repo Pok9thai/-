@@ -6,7 +6,6 @@ redirect_from:
   - /github/building-a-strong-community/unblocking-a-user-from-your-organization
 versions:
   fpt: '*'
-  ghec: '*'
 topics:
   - Community
 shortTitle: 从您的组织中解除阻止

@@ -6,7 +6,6 @@ versions:
 ---
 
 {% data reusables.actions.ae-hosted-runners-beta %}
-{% data reusables.actions.ae-beta %}
 
 ## Creating an {% data variables.actions.hosted_runner %} with a custom image
 

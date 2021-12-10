@@ -4,7 +4,6 @@ shortTitle: ガイド
 intro: コミュニティのディスカッションに参加したりモニタリングしたりするための最初のステップやベストプラクティスを学びましょう。
 versions:
   fpt: '*'
-  ghec: '*'
 children:
   - /best-practices-for-community-conversations-on-github
   - /finding-discussions-across-multiple-repositories

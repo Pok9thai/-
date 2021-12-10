@@ -6,12 +6,10 @@ redirect_from:
   - /github/getting-started-with-github/be-social
   - /github/getting-started-with-github/quickstart/be-social
 intro: '您可以在 {% data variables.product.prodname_dotcom %} 上与人员、仓库及组织进行互动。 从您的个人仪表板查看其他人正在做什么，在跟谁联系。'
-permissions: '{% data reusables.enterprise-accounts.emu-permission-interact %}'
 versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - Profile
   - Pull requests
@@ -24,7 +22,7 @@ topics:
 
 ## 关注他人
 
-在 {% data variables.product.prodname_dotcom %} 上关注某人后，您将会在您的个人仪表板中收到有关其活动的通知。 更多信息请参阅“[关于个人仪表板](/articles/about-your-personal-dashboard)”。
+在 {% data variables.product.product_location %} 上关注某人后，您将会在您的个人仪表板中收到有关其活动的通知。 更多信息请参阅“[关于个人仪表板](/articles/about-your-personal-dashboard)”。
 
 在某人的个人资料页面上单击 **Follow（关注）**可关注他们。
 
@@ -32,7 +30,7 @@ topics:
 
 ## 关注仓库
 
-您可以关注仓库以接收有关新拉取请求和议题的通知。 当所有者更新仓库时，您将在个人仪表板中看到其更改。 更多信息请参阅{% ifversion fpt or ghae or ghes or ghec %}“[查看您的订阅](/github/managing-subscriptions-and-notifications-on-github/viewing-your-subscriptions){% else %}”[关注和取消关注仓库](/github/receiving-notifications-about-activity-on-github/watching-and-unwatching-repositories){% endif %}”。
+您可以关注仓库以接收有关新拉取请求和议题的通知。 当所有者更新仓库时，您将在个人仪表板中看到其更改。 更多信息请参阅{% ifversion fpt or ghae or ghes %}“[查看您的订阅](/github/managing-subscriptions-and-notifications-on-github/viewing-your-subscriptions){% else %}”[关注和取消关注仓库](/github/receiving-notifications-about-activity-on-github/watching-and-unwatching-repositories){% endif %}”。
 
 在仓库顶部单击 **Watch（关注）**可关注它。
 
@@ -50,7 +48,7 @@ topics:
 
 ### 创建拉取请求
 
- 您可能希望为其他人的项目做出贡献，例如添加功能或修复漏洞。 做出更改后，通过发送拉取请求让原作者知道。 更多信息请参阅“[关于拉取请求](/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests)”。
+ 您可能希望为其他人的项目做出贡献，例如添加功能或修复漏洞。 做出更改后，通过发送拉取请求让原作者知道。 更多信息请参阅“[关于拉取请求](/articles/about-pull-requests)”。
 
  ![拉取请求按钮](/assets/images/help/repository/repo-actions-pullrequest.png)
 

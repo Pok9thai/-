@@ -12,7 +12,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - Identity
   - Access management
@@ -21,35 +20,35 @@ shortTitle: Criar um PAT
 
 {% note %}
 
-**Observação:** Se você usar {% data variables.product.prodname_cli %} para efetuar a autenticação para {% data variables.product.product_name %} na linha de comando você poderá ignorar a geração de um token de acesso pessoal e efetuar a autenticação por meio da web. Para mais informações sobre a autenticação com {% data variables.product.prodname_cli %}, consulte [`login gh`](https://cli.github.com/manual/gh_auth_login).
+**Note:** If you use {% data variables.product.prodname_cli %} to authenticate to {% data variables.product.product_name %} on the command line, you can skip generating a personal access token and authenticate via the web browser instead. For more information about authenticating with {% data variables.product.prodname_cli %}, see [`gh auth login`](https://cli.github.com/manual/gh_auth_login).
 
 {% endnote %}
 
 Os tokens de acesso pessoal (PATs) são uma alternativa para o uso de senhas para autenticação no {% data variables.product.product_name %} ao usar a [API do GitHub](/rest/overview/other-authentication-methods#via-oauth-and-personal-access-tokens) ou a [linha de comando](#using-a-token-on-the-command-line).
 
-{% ifversion fpt or ghec %}Se você deseja usar um PAT para acessar recursos que pertencem a uma organização que usa o SAML SSO, você deverá autorizar o PAT. Para mais informações consulte "[Sobre autenticação com logon único SAML](/github/authenticating-to-github/about-authentication-with-saml-single-sign-on)" e "[Autorizando um token de acesso pessoal para uso com logon único SAML](/github/authenticating-to-github/authorizing-a-personal-access-token-for-use-with-saml-single-sign-on).{% endif %}
+{% ifversion fpt %}Se você deseja usar um PAT para acessar recursos que pertencem a uma organização que usa o SAML SSO, você deverá autorizar o PAT. Para mais informações consulte "[Sobre autenticação com logon único SAML](/github/authenticating-to-github/about-authentication-with-saml-single-sign-on)" e "[Autorizando um token de acesso pessoal para uso com logon único SAML](/github/authenticating-to-github/authorizing-a-personal-access-token-for-use-with-saml-single-sign-on).{% endif %}
 
-{% ifversion fpt or ghec %}{% data reusables.user_settings.removes-personal-access-tokens %}{% endif %}
+{% ifversion fpt %}{% data reusables.user_settings.removes-personal-access-tokens %}{% endif %}
 
-Um token com nenhum escopo atribuído só pode acessar informações públicas. Para usar seu token para acessar repositórios da linha de comando, selecione `repo`. Para obter mais informações, consulte "[Escopos disponíveis](/apps/building-oauth-apps/scopes-for-oauth-apps#available-scopes)".
+A token with no assigned scopes can only access public information. Para usar seu token para acessar repositórios da linha de comando, selecione `repo`. For more information, see “[Available scopes](/apps/building-oauth-apps/scopes-for-oauth-apps#available-scopes)”.
 
 ## Criar um token
 
-{% ifversion fpt or ghec %}1. [Verifique seu endereço de e-mail](/github/getting-started-with-github/verifying-your-email-address), caso ainda não o tenha verificado.{% endif %}
+{% ifversion fpt %}1. [Verifique seu endereço de e-mail](/github/getting-started-with-github/verifying-your-email-address), caso ainda não o tenha verificado.{% endif %}
 {% data reusables.user_settings.access_settings %}
 {% data reusables.user_settings.developer_settings %}
 {% data reusables.user_settings.personal_access_tokens %}
-{% data reusables.user_settings.generate_new_token %}
-5. Dê ao seu token um nome descritivo. ![Token description field](/assets/images/help/settings/token_description.png){% ifversion fpt or ghes > 3.2 or ghae-issue-4374 or ghec %}
-6. Para dar ao seu token uma data de vencimento, selecione o menu suspenso **Vencimento** e, em seguida, clique em um padrão ou use o seletor de calendário. ![Token expiration field](/assets/images/help/settings/token_expiration.png){% endif %}
+4. Clique em **Generate new token** (Gerar novo token). ![Botão Generate new token (Gerar novo token)](/assets/images/help/settings/generate_new_token.png)
+5. Dê ao seu token um nome descritivo. ![Token description field](/assets/images/help/settings/token_description.png){% ifversion fpt or ghes > 3.2 or ghae-issue-4374 %}
+6. To give your token an expiration, select the **Expiration** drop-down menu, then click a default or use the calendar picker. ![Token expiration field](/assets/images/help/settings/token_expiration.png){% endif %}
 7. Selecione os escopos, ou as permissões, aos quais deseja conceder esse token. Para usar seu token para acessar repositórios da linha de comando, selecione **repo**.
-   {% ifversion fpt or ghes or ghec %}
+   {% ifversion fpt or ghes %}
    ![Selecionar escopos do token](/assets/images/help/settings/token_scopes.gif)
    {% elsif ghae %}
    ![Selecionar escopos do token](/assets/images/enterprise/github-ae/settings/access-token-scopes-for-ghae.png)
    {% endif %}
 8. Clique em **Generate token** (Gerar token). ![Botão Generate token (Gerar token)](/assets/images/help/settings/generate_token.png)
-   {% ifversion fpt or ghec %}
+   {% ifversion fpt %}
    ![Token recém-criado](/assets/images/help/settings/personal_access_tokens.png)
    {% elsif ghes > 3.1 or ghae-next %}
    ![Token recém-criado](/assets/images/help/settings/personal_access_tokens_ghe.png)
@@ -62,7 +61,7 @@ Um token com nenhum escopo atribuído só pode acessar informações públicas. 
 
    {% endwarning %}
 
-{% ifversion fpt or ghec %}9. Para usar seu token a fim de se autenticar em uma organização que usa SAML SSO, [autorize o token para uso com uma organização de logon único SAML](/github/authenticating-to-github/authorizing-a-personal-access-token-for-use-with-saml-single-sign-on).{% endif %}
+{% ifversion fpt %}9. Para usar seu token a fim de se autenticar em uma organização que usa SAML SSO, [autorize o token para uso com uma organização de logon único SAML](/github/authenticating-to-github/authorizing-a-personal-access-token-for-use-with-saml-single-sign-on).{% endif %}
 
 ## Usar um token na linha de comando
 
@@ -76,5 +75,5 @@ Em vez de inserir manualmente seu PAT para cada operação de HTTPS do Git, voc�
 
 ## Leia mais
 
-- "[Sobre a autenticação no GitHub](/github/authenticating-to-github/about-authentication-to-github)"{% ifversion fpt or ghae-issue-4374 or ghes > 3.2 or ghec %}
-- "[Vencimento e revogação do Token](/github/authenticating-to-github/keeping-your-account-and-data-secure/token-expiration-and-revocation)"{% endif %}
+- "[About authentication to GitHub](/github/authenticating-to-github/about-authentication-to-github)"{% ifversion fpt or ghae-issue-4374 or ghes > 3.2 %}
+- "[Token expiration and revocation](/github/authenticating-to-github/keeping-your-account-and-data-secure/token-expiration-and-revocation)"{% endif %}

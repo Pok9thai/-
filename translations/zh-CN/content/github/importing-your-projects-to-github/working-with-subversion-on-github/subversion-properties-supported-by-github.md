@@ -7,7 +7,6 @@ redirect_from:
 versions:
   fpt: '*'
   ghes: '*'
-  ghec: '*'
 shortTitle: GitHub 支持的属性
 ---
 

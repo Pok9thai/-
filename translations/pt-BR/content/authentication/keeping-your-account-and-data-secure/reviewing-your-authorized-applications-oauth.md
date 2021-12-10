@@ -9,7 +9,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - Identity
   - Access management
@@ -22,6 +21,6 @@ shortTitle: Revisar aplicativos OAuth
 {% data reusables.user_settings.review-oauth-apps %}
 
 ## Leia mais
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 - "[Sobre integrações](/articles/about-integrations)"{% endif %}
 - "[Revisar integrações autorizadas](/articles/reviewing-your-authorized-integrations)"

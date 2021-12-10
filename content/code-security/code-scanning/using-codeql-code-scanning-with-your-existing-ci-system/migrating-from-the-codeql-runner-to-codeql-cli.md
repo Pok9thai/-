@@ -6,8 +6,7 @@ product: '{% data reusables.gated-features.code-scanning %}'
 versions:
   fpt: '*'
   ghes: '>=3.1'
-  ghae: next
-  ghec: '*'
+  ghae: 'next'
 topics:
   - Advanced Security
   - Code scanning

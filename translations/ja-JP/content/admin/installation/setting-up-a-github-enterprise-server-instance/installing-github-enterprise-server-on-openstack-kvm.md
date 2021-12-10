@@ -7,12 +7,8 @@ redirect_from:
   - /admin/installation/installing-github-enterprise-server-on-openstack-kvm
 versions:
   ghes: '*'
-type: tutorial
 topics:
-  - Administrator
   - Enterprise
-  - Infrastructure
-  - Set up
 shortTitle: Install on OpenStack
 ---
 
@@ -55,5 +51,5 @@ shortTitle: Install on OpenStack
 
 ## 参考リンク
 
-- 「[システム概要](/enterprise/admin/guides/installation/system-overview)」{% ifversion ghes %}
+- 「[システム概要](/enterprise/admin/guides/installation/system-overview)」{% ifversion ghes > 2.22 %}
 - 「[新しいリリースへのアップグレードについて](/admin/overview/about-upgrades-to-new-releases)」{% endif %}

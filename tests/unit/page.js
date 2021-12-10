@@ -18,7 +18,7 @@ const nonEnterpriseDefaultPlan = nonEnterpriseDefaultVersion.split('@')[0]
 
 const opts = {
   relativePath:
-    'pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-branches.md',
+    'github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-branches.md',
   basePath: path.join(__dirname, '../../content'),
   languageCode: 'en',
 }
@@ -84,29 +84,17 @@ describe('Page class', () => {
         page: { version: `enterprise-server@${enterpriseServerReleases.latest}` },
         currentVersion: `enterprise-server@${enterpriseServerReleases.latest}`,
         currentPath:
-          '/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-branches',
+          '/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-branches',
         currentLanguage: 'en',
       }
       const rendered = await page.render(context)
       const $ = cheerio.load(rendered)
-      expect(
-        page.markdown.includes(
-          '(/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests)'
-        )
-      ).toBe(true)
-      expect(
-        page.markdown.includes(
-          '(/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests)'
-        )
-      ).toBe(false)
+      expect(page.markdown.includes('(/articles/about-pull-requests)')).toBe(true)
+      expect(page.markdown.includes('(/en/articles/about-pull-requests)')).toBe(false)
+      expect($('a[href="/articles/about-pull-requests"]').length).toBe(0)
       expect(
         $(
-          'a[href="/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests"]'
-        ).length
-      ).toBe(0)
-      expect(
-        $(
-          `a[href="/en/${`enterprise-server@${enterpriseServerReleases.latest}`}/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests"]`
+          `a[href="/en/${`enterprise-server@${enterpriseServerReleases.latest}`}/articles/about-pull-requests"]`
         ).length
       ).toBeGreaterThan(0)
     })
@@ -125,27 +113,18 @@ describe('Page class', () => {
 
     test('rewrites links in the intro to include the current language prefix and version', async () => {
       const page = await Page.init(opts)
-      page.rawIntro =
-        '[Pull requests](/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests)'
+      page.rawIntro = '[Pull requests](/articles/about-pull-requests)'
       const context = {
         page: { version: nonEnterpriseDefaultVersion },
         currentVersion: nonEnterpriseDefaultVersion,
         currentPath:
-          '/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-branches',
+          '/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-branches',
         currentLanguage: 'en',
       }
       await page.render(context)
       const $ = cheerio.load(page.intro)
-      expect(
-        $(
-          'a[href="/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests"]'
-        ).length
-      ).toBe(0)
-      expect(
-        $(
-          'a[href="/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests"]'
-        ).length
-      ).toBeGreaterThan(0)
+      expect($('a[href="/articles/about-pull-requests"]').length).toBe(0)
+      expect($('a[href="/en/articles/about-pull-requests"]').length).toBeGreaterThan(0)
     })
 
     test('does not rewrite links that include deprecated enterprise release numbers', async () => {
@@ -185,7 +164,7 @@ describe('Page class', () => {
       const context = {
         page: { version: nonEnterpriseDefaultVersion },
         currentVersion: nonEnterpriseDefaultVersion,
-        currentPath: `/en/${nonEnterpriseDefaultVersion}/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-branches`,
+        currentPath: `/en/${nonEnterpriseDefaultVersion}/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-branches`,
         currentLanguage: 'en',
       }
       const rendered = await page.render(context)
@@ -323,7 +302,7 @@ describe('Page class', () => {
     test('sets versioned values', async () => {
       const page = await Page.init(opts)
       const expectedPath =
-        'pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-branches'
+        'github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-branches'
       expect(
         page.permalinks.find((permalink) => permalink.pageVersion === nonEnterpriseDefaultVersion)
           .href
@@ -367,7 +346,7 @@ describe('Page class', () => {
         page.permalinks.find((permalink) => permalink.pageVersion === nonEnterpriseDefaultVersion)
           .href
       ).toBe(expectedPath)
-      expect(page.permalinks.length).toBe(2)
+      expect(page.permalinks.length).toBe(1)
     })
 
     test('permalinks for enterprise-only pages', async () => {
@@ -424,7 +403,6 @@ describe('Page class', () => {
       ])
     })
 
-    // Docs Engineering issue: 970
     it.skip('renders learning tracks that have been defined', async () => {
       // getLinkData.mockImplementation((guides) => { return guides })
       const guides = ['/path/guide1', '/path/guide2']
@@ -508,7 +486,6 @@ describe('Page class', () => {
       expect(page.includeGuides).toStrictEqual(['/path/guide1', '/path/guide2', '/path/guide3'])
     })
 
-    // Docs Engineering issue: 971
     it.skip('renders guides and topics', async () => {
       /* getLinkData.mockImplementation(() => {
         return [{
@@ -576,11 +553,10 @@ describe('Page class', () => {
   })
 
   describe('page.versions frontmatter', () => {
-    // Docs Engineering issue: 972
     test.skip('pages that apply to older enterprise versions', async () => {
       // There are none of these in the content at this time!
     })
-    // Docs Engineering issue: 972
+
     test.skip('pages that apply to newer enterprise versions', async () => {
       // There are none of these in the content at this time!
     })
@@ -630,7 +606,7 @@ describe('Page class', () => {
       // and placeholder.yml has:
       //
       // versions:
-      //   ghes: '<3.0'
+      //   ghes: '<2.22'
       //   ghae: '*'
       //
       // So we expect to get the versioning from both.
@@ -653,7 +629,7 @@ describe('Page class', () => {
       // because lib/get-applicable-versions only returns currently supported versions,
       // so as soon as 2.21 is deprecated, a test for that _not_ to exist will not be meaningful.
       // But by testing that the _latest_ GHES version is returned, we can ensure that the
-      // the frontmatter GHES `*` is not being overwritten by the placeholder's GHES `<3.0`.
+      // the frontmatter GHES `*` is not being overwritten by the placeholder's GHES `<2.22`.
       expect(page.applicableVersions.includes('free-pro-team@latest')).toBe(true)
       expect(page.applicableVersions.includes(`enterprise-server@${latest}`)).toBe(true)
       expect(page.applicableVersions.includes('github-ae@latest')).toBe(true)

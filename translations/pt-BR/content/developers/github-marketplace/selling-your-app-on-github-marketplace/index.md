@@ -10,7 +10,6 @@ redirect_from:
   - /marketplace/selling-your-app
 versions:
   fpt: '*'
-  ghec: '*'
 topics:
   - Marketplace
 children:

@@ -16,7 +16,6 @@ redirect_from:
   - /developers/github-marketplace/setting-pricing-plans-for-your-listing
 versions:
   fpt: '*'
-  ghec: '*'
 topics:
   - Marketplace
 shortTitle: 设置上市定价计划

@@ -5,7 +5,6 @@ intro: You can configure your enterprise to suit your organization's needs.
 redirect_from:
   - /enterprise/admin/configuration
 versions:
-  ghec: '*'
   ghes: '*'
   ghae: '*'
 topics:

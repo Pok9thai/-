@@ -13,7 +13,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 shortTitle: Handle line endings
 ---
 ## About line endings

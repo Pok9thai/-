@@ -8,7 +8,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - API
 miniTocMaxHeadingLevel: 3
@@ -18,7 +17,7 @@ miniTocMaxHeadingLevel: 3
   {% unless operation.subcategory %}{% include rest_operation %}{% endunless %}
 {% endfor %}
 
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 ## ユーザのブロック
 
 Organization に対するブロック呼び出しを実行するには、呼び出しの認証に使用するトークンに `admin:org` が必要です。 それがない場合には、`HTTP 404` が返されます。
@@ -40,14 +39,6 @@ Organization に対するブロック呼び出しを実行するには、呼び�
 {% for operation in currentRestOperations %}
   {% if operation.subcategory == 'outside-collaborators' %}{% include rest_operation %}{% endif %}
 {% endfor %}
-
-{% ifversion fpt or ghes > 3.4  %}
-## Custom repository roles
-
-{% for operation in currentRestOperations %}
-  {% if operation.subcategory == 'custom_roles' %}{% include rest_operation %}{% endif %}
-{% endfor %}
-{% endif %}
 
 ## webhook
 

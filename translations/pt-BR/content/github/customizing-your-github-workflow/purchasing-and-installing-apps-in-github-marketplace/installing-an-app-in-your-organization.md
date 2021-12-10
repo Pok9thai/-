@@ -6,7 +6,6 @@ redirect_from:
   - /github/customizing-your-github-workflow/installing-an-app-in-your-organization
 versions:
   fpt: '*'
-  ghec: '*'
 shortTitle: Instalar organização de aplicativos
 ---
 

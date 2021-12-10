@@ -12,14 +12,13 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - Repositories
 ---
 
 ## About repository archival
 
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 {% note %}
 
 **Note:** If you have a legacy per-repository billing plan, you will still be charged for your archived repository. If you don't want to be charged for an archived repository, you must upgrade to a new product. For more information, see "[{% data variables.product.prodname_dotcom %}'s products](/articles/github-s-products)."

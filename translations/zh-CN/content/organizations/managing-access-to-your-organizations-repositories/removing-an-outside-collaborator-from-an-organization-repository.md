@@ -8,14 +8,13 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - Organizations
   - Teams
 shortTitle: 删除协作者
 ---
 
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 
 {% warning %}
 

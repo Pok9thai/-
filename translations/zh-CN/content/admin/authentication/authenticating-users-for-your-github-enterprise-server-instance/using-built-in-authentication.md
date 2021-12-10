@@ -28,14 +28,14 @@ shortTitle: 使用内置身份验证
 {% data reusables.enterprise_user_management.two_factor_auth_header %}
 {% data reusables.enterprise_user_management.2fa_is_available %}
 
-## 创建账户
+## Creating your account
 
-在实例创建完成后，您需要创建自己的管理员帐户。
+Once your instance has been created, you'll need to create your own admin account.
 
 1. 在 `http(s)://[hostname]/join` 的“Create Admin Account”页面下，选择您的用户名、密码和电子邮件地址，然后单击 **Create an account**。 ![创建管理员帐户](/assets/images/enterprise/site-admin-settings/create-first-admin-acct.png)
 {% data reusables.enterprise_site_admin_settings.sign-in %}
 
-## 邀请用户
+## Inviting users
 
 {% data reusables.enterprise_site_admin_settings.access-settings %}
 {% data reusables.enterprise_site_admin_settings.invite-user-sidebar-tab %}
@@ -43,10 +43,10 @@ shortTitle: 使用内置身份验证
 
 {% tip %}
 
-**提示：** 如果在设备上配置通知电子邮件，邀请也将发送到提供的电子邮件地址。
+**Tip:** If email for notifications is configured on the appliance, an invite will also be sent to the provided email address.
 
 {% endtip %}
 
 ## 延伸阅读
 
-- "[配置通知电子邮件](/admin/configuration/configuring-your-enterprise/configuring-email-for-notifications)"
+- "[Configuring email for notifications](/admin/configuration/configuring-your-enterprise/configuring-email-for-notifications)"

@@ -1,11 +1,10 @@
 ---
 title: Interações
-intro: 'Com a API de interações, as pessoas com acesso de proprietário ou administrador podem definir o limite de interação para os usuários nas suas organizações e repositórios.'
+intro: 'With the Interactions API, people with owner or admin access can set the interaction limit for the users in their organizations and repositories.'
 redirect_from:
   - /v3/interactions
 versions:
   fpt: '*'
-  ghec: '*'
 topics:
   - API
 miniTocMaxHeadingLevel: 3

@@ -9,10 +9,9 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 shortTitle: Code migration tools
 ---
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 
 We recommend using [GitHub Importer](/articles/about-github-importer) to import projects from Subversion, Mercurial, Team Foundation Version Control (TFVC), or another Git repository. You can also use these external tools to convert your project to Git.
 
@@ -46,7 +45,7 @@ For more information about moving from TFVC (a centralized version control syste
 
 {% endtip %}
 
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 
 ## Further reading
 

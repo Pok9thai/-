@@ -11,7 +11,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - SSH
 shortTitle: Recuperar la frase deacceso de la llave SSH

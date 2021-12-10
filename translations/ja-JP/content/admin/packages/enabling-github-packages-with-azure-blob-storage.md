@@ -2,12 +2,9 @@
 title: Azure Blob Storage で GitHub Packages を有効化する
 intro: 'Azure Blob Storage を外部ストレージとして {% data variables.product.prodname_registry %} を設定します。'
 versions:
-  ghes: '*'
-type: tutorial
+  ghes: '>=3.0'
 topics:
   - Enterprise
-  - Packages
-  - Storage
 shortTitle: Enable Packages with Azure
 ---
 

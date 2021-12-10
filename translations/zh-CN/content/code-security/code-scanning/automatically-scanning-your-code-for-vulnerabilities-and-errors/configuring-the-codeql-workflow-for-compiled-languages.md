@@ -12,9 +12,8 @@ redirect_from:
   - /code-security/secure-coding/automatically-scanning-your-code-for-vulnerabilities-and-errors/configuring-the-codeql-workflow-for-compiled-languages
 versions:
   fpt: '*'
-  ghes: '*'
+  ghes: '>=3.0'
   ghae: '*'
-  ghec: '*'
 type: how_to
 topics:
   - Advanced Security

@@ -1,6 +1,7 @@
 ---
 title: MavenでのJavaのビルドとテスト
 intro: GitHub Actions中で継続的インテグレーション（CI）ワークフローを作成し、MavenでJavaのプロジェクトのビルドとテストを行うことができます。
+product: '{% data reusables.gated-features.actions %}'
 redirect_from:
   - /actions/language-and-framework-guides/building-and-testing-java-with-maven
   - /actions/guides/building-and-testing-java-with-maven
@@ -8,7 +9,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 type: tutorial
 topics:
   - CI

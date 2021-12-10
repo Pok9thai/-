@@ -12,7 +12,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 shortTitle: Registro de Gradle
 ---
 
@@ -57,7 +56,7 @@ publishing {
     repositories {
         maven {
             name = "GitHubPackages"
-            url = uri("https://{% ifversion fpt or ghec %}maven.pkg.github.com{% else %}<em>REGISTRY-URL</em>{% endif %}/<em>OWNER</em>/<em>REPOSITORY</em>")
+            url = uri("https://{% ifversion fpt %}maven.pkg.github.com{% else %}<em>REGISTRY-URL</em>{% endif %}/<em>OWNER</em>/<em>REPOSITORY</em>")
             credentials {
                 username = project.findProperty("gpr.user") ?: System.getenv("<em>USERNAME</em>")
                 password = project.findProperty("gpr.key") ?: System.getenv("<em>TOKEN</em>")
@@ -84,7 +83,7 @@ subprojects {
         repositories {
             maven {
                 name = "GitHubPackages"
-                url = uri("https://{% ifversion fpt or ghec %}maven.pkg.github.com{% else %}<em>REGISTRY-URL</em>{% endif %}/<em>OWNER</em>/<em>REPOSITORY</em>")
+                url = uri("https://{% ifversion fpt %}maven.pkg.github.com{% else %}<em>REGISTRY-URL</em>{% endif %}/<em>OWNER</em>/<em>REPOSITORY</em>")
                 credentials {
                     username = project.findProperty("gpr.user") ?: System.getenv("<em>USERNAME</em>")
                     password = project.findProperty("gpr.key") ?: System.getenv("<em>TOKEN</em>")
@@ -110,7 +109,7 @@ publishing {
     repositories {
         maven {
             name = "GitHubPackages"
-            url = uri("https://{% ifversion fpt or ghec %}maven.pkg.github.com{% else %}<em>REGISTRY-URL</em>{% endif %}/<em>OWNER</em>/<em>REPOSITORY</em>")
+            url = uri("https://{% ifversion fpt %}maven.pkg.github.com{% else %}<em>REGISTRY-URL</em>{% endif %}/<em>OWNER</em>/<em>REPOSITORY</em>")
             credentials {
                 username = project.findProperty("gpr.user") as String? ?: System.getenv("<em>USERNAME</em>")
                 password = project.findProperty("gpr.key") as String? ?: System.getenv("<em>TOKEN</em>")
@@ -137,7 +136,7 @@ subprojects {
         repositories {
             maven {
                 name = "GitHubPackages"
-                url = uri("https://{% ifversion fpt or ghec %}maven.pkg.github.com{% else %}<em>REGISTRY-URL</em>{% endif %}/<em>OWNER</em>/<em>REPOSITORY</em>")
+                url = uri("https://{% ifversion fpt %}maven.pkg.github.com{% else %}<em>REGISTRY-URL</em>{% endif %}/<em>OWNER</em>/<em>REPOSITORY</em>")
                 credentials {
                     username = project.findProperty("gpr.user") as String? ?: System.getenv("<em>USERNAME</em>")
                     password = project.findProperty("gpr.key") as String? ?: System.getenv("<em>TOKEN</em>")
@@ -166,9 +165,9 @@ subprojects {
    $ gradle publish
   ```
 
-## Utilizar un paquete publicado
+## Using a published package
 
-Para utiliza run paquete publicado del {% data variables.product.prodname_registry %}, agrégalo como una dependencia y luego agrega el repositorio a tu proyecto. Para obtener más información, consulta "[Declarar dependencias](https://docs.gradle.org/current/userguide/declaring_dependencies.html)" en la documentación de Gradle.
+To use a published package from {% data variables.product.prodname_registry %}, add the package as a dependency and add the repository to your project. Para obtener más información, consulta "[Declarar dependencias](https://docs.gradle.org/current/userguide/declaring_dependencies.html)" en la documentación de Gradle.
 
 {% data reusables.package_registry.authenticate-step %}
 2. Agrega las dependencias del paquete a tu archivo *build.gradle* (Gradle Groovy) o archivo *build.gradle.kts* (Kotlin DSL).
@@ -186,13 +185,13 @@ Para utiliza run paquete publicado del {% data variables.product.prodname_regist
   }
   ```
 
-3. Agrega el repositorio a tu archivo de *build.gradle* (Gradel Groovy) o a tu archivo de *build.gradle.kts* (Kotlin DSL).
+3. Add the repository to your *build.gradle* file (Gradle Groovy) or *build.gradle.kts* file (Kotlin DSL) file.
 
   Ejemplo utilizando Gradle Groovy:
   ```shell
   repositories {
       maven {
-          url = uri("https://{% ifversion fpt or ghec %}maven.pkg.github.com{% else %}<em>REGISTRY-URL</em>{% endif %}/<em>OWNER</em>/<em>REPOSITORY</em>")
+          url = uri("https://{% ifversion fpt %}maven.pkg.github.com{% else %}<em>REGISTRY-URL</em>{% endif %}/<em>OWNER</em>/<em>REPOSITORY</em>")
           credentials {
               username = project.findProperty("gpr.user") ?: System.getenv("<em>USERNAME</em>")
               password = project.findProperty("gpr.key") ?: System.getenv("<em>TOKEN</em>")
@@ -204,7 +203,7 @@ Para utiliza run paquete publicado del {% data variables.product.prodname_regist
   ```shell
   repositories {
       maven {
-          url = uri("https://{% ifversion fpt or ghec %}maven.pkg.github.com{% else %}<em>REGISTRY-URL</em>{% endif %}/<em>OWNER</em>/<em>REPOSITORY</em>")
+          url = uri("https://{% ifversion fpt %}maven.pkg.github.com{% else %}<em>REGISTRY-URL</em>{% endif %}/<em>OWNER</em>/<em>REPOSITORY</em>")
           credentials {
               username = project.findProperty("gpr.user") as String? ?: System.getenv("<em>USERNAME</em>")
               password = project.findProperty("gpr.key") as String? ?: System.getenv("<em>TOKEN</em>")
@@ -216,4 +215,4 @@ Para utiliza run paquete publicado del {% data variables.product.prodname_regist
 ## Leer más
 
 - "[Trabajar con el registro de Apache Maven](/packages/working-with-a-github-packages-registry/working-with-the-apache-maven-registry)"
-- "{% ifversion fpt or ghes > 3.0 or ghec %}[Deleting and restoring a package](/packages/learn-github-packages/deleting-and-restoring-a-package){% elsif ghes < 3.1 or ghae %}[Deleting a package](/packages/learn-github-packages/deleting-a-package){% endif %}"
+- "{% ifversion fpt or ghes > 3.0 %}[Borrar y restaurar un paquete](/packages/learn-github-packages/deleting-and-restoring-a-package){% elsif ghes < 3.1 or ghae %}[Borrar un paquete](/packages/learn-github-packages/deleting-a-package){% endif %}"

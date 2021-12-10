@@ -7,7 +7,6 @@ redirect_from:
   - /github/setting-up-and-managing-organizations-and-teams/enabling-and-testing-saml-single-sign-on-for-your-organization
 versions:
   fpt: '*'
-  ghec: '*'
 topics:
   - Organizations
   - Teams
@@ -24,7 +23,7 @@ If you enable but don't enforce SAML SSO, organization members who choose not to
 
 ## Enabling and testing SAML single sign-on for your organization
 
-{% data reusables.saml.saml-requires-ghec %}{% ifversion fpt %} {% data reusables.enterprise.link-to-ghec-trial %}{% endif %}
+{% data reusables.saml.saml-requires-ghec %} {% data reusables.enterprise.link-to-ghec-trial %}
 
 Before your enforce SAML SSO in your organization, ensure that you've prepared the organization. For more information, see "[Preparing to enforce SAML single sign-on in your organization](/articles/preparing-to-enforce-saml-single-sign-on-in-your-organization)."
 

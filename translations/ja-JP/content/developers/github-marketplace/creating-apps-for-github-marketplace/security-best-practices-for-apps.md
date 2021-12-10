@@ -9,7 +9,6 @@ redirect_from:
 shortTitle: セキュリティベストプラクティス
 versions:
   fpt: '*'
-  ghec: '*'
 topics:
   - Marketplace
 ---

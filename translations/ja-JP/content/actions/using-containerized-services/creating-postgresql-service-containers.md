@@ -2,6 +2,7 @@
 title: PostgreSQLサービスコンテナの作成
 shortTitle: PostgreSQL サービス コンテナ
 intro: ワークフローで利用するPostgreSQLサービスコンテナを作成できます。 このガイドでは、コンテナで実行されるジョブか、ランナーマシン上で直接実行されるジョブのためのPostgreSQLサービスの作成例を紹介します。
+product: '{% data reusables.gated-features.actions %}'
 redirect_from:
   - /actions/automating-your-workflow-with-github-actions/creating-postgresql-service-containers
   - /actions/configuring-and-managing-workflows/creating-postgresql-service-containers
@@ -10,7 +11,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 type: tutorial
 topics:
   - Containers

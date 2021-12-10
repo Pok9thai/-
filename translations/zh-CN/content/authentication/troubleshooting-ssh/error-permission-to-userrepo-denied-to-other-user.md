@@ -10,7 +10,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - SSH
 shortTitle: 拒绝其他用户的权限

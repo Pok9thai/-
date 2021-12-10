@@ -11,7 +11,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 ---
 
 ## Versão de suporte estendido do Firefox

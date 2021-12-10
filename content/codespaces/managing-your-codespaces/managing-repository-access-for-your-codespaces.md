@@ -5,7 +5,6 @@ intro: 'You can manage the repositories that {% data variables.product.prodname_
 product: '{% data reusables.gated-features.codespaces %}'
 versions:
   fpt: '*'
-  ghec: '*'
 topics:
   - Codespaces
   - Security

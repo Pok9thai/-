@@ -1,13 +1,13 @@
 ---
 title: Comentar em um problema quando uma etiqueta é adicionada
 intro: 'Você pode usar {% data variables.product.prodname_actions %} para comentar automaticamente nos problema quando uma etiqueta específica é aplicada.'
+product: '{% data reusables.gated-features.actions %}'
 redirect_from:
   - /actions/guides/commenting-on-an-issue-when-a-label-is-added
 versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 type: tutorial
 topics:
   - Workflows
@@ -18,6 +18,7 @@ shortTitle: Adicionar etiqueta ao comentário no problema
 {% data reusables.actions.enterprise-beta %}
 {% data reusables.actions.enterprise-github-hosted-runners %}
 {% data reusables.actions.ae-beta %}
+{% data reusables.actions.ae-self-hosted-runners-notice %}
 
 ## Introdução
 
@@ -42,7 +43,7 @@ No tutorial, primeiro você vai criar um arquivo de fluxo de trabalho que usa a 
     jobs:
       add-comment:
         if: github.event.label.name == 'help-wanted'
-        runs-on: ubuntu-latest{% ifversion fpt or ghes > 3.1 or ghae-next or ghec %}
+        runs-on: ubuntu-latest{% ifversion fpt or ghes > 3.1 or ghae-next %}
         permissions:
           issues: write{% endif %}
         steps:

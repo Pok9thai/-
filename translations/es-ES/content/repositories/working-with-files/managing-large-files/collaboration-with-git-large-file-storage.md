@@ -10,7 +10,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 shortTitle: Colaboración
 ---
 
@@ -32,7 +31,7 @@ Para obtener más información acerca de los archivos puntero, consulta la secci
 
 Para ver los cambios que se realizaron en los archivos grandes, verifica localmente la solicitud de extracción para revisar la diferencia. Para obtener más información, consulta la sección "[Revisar las solicitudes de extracción localmente](/github/collaborating-with-issues-and-pull-requests/checking-out-pull-requests-locally)".
 
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 
 ## Subir archivos de gran tamaño a bifurcaciones
 

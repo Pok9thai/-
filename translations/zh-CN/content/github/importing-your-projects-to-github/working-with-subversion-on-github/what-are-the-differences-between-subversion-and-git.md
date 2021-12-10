@@ -8,7 +8,6 @@ redirect_from:
 versions:
   fpt: '*'
   ghes: '*'
-  ghec: '*'
 shortTitle: Subversion 与 Git 差异
 ---
 

@@ -6,7 +6,6 @@ redirect_from:
   - /github/importing-your-projects-to-github/updating-commit-author-attribution-with-github-importer
 versions:
   fpt: '*'
-  ghec: '*'
 shortTitle: Actualizar el importador de GitHub de autor
 ---
 

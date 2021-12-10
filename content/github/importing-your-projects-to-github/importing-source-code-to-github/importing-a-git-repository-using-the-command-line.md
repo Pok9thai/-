@@ -8,7 +8,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 shortTitle: Import repo locally
 ---
 Before you start, make sure you know:
@@ -23,7 +22,7 @@ For purposes of demonstration, we'll use:
 - An external account named **extuser**
 - An external Git host named `https://external-host.com`
 - A {% data variables.product.product_name %} personal user account named **ghuser**
-- A repository on {% ifversion ghae %}{% data variables.product.product_name %}{% else %}{% data variables.product.product_location %}{% endif %} named **repo.git**
+- A {% data variables.product.product_name %} repository named **repo.git**
 
 {% endtip %}
 
@@ -37,7 +36,7 @@ For purposes of demonstration, we'll use:
   ```shell
   $ cd <em>repo.git</em>
   $ git push --mirror https://{% data variables.command_line.codeblock %}/<em>ghuser</em>/<em>repo.git</em>
-  # Pushes the mirror to the new repository on {% ifversion ghae %}{% data variables.product.product_name %}{% else %}{% data variables.product.product_location %}{% endif %}
+  # Pushes the mirror to the new {% data variables.product.product_name %} repository
   ```
 4. Remove the temporary local repository.
   ```shell

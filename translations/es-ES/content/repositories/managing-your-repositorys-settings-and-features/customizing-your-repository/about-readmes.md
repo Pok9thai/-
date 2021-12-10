@@ -11,16 +11,15 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - Repositories
 ---
 
 ## Acerca de los archivos README
 
-Puedes agregar un archivo README a un repositorio para comunicar información importante sobre tu proyecto. El contar con un README, en conjunto con una licencia de repositorio{% ifversion fpt or ghes > 3.2 or ghae-issue-4651 or ghec %}, archivo de citas{% endif %}{% ifversion fpt or ghec %}, lineamientos de contribución y código de conducta{% elsif ghes %} y lineamientos de contribución{% endif %}, comunica las expectativas de tu proyecto y te ayuda a administrar las contribuciones.
+Puedes agregar un archivo README a un repositorio para comunicar información importante sobre tu proyecto. A README, along with a repository license{% ifversion fpt or ghes > 3.2 or ghae-issue-4651 %}, citation file{% endif %}{% ifversion fpt %}, contribution guidelines, and a code of conduct{% elsif ghes %} and contribution guidelines{% endif %}, communicates expectations for your project and helps you manage contributions.
 
-Para obtener más información acerca de cómo proporcionar lineamientos para tu proyecto, consulta la sección {% ifversion fpt or ghec %}"[Agregar un código de conducta para tu proyecto](/communities/setting-up-your-project-for-healthy-contributions/adding-a-code-of-conduct-to-your-project)" y {% endif %}"[Configurar tu proyecto para que tenga contribuciones sanas](/communities/setting-up-your-project-for-healthy-contributions)".
+Para obtener más información acerca de cómo proporcionar lineamientos para tu proyecto, consulta la sección {% ifversion fpt %}"[Agregar un código de conducta para tu proyecto](/communities/setting-up-your-project-for-healthy-contributions/adding-a-code-of-conduct-to-your-project)" y {% endif %}"[Configurar tu proyecto para que tenga contribuciones sanas](/communities/setting-up-your-project-for-healthy-contributions)".
 
 Un archivo README suele ser el primer elemento que verá un visitante cuando entre a tu repositorio. Los archivos README habitualmente incluyen información sobre:
 - Qué hace el proyecto.
@@ -33,7 +32,7 @@ Si colocas tu archivo README en la raíz de tu repositorio, `docs`, o en el dire
 
 ![Página principal del repositorio github/scientist y su archivo README](/assets/images/help/repository/repo-with-readme.png)
 
-{% ifversion fpt or ghes or ghec %}
+{% ifversion fpt or ghes %}
 
 {% data reusables.profile.profile-readme %}
 
@@ -41,7 +40,7 @@ Si colocas tu archivo README en la raíz de tu repositorio, `docs`, o en el dire
 
 ![El archivo de README en tu nombre de usuario/repositorio de nombre de usuario](/assets/images/help/repository/username-repo-with-readme.png)
 
-{% ifversion fpt or ghae-next or ghes > 3.1 or ghec %}
+{% ifversion fpt or ghae-next or ghes > 3.1 %}
 
 ## Índice auto-generado de los archivos README
 
@@ -64,10 +63,6 @@ El índice auto-generado se habilita predeterminadamente para todos los archivos
 ## Enlaces relativos y rutas con imágenes en los archivos README
 
 {% data reusables.repositories.relative-links %}
-
-## Wikis
-
-A README should contain only the necessary information for developers to get started using and contributing to your project. Longer documentation is best suited for wikis. Para obtener más información, consulta la sección "[Acerca de los wikis](/communities/documenting-your-project-with-wikis/about-wikis)".
 
 ## Leer más
 

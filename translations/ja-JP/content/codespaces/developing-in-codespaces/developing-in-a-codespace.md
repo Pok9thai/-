@@ -8,7 +8,6 @@ redirect_from:
   - /github/developing-online-with-codespaces/developing-in-a-codespace
 versions:
   fpt: '*'
-  ghec: '*'
 type: how_to
 topics:
   - Codespaces
@@ -21,8 +20,6 @@ topics:
 ## About development with {% data variables.product.prodname_codespaces %}
 
 {% data variables.product.prodname_codespaces %} は、{% data variables.product.prodname_vscode %} の完全な開発体験を提供します。 {% data reusables.codespaces.use-visual-studio-features %}
-
-{% data reusables.codespaces.links-to-get-started %}
 
 ![codespace の概要(注釈付き)](/assets/images/help/codespaces/codespace-overview-annotated.png)
 
@@ -51,9 +48,9 @@ topics:
 
 {% data reusables.codespaces.committing-link-to-procedure %}
 
-### Using the {% data variables.product.prodname_vscode_command_palette %}
+### コマンドパレットを使用する
 
-The {% data variables.product.prodname_vscode_command_palette %} allows you to access and manage many features for {% data variables.product.prodname_codespaces %} and {% data variables.product.prodname_vscode %}. For more information, see "[Using the {% data variables.product.prodname_vscode_command_palette %} in {% data variables.product.prodname_codespaces %}](/codespaces/codespaces-reference/using-the-vs-code-command-palette-in-codespaces)."
+コマンドパレットを使用すると、{% data variables.product.prodname_codespaces %} および {% data variables.product.prodname_vscode %} の多くの機能にアクセスして管理できます。 詳しい情報については、「[{% data variables.product.prodname_codespaces %} でコマンドパレットを使用する](/codespaces/codespaces-reference/using-the-command-palette-in-codespaces)」を参照してください。
 
 ## 既存の codespace に移動する
 

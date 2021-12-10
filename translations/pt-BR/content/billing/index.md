@@ -1,13 +1,12 @@
 ---
-title: Cobrança e pagamentos para o GitHub
+title: Billing and payments for GitHub
 shortTitle: Faturamento e pagamentos
-intro: '{% ifversion fpt %}{% data variables.product.product_name %} oferece produtos grátis e pagos para cada conta. Você pode atualizar, fazer o downgrade e visualizar as alterações pendentes da assinatura da sua conta a qualquer momento.{% elsif ghec or ghes or ghae %}{% data variables.product.company_short %} cobranças para os integrantes da sua empresa {% ifversion ghec or ghae %}uso de {% data variables.product.product_name %}{% elsif ghes %} estações de licença para {% data variables.product.product_name %}{% ifversion ghes > 3.0 %} e quaisquer serviços adicionais que você comprar{% endif %}{% endif %}.{% endif %}'
+intro: '{% ifversion fpt %}{% data variables.product.product_name %} offers free and paid products for every account. You can upgrade, downgrade, and view pending changes to your account''s subscription at any time.{% elsif ghes or ghae %}{% data variables.product.company_short %} bills for your enterprise members'' {% ifversion ghae %}usage of {% data variables.product.product_name %}{% elsif ghes %} licence seats for {% data variables.product.product_name %}{% ifversion ghes > 3.0 %} and any additional services that you purchase{% endif %}{% endif %}.{% endif %}'
 redirect_from:
   - /github/setting-up-and-managing-billing-and-payments-on-github
   - /categories/setting-up-and-managing-billing-and-payments-on-github
 versions:
   fpt: '*'
-  ghec: '*'
   ghes: '*'
   ghae: '*'
 children:
@@ -17,7 +16,6 @@ children:
   - /managing-billing-for-github-codespaces
   - /managing-billing-for-github-packages
   - /managing-your-license-for-github-enterprise
-  - /managing-licenses-for-visual-studio-subscriptions-with-github-enterprise
   - /managing-billing-for-github-advanced-security
   - /managing-billing-for-github-sponsors
   - /managing-billing-for-github-marketplace-apps

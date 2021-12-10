@@ -7,7 +7,6 @@ redirect_from:
   - /github/managing-security-vulnerabilities/creating-a-security-advisory
 versions:
   fpt: '*'
-  ghec: '*'
 type: how_to
 topics:
   - Security advisories

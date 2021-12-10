@@ -4,9 +4,8 @@ shortTitle: 入门指南
 intro: '使用 {% data variables.product.product_name %} 的代码安全性简介。'
 versions:
   fpt: '*'
-  ghes: '*'
+  ghes: '>=3.0'
   ghae: '*'
-  ghec: '*'
 topics:
   - Repositories
   - Dependencies

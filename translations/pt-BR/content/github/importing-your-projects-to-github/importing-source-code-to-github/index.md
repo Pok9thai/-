@@ -11,7 +11,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 children:
   - /about-github-importer
   - /importing-a-repository-with-github-importer

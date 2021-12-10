@@ -8,7 +8,6 @@ redirect_from:
 versions:
   fpt: '*'
   ghes: '*'
-  ghec: '*'
 topics:
   - Organizations
   - Teams
@@ -17,7 +16,7 @@ shortTitle: 管理Teamの変換
 
 レガシーの管理者 Team メンバーのために新しい Team を作成することで、レガシーの管理者 Team が持つリポジトリ作成の資格を削除できます。Team が Organization のリポジトリに対して必要なアクセスを持っていることを確認してから、レガシーの管理者 Teamを削除してください。
 
-For more information, see "[Repository roles for an organization](/organizations/managing-access-to-your-organizations-repositories/repository-roles-for-an-organization)."
+詳しい情報については、「[Organization のリポジトリ権限レベル](/articles/repository-permission-levels-for-an-organization)」を参照してください。
 
 {% warning %}
 

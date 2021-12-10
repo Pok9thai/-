@@ -17,10 +17,9 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - Repositories
-shortTitle: Analisar alterações
+shortTitle: Analyze changes
 ---
 
 ## Visualizar commits em um repositório
@@ -41,11 +40,11 @@ O gráfico inferior mostra a média de commits por dia da semana para a semana s
 {% data reusables.repositories.accessing-repository-graphs %}
 3. Na barra lateral esquerda, clique em **Commits** (Commits). ![Guia Commits (Commits)](/assets/images/help/graphs/commits_tab.png)
 
-## Visualizando adições e exclusão de conteúdo em um repositório
+## Visualizing additions and deletion to content in a repository
 
 O gráfico de código de frequência mostra as adições e exclusões de conteúdo para cada semana no histórico de um repositório.
 
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 
 ![gráfico de código de frequência](/assets/images/help/graphs/repo_code_frequency_graph_dotcom.png)
 

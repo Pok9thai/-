@@ -4,7 +4,6 @@ intro: 'Você pode aprender sobre {% data variables.product.product_name %} e ge
 redirect_from:
   - /enterprise/admin/overview
 versions:
-  ghec: '*'
   ghes: '*'
   ghae: '*'
 children:
@@ -14,7 +13,6 @@ children:
   - /about-enterprise-accounts
   - /system-overview
   - /about-the-github-enterprise-api
-  - /creating-an-enterprise-account
 ---
 
 Para obter mais informações ou comprar o {% data variables.product.prodname_enterprise %}, consulte [{% data variables.product.prodname_enterprise %}](https://github.com/enterprise).

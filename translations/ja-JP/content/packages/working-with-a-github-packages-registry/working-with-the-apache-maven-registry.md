@@ -12,7 +12,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 shortTitle: Apache Mavenレジストリ
 ---
 
@@ -65,7 +64,7 @@ shortTitle: Apache Mavenレジストリ
         </repository>
         <repository>
           <id>github</id>
-          <url>https://{% ifversion fpt or ghec %}maven.pkg.github.com{% else %}maven.HOSTNAME{% endif %}/OWNER/REPOSITORY</url>
+          <url>https://{% ifversion fpt %}maven.pkg.github.com{% else %}maven.HOSTNAME{% endif %}/OWNER/*</url>
           <snapshots>
             <enabled>true</enabled>
           </snapshots>
@@ -107,7 +106,7 @@ shortTitle: Apache Mavenレジストリ
         </repository>
         <repository>
           <id>github</id>
-          <url>HOSTNAME/_registry/maven/OWNER/REPOSITORY</url>
+          <url>HOSTNAME/_registry/maven/OWNER/*</url>
           <snapshots>
             <enabled>true</enabled>
           </snapshots>
@@ -143,7 +142,7 @@ shortTitle: Apache Mavenレジストリ
      <repository>
        <id>github</id>
        <name>GitHub OWNER Apache Maven Packages</name>
-       <url>https://{% ifversion fpt or ghec %}maven.pkg.github.com{% else %}maven.HOSTNAME{% endif %}/OWNER/REPOSITORY</url>
+       <url>https://{% ifversion fpt %}maven.pkg.github.com{% else %}maven.HOSTNAME{% endif %}/OWNER/REPOSITORY</url>
      </repository>
   </distributionManagement>
   ```{% ifversion ghes %}
@@ -191,4 +190,4 @@ shortTitle: Apache Mavenレジストリ
 ## 参考リンク
 
 - 「[Gradleレジストリの利用](/packages/working-with-a-github-packages-registry/working-with-the-gradle-registry)」
-- "{% ifversion fpt or ghes > 3.0 or ghec %}[Deleting and restoring a package](/packages/learn-github-packages/deleting-and-restoring-a-package){% elsif ghes < 3.1 or ghae %}[Deleting a package](/packages/learn-github-packages/deleting-a-package){% endif %}"
+- 「{% ifversion fpt or ghes > 3.0 %}[パッケージの削除と復元](/packages/learn-github-packages/deleting-and-restoring-a-package){% elsif ghes < 3.1 or ghae %}[パッケージの削除](/packages/learn-github-packages/deleting-a-package){% endif %}」

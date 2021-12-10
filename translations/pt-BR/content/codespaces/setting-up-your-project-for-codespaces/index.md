@@ -1,10 +1,9 @@
 ---
-title: 'Configurando seu projeto para {% data variables.product.prodname_codespaces %}'
+title: 'Setting up your project for {% data variables.product.prodname_codespaces %}'
 intro: 'Aprenda como dar os primeiros passos com {% data variables.product.prodname_codespaces %}, incluindo a configuração para linguagens específicas.'
 product: '{% data reusables.gated-features.codespaces %}'
 versions:
-  fpt: '*'
-  ghec: '*'
+  free-pro-team: '*'
 redirect_from:
   - /codespaces/getting-started-with-codespaces
 children:

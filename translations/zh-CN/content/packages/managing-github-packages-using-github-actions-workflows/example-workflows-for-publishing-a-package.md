@@ -5,7 +5,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 shortTitle: 示例工作流程
 ---
 

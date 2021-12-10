@@ -10,13 +10,12 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - Accounts
 shortTitle: Leave an organization
 ---
 
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 
 {% warning %}
 

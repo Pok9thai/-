@@ -10,7 +10,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - Repositories
 ---
@@ -91,7 +90,7 @@ If you're unable to clone a repository, check that:
 - You have permission to access the repository you want to clone. For more information, see "[Error: Repository not found](/github/creating-cloning-and-archiving-repositories/error-repository-not-found)."
 - The default branch you want to clone still exists. For more information, see  have permission to access the repository you want to clone. For more information, see "[Error: Remote HEAD refers to nonexistent ref, unable to checkout](/github/creating-cloning-and-archiving-repositories/error-remote-head-refers-to-nonexistent-ref-unable-to-checkout)."
 
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 
 ## Further reading
 

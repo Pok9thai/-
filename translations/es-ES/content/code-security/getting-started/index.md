@@ -4,9 +4,8 @@ shortTitle: Empezar
 intro: 'Introducción a la seguridad de código con {% data variables.product.product_name %}.'
 versions:
   fpt: '*'
-  ghes: '*'
+  ghes: '>=3.0'
   ghae: '*'
-  ghec: '*'
 topics:
   - Repositories
   - Dependencies

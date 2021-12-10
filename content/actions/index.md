@@ -43,23 +43,20 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 children:
   - /quickstart
   - /learn-github-actions
-  - /managing-workflow-runs
+  - /creating-actions
+  - /security-guides
   - /automating-builds-and-tests
   - /deployment
-  - /using-containerized-services
-  - /publishing-packages
   - /managing-issues-and-pull-requests
-  - /migrating-to-github-actions
+  - /publishing-packages
+  - /using-containerized-services
+  - /advanced-guides
+  - /managing-workflow-runs
   - /monitoring-and-troubleshooting-workflows
   - /using-github-hosted-runners
   - /hosting-your-own-runners
-  - /security-guides
-  - /advanced-guides
-  - /creating-actions
-  - /guides
+  - /migrating-to-github-actions
 ---
-

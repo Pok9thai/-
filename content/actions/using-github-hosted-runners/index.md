@@ -5,7 +5,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 children:
   - /about-github-hosted-runners
   - /customizing-github-hosted-runners
@@ -20,4 +19,3 @@ shortTitle: Use GitHub-hosted runners
 {% data reusables.actions.ae-hosted-runners-beta %}
 {% data reusables.actions.enterprise-beta %}
 {% data reusables.actions.enterprise-github-hosted-runners %}
-{% data reusables.actions.ae-beta %}

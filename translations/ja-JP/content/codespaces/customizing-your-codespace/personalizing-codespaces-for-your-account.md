@@ -7,14 +7,13 @@ redirect_from:
   - /codespaces/setting-up-your-codespace/personalizing-codespaces-for-your-account
 versions:
   fpt: '*'
-  ghec: '*'
 type: how_to
 topics:
   - Codespaces
   - Set up
   - Fundamentals
 product: '{% data reusables.gated-features.codespaces %}'
-shortTitle: Personalize your codespaces
+shortTitle: アカウントのパーソナライズ
 ---
 
 

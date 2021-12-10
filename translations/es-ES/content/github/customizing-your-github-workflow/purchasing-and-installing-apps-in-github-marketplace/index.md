@@ -5,7 +5,6 @@ redirect_from:
   - /articles/purchasing-and-installing-apps-in-github-marketplace
 versions:
   fpt: '*'
-  ghec: '*'
 children:
   - /installing-an-app-in-your-personal-account
   - /installing-an-app-in-your-organization

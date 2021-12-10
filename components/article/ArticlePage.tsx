@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router'
 import cx from 'classnames'
-import { ActionList, Heading } from '@primer/components'
+import { Heading } from '@primer/components'
 
 import { ZapIcon, InfoIcon, ShieldLockIcon } from '@primer/octicons-react'
 import { Callout } from 'components/ui/Callout'
@@ -14,7 +14,8 @@ import { LearningTrackNav } from './LearningTrackNav'
 import { MarkdownContent } from 'components/ui/MarkdownContent'
 import { Lead } from 'components/ui/Lead'
 import { ArticleGridLayout } from './ArticleGridLayout'
-import { PlatformPicker } from 'components/article/PlatformPicker'
+import { VersionPicker } from 'components/VersionPicker'
+import { Breadcrumbs } from 'components/Breadcrumbs'
 
 // Mapping of a "normal" article to it's interactive counterpart
 const interactiveAlternatives: Record<string, { href: string }> = {
@@ -31,11 +32,11 @@ export const ArticlePage = () => {
   const {
     title,
     intro,
-    effectiveDate,
     renderedPage,
     contributor,
     permissions,
     includesPlatformSpecificContent,
+    defaultPlatform,
     product,
     miniTocItems,
     currentLearningTrack,
@@ -43,25 +44,14 @@ export const ArticlePage = () => {
   const { t } = useTranslation('pages')
   const currentPath = router.asPath.split('?')[0]
 
-  const RenderHTML = (props: { html: any }) => (
-    <div dangerouslySetInnerHTML={{ __html: props.html }}></div>
-  )
-
   const renderTocItem = (item: MiniTocItem) => {
     return (
-      <ActionList.Item
-        as="a"
-        href={item.link}
-        key={item.title}
-        sx={{ listStyle: 'none', padding: '2px' }}
-      >
-        <div className={cx('lh-condensed', item.platform)}>
-          <RenderHTML html={item.title} />
-          {item.items && item.items.length > 0 ? (
-            <ul className="ml-3">{item.items.map(renderTocItem)}</ul>
-          ) : null}
-        </div>
-      </ActionList.Item>
+      <li key={item.contents} className={cx(item.platform, 'mb-2 lh-condensed')}>
+        <div className="mb-2 lh-condensed" dangerouslySetInnerHTML={{ __html: item.contents }} />
+        {item.items && item.items.length > 0 ? (
+          <ul className="list-style-none pl-0 f5 mb-0 ml-3">{item.items.map(renderTocItem)}</ul>
+        ) : null}
+      </li>
     )
   }
 
@@ -69,9 +59,12 @@ export const ArticlePage = () => {
     <DefaultLayout>
       <div className="container-xl px-3 px-md-6 my-4">
         <ArticleGridLayout
-          topper={<ArticleTitle>{title}</ArticleTitle>}
+          topper={<Breadcrumbs />}
+          topperSidebar={<VersionPicker />}
           intro={
             <>
+              <ArticleTitle>{title}</ArticleTitle>
+
               {contributor && (
                 <Callout variant="info" className="mb-3">
                   <p>
@@ -83,11 +76,7 @@ export const ArticlePage = () => {
                 </Callout>
               )}
 
-              {intro && (
-                <Lead data-testid="lead" data-search="lead">
-                  {intro}
-                </Lead>
-              )}
+              {intro && <Lead data-testid="lead">{intro}</Lead>}
 
               {permissions && (
                 <div className="permissions-statement d-table">
@@ -98,7 +87,35 @@ export const ArticlePage = () => {
                 </div>
               )}
 
-              {includesPlatformSpecificContent && <PlatformPicker variant="underlinenav" />}
+              {includesPlatformSpecificContent && (
+                <nav
+                  className="UnderlineNav my-3"
+                  data-default-platform={defaultPlatform || undefined}
+                >
+                  <div className="UnderlineNav-body">
+                    {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+                    <a href="#" className="UnderlineNav-item platform-switcher" data-platform="mac">
+                      Mac
+                    </a>
+                    {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+                    <a
+                      href="#"
+                      className="UnderlineNav-item platform-switcher"
+                      data-platform="windows"
+                    >
+                      Windows
+                    </a>
+                    {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+                    <a
+                      href="#"
+                      className="UnderlineNav-item platform-switcher"
+                      data-platform="linux"
+                    >
+                      Linux
+                    </a>
+                  </div>
+                </nav>
+              )}
 
               {product && (
                 <Callout
@@ -122,18 +139,13 @@ export const ArticlePage = () => {
               {miniTocItems.length > 1 && (
                 <>
                   <Heading as="h2" fontSize={1} id="in-this-article" className="mb-1">
-                    <Link href="#in-this-article">{t('miniToc')}</Link>
+                    <a className="Link--primary" href="#in-this-article">
+                      {t('miniToc')}
+                    </a>
                   </Heading>
-
-                  <ActionList
-                    items={miniTocItems.map((items) => {
-                      return {
-                        key: title,
-                        text: title,
-                        renderItem: () => <ul>{renderTocItem(items)}</ul>,
-                      }
-                    })}
-                  />
+                  <ul className="list-style-none pl-0 f5 mb-0">
+                    {miniTocItems.map(renderTocItem)}
+                  </ul>
                 </>
               )}
             </>
@@ -141,14 +153,6 @@ export const ArticlePage = () => {
         >
           <div id="article-contents">
             <MarkdownContent>{renderedPage}</MarkdownContent>
-            {effectiveDate && (
-              <div className="mt-4" id="effectiveDate">
-                Effective as of:{' '}
-                <time dateTime={new Date(effectiveDate).toISOString()}>
-                  {new Date(effectiveDate).toDateString()}
-                </time>
-              </div>
-            )}
           </div>
         </ArticleGridLayout>
 

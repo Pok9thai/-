@@ -6,7 +6,6 @@ redirect_from:
 intro: '{% data reusables.user_settings.export-data %}'
 versions:
   fpt: '*'
-  ghec: '*'
 topics:
   - Policy
   - Legal

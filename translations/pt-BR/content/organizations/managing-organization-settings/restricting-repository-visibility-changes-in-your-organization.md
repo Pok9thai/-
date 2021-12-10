@@ -8,7 +8,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - Organizations
   - Teams
@@ -32,4 +31,4 @@ Você pode restringir a capacidade de alterar a visibilidade do repositório ape
 
 ## Leia mais
 
-- "[Sobre repositórios](/repositories/creating-and-managing-repositories/about-repositories#about-repository-visibility)"
+- "[About repositories](/repositories/creating-and-managing-repositories/about-repositories#about-repository-visibility)"

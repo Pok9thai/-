@@ -9,14 +9,13 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - Identity
   - Access management
 ---
-When an {% data variables.product.prodname_oauth_app %} wants to identify you by your account on {% ifversion ghae %}{% data variables.product.product_name %}{% else %}{% data variables.product.product_location %}{% endif %}, you'll see a page with the app's developer contact information and a list of the specific data that's being requested.
+When an {% data variables.product.prodname_oauth_app %} wants to identify you by your {% data variables.product.product_name %} account, you'll see a page with the app's developer contact information and a list of the specific data that's being requested.
 
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 
 {% tip %}
 
@@ -73,7 +72,7 @@ When you want to use an {% data variables.product.prodname_oauth_app %} that int
 
 When {% data variables.product.prodname_oauth_apps %} request new access permissions, they will notify you of the differences between their current permissions and the new permissions.
 
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 
 ## {% data variables.product.prodname_oauth_apps %} and organizations
 

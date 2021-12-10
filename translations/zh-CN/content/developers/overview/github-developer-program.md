@@ -5,7 +5,6 @@ redirect_from:
   - /program
 versions:
   fpt: '*'
-  ghec: '*'
 topics:
   - API
 ---

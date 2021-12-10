@@ -9,7 +9,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - SSH
 ---
@@ -44,7 +43,7 @@ $ git clone https://{% data variables.command_line.codeblock %}/<em>username</em
 
 ファイアウォールのない別のネットワークにコンピュータを接続できる場合は、{% data variables.product.product_name %} への SSH 接続をテストしてみることができます。 想定通りにすべてが機能する場合は、ネットワーク管理者に問い合わせし、ファイアウォール設定で {% data variables.product.product_name %} への SSH 接続が成功するように許可するよう、サポートしてもらってください。
 
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 
 ### HTTPS ポートを介して SSH を使用する
 
@@ -52,7 +51,7 @@ HTTPS を使用せず、ファイアウォール管理者が SSH 接続を許可
 
 {% endif %}
 
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 
 ## 参考リンク
 

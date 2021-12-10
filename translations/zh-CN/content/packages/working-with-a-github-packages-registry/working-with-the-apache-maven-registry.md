@@ -12,7 +12,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 shortTitle: Apache Maven 注册表
 ---
 
@@ -65,7 +64,7 @@ shortTitle: Apache Maven 注册表
         </repository>
         <repository>
           <id>github</id>
-          <url>https://{% ifversion fpt or ghec %}maven.pkg.github.com{% else %}maven.HOSTNAME{% endif %}/OWNER/REPOSITORY</url>
+          <url>https://{% ifversion fpt %}maven.pkg.github.com{% else %}maven.HOSTNAME{% endif %}/OWNER/*</url>
           <snapshots>
             <enabled>true</enabled>
           </snapshots>
@@ -107,7 +106,7 @@ shortTitle: Apache Maven 注册表
         </repository>
         <repository>
           <id>github</id>
-          <url>HOSTNAME/_registry/maven/OWNER/REPOSITORY</url>
+          <url>HOSTNAME/_registry/maven/OWNER/*</url>
           <snapshots>
             <enabled>true</enabled>
           </snapshots>
@@ -143,7 +142,7 @@ shortTitle: Apache Maven 注册表
      <repository>
        <id>github</id>
        <name>GitHub OWNER Apache Maven Packages</name>
-       <url>https://{% ifversion fpt or ghec %}maven.pkg.github.com{% else %}maven.HOSTNAME{% endif %}/OWNER/REPOSITORY</url>
+       <url>https://{% ifversion fpt %}maven.pkg.github.com{% else %}maven.HOSTNAME{% endif %}/OWNER/REPOSITORY</url>
      </repository>
   </distributionManagement>
   ```{% ifversion ghes %}
@@ -191,4 +190,4 @@ shortTitle: Apache Maven 注册表
 ## 延伸阅读
 
 - “[使用 Gradle 注册表](/packages/working-with-a-github-packages-registry/working-with-the-gradle-registry)”
-- "{% ifversion fpt or ghes > 3.0 or ghec %}[删除和恢复包](/packages/learn-github-packages/deleting-and-restoring-a-package){% elsif ghes < 3.1 or ghae %}[删除包](/packages/learn-github-packages/deleting-a-package){% endif %}"
+- "{% ifversion fpt or ghes > 3.0 %}[删除和恢复包](/packages/learn-github-packages/deleting-and-restoring-a-package){% elsif ghes < 3.1 or ghae %}[删除包](/packages/learn-github-packages/deleting-a-package){% endif %}"

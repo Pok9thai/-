@@ -1,18 +1,18 @@
 ---
 title: 构建和测试 Ruby
 intro: 您可以创建持续集成 (CI) 工作流程来构建和测试您的 Ruby 项目。
+product: '{% data reusables.gated-features.actions %}'
 redirect_from:
   - /actions/guides/building-and-testing-ruby
 versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 type: tutorial
 topics:
   - CI
   - Ruby
-shortTitle: 构建和测试Ruby
+shortTitle: Build & test Ruby
 ---
 
 {% data reusables.actions.enterprise-beta %}
@@ -284,7 +284,7 @@ on:
 jobs:
   build:
     name: Build + Publish
-    runs-on: ubuntu-latest{% ifversion fpt or ghes > 3.1 or ghae-next or ghec %}
+    runs-on: ubuntu-latest{% ifversion fpt or ghes > 3.1 or ghae-next %}
     permissions:
       packages: write
       contents: read{% endif %}

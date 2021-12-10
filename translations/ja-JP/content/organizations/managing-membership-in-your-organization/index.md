@@ -9,7 +9,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - Organizations
   - Teams
@@ -19,7 +18,6 @@ children:
   - /adding-people-to-your-organization
   - /removing-a-member-from-your-organization
   - /reinstating-a-former-member-of-your-organization
-  - /exporting-member-information-for-your-organization
   - /can-i-create-accounts-for-people-in-my-organization
 shortTitle: メンバーシップの管理
 ---

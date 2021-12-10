@@ -4,7 +4,6 @@ intro: 'Aprende cómo iniciar con los {% data variables.product.prodname_codespa
 product: '{% data reusables.gated-features.codespaces %}'
 versions:
   fpt: '*'
-  ghec: '*'
 children:
   - /quickstart
   - /deep-dive

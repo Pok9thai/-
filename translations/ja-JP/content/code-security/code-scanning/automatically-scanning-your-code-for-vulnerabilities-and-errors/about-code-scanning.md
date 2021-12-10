@@ -9,9 +9,8 @@ redirect_from:
   - /code-security/secure-coding/automatically-scanning-your-code-for-vulnerabilities-and-errors/about-code-scanning
 versions:
   fpt: '*'
-  ghes: '*'
+  ghes: '>=3.0'
   ghae: '*'
-  ghec: '*'
 type: overview
 topics:
   - Advanced Security
@@ -35,7 +34,7 @@ topics:
 
 {% data variables.product.prodname_code_scanning %} を始めるには、「[リポジトリに対する {% data variables.product.prodname_code_scanning %} を設定する](/code-security/secure-coding/setting-up-code-scanning-for-a-repository)」を参照してください。
 
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 
 ## {% data variables.product.prodname_code_scanning %}の支払いについて
 

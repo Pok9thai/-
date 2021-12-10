@@ -19,7 +19,7 @@ topics:
 
 {% data reusables.actions.enterprise-github-hosted-runners %}
 
-{% ifversion ghes %}
+{% ifversion ghes > 2.22 %}
 
 Este artículo explica cómo los administradores de sitio pueden habilitar {% data variables.product.prodname_ghe_server %} para utilizar {% data variables.product.prodname_actions %}. Esto cubre los requisitos de hardware y software, presenta las opciones de almacenamiento y describe las políticas de administración de seguridad.
 
@@ -27,56 +27,30 @@ Este artículo explica cómo los administradores de sitio pueden habilitar {% da
 
 ## Revisar las consideraciones de hardware
 
-{% ifversion ghes = 3.0 %}
+{% ifversion ghes = 2.22 or ghes = 3.0 %}
 
 {% note %}
 
-**Note**: If you're upgrading an existing {% data variables.product.prodname_ghe_server %} instance to 3.0 or later and want to configure {% data variables.product.prodname_actions %}, note that the minimum hardware requirements have increased. Para obtener más información, consulta "[Actualizar {% data variables.product.prodname_ghe_server %}](/admin/enterprise-management/upgrading-github-enterprise-server#about-minimum-requirements-for-github-enterprise-server-30-and-later)."
+**Nota**: {% ifversion ghes = 2.22 %}{% data variables.product.prodname_actions %} estuvo disponible para {% data variables.product.prodname_ghe_server %} 2.22 como beta limitado. {% endif %}Si estás actualizando una instancia existente de {% data variables.product.prodname_ghe_server %} hacia la versión 3.0 o superior y quieres configurar las {% data variables.product.prodname_actions %}, nota que los requisitos mínimos de hardware han aumentado. Para obtener más información, consulta "[Actualizar {% data variables.product.prodname_ghe_server %}](/admin/enterprise-management/upgrading-github-enterprise-server#about-minimum-requirements-for-github-enterprise-server-30-and-later)."
 
 {% endnote %}
 
 {% endif %}
 
-{%- ifversion ghes < 3.2 %}
-
 Los recursos de CPU y de memoria que están disponibles para {% data variables.product.product_location %} determinan el rendimiento máximo de jobs para {% data variables.product.prodname_actions %}.
 
 Las pruebas internas de {% data variables.product.company_short %} demostraron el siguiente rendimiento máximo para las instancias de {% data variables.product.prodname_ghe_server %} con un rango de CPU y configuraciones de memoria. Puede que vas rendimientos diferentes dependiendo de los niveles generales de actividad en tu instancia.
 
-{%- endif %}
-
-{%- ifversion ghes > 3.1 %}
-
-Los recursos de memoria y CPU que {% data variables.product.product_location %} tiene disponibles determinan la cantidad de jobs que se pueden ejecutar simultáneamente sin pérdida de rendimiento.
-
-La cantidad máxima de ejecución simultánea de jobs sin pérdida de rendimiento depende de factores tales como la duración de los jobs, el uso de artefactos, la cantidad de repositorios ejecutando acciones y qué tanto trabajo adicional sin relación a las acciones ejecuta tu instancia. Las pruebas internas en GitHub demostraron los siguientes objetivos de rendimiento para GitHub Enterprise Server en un rango de configuraciones de memoria y CPU:
-
-{% endif %}
-
-{%- ifversion ghes < 3.2 %}
-
 | vCPU | Memoria | Rendimiento máximo del job |
 |:---- |:------- |:-------------------------- |
-| 4    | 32 GB   | Demo o pruebas leves       |
-| 8    | 64 GB   | 25 puestos de trabajo      |
-| 16   | 160 GB  | 35 puestos de trabajo      |
-| 32   | 256 GB  | 100 puestos de trabajo     |
-
-{%- endif %}
-
+|      |         |                            |
 {%- ifversion ghes > 3.1 %}
-
-| vCPU | Memoria | Simultaneidad máxima*   |
-|:---- |:------- |:----------------------- |
-| 32   | 128 GB  | 1500 puestos de trabajo |
-| 64   | 256 GB  | 1900 puestos de trabajo |
-| 96   | 384 GB  | 2200 puestos de trabajo |
-
-*La simultaneidad máxima se midió utilizando repositorios múltiples, una duración de los jobs de aproximadamente 10 minutos y 10 MB de cargas de artefactos. Puedes experimentar rendimientos diferentes dependiendo de los niveles de actividad generales de tu instancia.
-
+| 4 | 32 GB | Demo or light testing | | 8 | 64 GB | 30 jobs | | 16 | 128 GB | 60 jobs | | 32 | 256 GB | 120 jobs | | 64 | 512 GB | 160 jobs |
+{%- else ifversion ghes < 3.2 %}
+| 4 | 32 GB | Demo or light testing | | 8 | 64 GB | 25 jobs | | 16 | 160 GB | 35 jobs | | 32 | 256 GB | 100 jobs |
 {%- endif %}
 
-If you plan to enable {% data variables.product.prodname_actions %} for the users of an existing instance, review the levels of activity for users and automations on the instance and ensure that you have provisioned adequate CPU and memory for your users. Para obtener más información acerca de cómo monitorear la capacidad y rendimiento de {% data variables.product.prodname_ghe_server %}, consulta la sección "[Monitorear tu aplicativo](/admin/enterprise-management/monitoring-your-appliance)".
+Si {% ifversion ghes = 2.22 %}habilitaste el beta de{% else %}planeas habilitar{% endif %} {% data variables.product.prodname_actions %} para los usuarios de una instancia existente, revisa los niveles de actividad para los usuarios y las automatizaciones en la instancia y asegúrate de que hayas aprovisionado la memoria y CPU adecuados para tus usuarios. Para obtener más información acerca de cómo monitorear la capacidad y rendimiento de {% data variables.product.prodname_ghe_server %}, consulta la sección "[Monitorear tu aplicativo](/admin/enterprise-management/monitoring-your-appliance)".
 
 Para obtener más información acerca de los requisitos mínimos de {% data variables.product.product_location %}, consulta las consideraciones de hardware para la plataforma de tu instancia.
 
@@ -108,11 +82,27 @@ Para habilitar {% data variables.product.prodname_actions %} en {% data variable
 
 {% endnote %}
 
-## Consideraciones de las conexiones
+{% ifversion ghes = 2.22 %}
 
-{% data reusables.actions.proxy-considerations %} Para obtener más información sobre cómo utilizar un proxy con {% data variables.product.prodname_ghe_server %}, consulta la sección "[Configurar un servidor proxy saliente](/admin/configuration/configuring-network-settings/configuring-an-outbound-web-proxy-server)".
+### Permisos para Amazon S3
 
-{% ifversion ghes %}
+{% data reusables.actions.enterprise-s3-permission %}
+
+## Habilitar {% data variables.product.prodname_actions %}
+
+El soporte para {% data variables.product.prodname_actions %} en {% data variables.product.prodname_ghe_server %} 2.22 estuvo disponible com un beta limitado. Para configurar las {% data variables.product.prodname_actions %} para tu instancia, mejora a {% data variables.product.prodname_ghe_server %} 3.0 o superior. Para obtener más información, consulta las [notas de lanzamiento para {% data variables.product.prodname_ghe_server %} 3.0](/enterprise-server@3.0/admin/release-notes) y la sección "[Mejorar {% data variables.product.prodname_ghe_server %}](/admin/enterprise-management/upgrading-github-enterprise-server)".
+
+## Leer más
+
+- "Consideraciones de hardware" para tu plataforma en "[Configurar una instancia de {% data variables.product.prodname_ghe_server %}](/enterprise/admin/installation/setting-up-a-github-enterprise-server-instance)"
+
+{% endif %}
+
+## Networking considerations
+
+{% data reusables.actions.proxy-considerations %} For more information about using a proxy with {% data variables.product.prodname_ghe_server %}, see "[Configuring an outbound web proxy server](/admin/configuration/configuring-network-settings/configuring-an-outbound-web-proxy-server)."
+
+{% ifversion ghes > 2.22 %}
 
 ## Habilitar las {% data variables.product.prodname_actions %} con tu proveedor de almacenamiento
 
@@ -144,6 +134,6 @@ Si quieres aprender más acerca de las prácticas de seguridad para {% data vari
 
 {% endif %}
 
-## Nombres reservados
+## Reserved Names
 
-Cuando habilitas las {% data variables.product.prodname_actions %} para tu empresa, se crean dos organizaciones: `github` y `actions`. Si tu empresa utiliza el nombre de organización `github`, `github-org` (o `github-github-org` si `github-org` también se está utilizando) se utilizará en su lugar. Si tu empresa ya utiliza el nombre de organización `actions`, `github-actions` (or `github-actions-org` si `github-actions` también se está utilizando) se utilizará en su lugar. Una vez que se habiliten las acciones, ya no podrás utilizar estos nombres.
+When you enable {% data variables.product.prodname_actions %} for your enterprise, two organizations are created: `github` and `actions`. If your enterprise already uses the `github` organization name, `github-org` (or `github-github-org` if `github-org` is also in use) will be used instead. If your enterprise already uses the `actions` organization name, `github-actions` (or `github-actions-org` if `github-actions` is also in use) will be used instead. Once actions is enabled, you won't be able to use these names anymore.

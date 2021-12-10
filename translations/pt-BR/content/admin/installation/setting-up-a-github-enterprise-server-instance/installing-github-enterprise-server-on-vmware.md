@@ -10,12 +10,8 @@ redirect_from:
   - /admin/installation/installing-github-enterprise-server-on-vmware
 versions:
   ghes: '*'
-type: tutorial
 topics:
-  - Administrator
   - Enterprise
-  - Infrastructure
-  - Set up
 shortTitle: Instalar em VMware
 ---
 
@@ -56,5 +52,5 @@ shortTitle: Instalar em VMware
 
 ## Leia mais
 
-- "[Visão geral do sistema](/enterprise/admin/guides/installation/system-overview){% ifversion ghes %}
+- "[Visão geral do sistema](/enterprise/admin/guides/installation/system-overview){% ifversion ghes > 2.22 %}
 - "[Sobre atualizações para novas versões](/admin/overview/about-upgrades-to-new-releases)"{% endif %}

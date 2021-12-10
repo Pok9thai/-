@@ -14,14 +14,13 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - Organizations
   - Teams
 shortTitle: 访问组织设置
 ---
 
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 
 {% tip %}
 

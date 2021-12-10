@@ -9,7 +9,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 shortTitle: Automate with OAuth tokens
 ---
 
@@ -19,7 +18,7 @@ shortTitle: Automate with OAuth tokens
 
 {% tip %}
 
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 **参考:**
 - 個人アクセストークンを作成する前に、メールアドレスを確認する必要があります。 詳細は「[メールアドレスを検証する](/articles/verifying-your-email-address)」を参照してください。
 - {% data reusables.user_settings.review_oauth_tokens_tip %}
@@ -29,7 +28,7 @@ shortTitle: Automate with OAuth tokens
 
 {% endtip %}
 
-{% ifversion fpt or ghec %}{% data reusables.user_settings.removes-personal-access-tokens %}{% endif %}
+{% ifversion fpt %}{% data reusables.user_settings.removes-personal-access-tokens %}{% endif %}
 
 ## ステップ 2: リポジトリをクローンする
 

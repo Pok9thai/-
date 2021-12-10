@@ -8,7 +8,6 @@ redirect_from:
   - /developers/github-marketplace/handling-plan-changes
 versions:
   fpt: '*'
-  ghec: '*'
 topics:
   - Marketplace
 ---

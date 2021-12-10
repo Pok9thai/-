@@ -7,9 +7,8 @@ redirect_from:
   - /github/setting-up-and-managing-organizations-and-teams/managing-security-and-analysis-settings-for-your-organization
 versions:
   fpt: '*'
-  ghes: '*'
+  ghes: '>=3.0'
   ghae: '*'
-  ghec: '*'
 topics:
   - Organizations
   - Teams
@@ -18,7 +17,7 @@ shortTitle: Manage security & analysis
 
 ## About management of security and analysis settings
 
-{% data variables.product.prodname_dotcom %} can help secure the repositories in your organization. You can manage the security and analysis features for all existing or new repositories that members create in your organization. {% ifversion fpt or ghec %}If you have a license for {% data variables.product.prodname_GH_advanced_security %} then you can also manage access to these features. {% data reusables.advanced-security.more-info-ghas %}{% endif %}
+{% data variables.product.prodname_dotcom %} can help secure the repositories in your organization. You can manage the security and analysis features for all existing or new repositories that members create in your organization. {% ifversion fpt %}If you have a license for {% data variables.product.prodname_GH_advanced_security %} then you can also manage access to these features. {% data reusables.advanced-security.more-info-ghas %}{% endif %}
 
 {% data reusables.security.some-security-and-analysis-features-are-enabled-by-default %}
 {% data reusables.security.security-and-analysis-features-enable-read-only %}
@@ -31,15 +30,15 @@ shortTitle: Manage security & analysis
 
 The page that's displayed allows you to enable or disable all security and analysis features for the repositories in your organization.
 
-{% ifversion fpt or ghec %}If your organization belongs to an enterprise with a license for {% data variables.product.prodname_GH_advanced_security %}, the page will also contain options to enable and disable {% data variables.product.prodname_advanced_security %} features. Any repositories that use {% data variables.product.prodname_GH_advanced_security %} are listed at the bottom of the page.{% endif %}
+{% ifversion fpt %}If your organization belongs to an enterprise with a license for {% data variables.product.prodname_GH_advanced_security %}, the page will also contain options to enable and disable {% data variables.product.prodname_advanced_security %} features. Any repositories that use {% data variables.product.prodname_GH_advanced_security %} are listed at the bottom of the page.{% endif %}
 
 {% ifversion ghes > 3.0 %}If you have a license for {% data variables.product.prodname_GH_advanced_security %}, the page will also contain options to enable and disable {% data variables.product.prodname_advanced_security %} features. Any repositories that use {% data variables.product.prodname_GH_advanced_security %} are listed at the bottom of the page.{% endif %}
 
-{% ifversion ghae %}The page will also contain options to enable and disable {% data variables.product.prodname_advanced_security %} features. Any repositories that use {% data variables.product.prodname_GH_advanced_security %} are listed at the bottom of the page.{% endif %}
+{% ifversion ghae %}The page will also contain options to enable and disable {% data variables.product.prodname_advanced_security %} features.{% endif %}
 
 ## Enabling or disabling a feature for all existing repositories
 
-You can enable or disable features for all repositories. {% ifversion fpt or ghec %}The impact of your changes on repositories in your organization is determined by their visibility:
+You can enable or disable features for all repositories. {% ifversion fpt %}The impact of your changes on repositories in your organization is determined by their visibility:
 
 - **Dependency graph** - Your changes affect only private repositories because the feature is always enabled for public repositories.
 - **{% data variables.product.prodname_dependabot_alerts %}** - Your changes affect all repositories.
@@ -50,14 +49,11 @@ You can enable or disable features for all repositories. {% ifversion fpt or ghe
 {% data reusables.advanced-security.note-org-enable-uses-seats %}
 
 1. Go to the security and analysis settings for your organization. For more information, see "[Displaying the security and analysis settings](#displaying-the-security-and-analysis-settings)."
-2. Under "Configure security and analysis features", to the right of the feature, click **Disable all** or **Enable all**. {% ifversion fpt or ghes > 3.0 or ghec %}The control for "{% data variables.product.prodname_GH_advanced_security %}" is disabled if you have no available seats in your {% data variables.product.prodname_GH_advanced_security %} license.{% endif %}
-   {% ifversion fpt or ghec %}
+2. Under "Configure security and analysis features", to the right of the feature, click **Disable all** or **Enable all**. {% ifversion fpt or ghes > 3.0 %}The control for "{% data variables.product.prodname_GH_advanced_security %}" is disabled if you have no available seats in your {% data variables.product.prodname_GH_advanced_security %} license.{% endif %}
+   {% ifversion fpt %}
    !["Enable all" or "Disable all" button for "Configure security and analysis" features](/assets/images/help/organizations/security-and-analysis-disable-or-enable-all-ghas-dotcom.png)
    {% endif %}
-   {% ifversion ghes > 3.2 %}
-   !["Enable all" or "Disable all" button for "Configure security and analysis" features](/assets/images/enterprise/3.3/organizations/security-and-analysis-disable-or-enable-all-ghas.png)
-   {% endif %}
-   {% ifversion ghes = 3.1 or ghes = 3.2 %}
+   {% ifversion ghes > 3.0 %}
    !["Enable all" or "Disable all" button for "Configure security and analysis" features](/assets/images/enterprise/3.1/help/organizations/security-and-analysis-disable-or-enable-all-ghas.png)
    {% endif %}
    {% ifversion ghes = 3.0 %}
@@ -66,18 +62,18 @@ You can enable or disable features for all repositories. {% ifversion fpt or ghe
    {% ifversion ghae %}
    !["Enable all" or "Disable all" button for "Configure security and analysis" features](/assets/images/enterprise/github-ae/organizations/security-and-analysis-disable-or-enable-all-ghae.png)
    {% endif %}
-   {% ifversion fpt or ghes = 3.0 or ghec %}
+   {% ifversion fpt or ghes = 3.0 %}
 3. Optionally, enable the feature by default for new repositories in your organization.
-   {% ifversion fpt or ghec %}
+   {% ifversion fpt %}
    !["Enable by default" option for new repositories](/assets/images/help/organizations/security-and-analysis-enable-by-default-in-modal.png)
    {% endif %}
    {% ifversion ghes = 3.0 %}
    !["Enable by default" option for new repositories](/assets/images/enterprise/3.0/organizations/security-and-analysis-secret-scanning-enable-by-default.png)
    {% endif %}
    {% endif %}
-   {% ifversion fpt or ghes = 3.0 or ghec %}
+   {% ifversion fpt or ghes = 3.0 %}
 4. Click **Disable FEATURE** or **Enable FEATURE** to disable or enable the feature for all the repositories in your organization.
-   {% ifversion fpt or ghec %}
+   {% ifversion fpt %}
    ![Button to disable or enable feature](/assets/images/help/organizations/security-and-analysis-enable-dependency-graph.png)
    {% endif %}
    {% ifversion ghes = 3.0 %}
@@ -94,14 +90,11 @@ You can enable or disable features for all repositories. {% ifversion fpt or ghe
 ## Enabling or disabling a feature automatically when new repositories are added
 
 1. Go to the security and analysis settings for your organization. For more information, see "[Displaying the security and analysis settings](#displaying-the-security-and-analysis-settings)."
-2. Under "Configure security and analysis features", to the right of the feature, enable or disable the feature by default for new repositories{% ifversion fpt or ghec %}, or all new private repositories,{% endif %} in your organization.
-   {% ifversion fpt or ghec %}
+2. Under "Configure security and analysis features", to the right of the feature, enable or disable the feature by default for new repositories{% ifversion fpt %}, or all new private repositories,{% endif %} in your organization.
+   {% ifversion fpt or ghes > 3.1 %}
    ![Checkbox for enabling or disabling a feature for new repositories](/assets/images/help/organizations/security-and-analysis-enable-or-disable-feature-checkbox-dotcom.png)
    {% endif %}
-   {% ifversion ghes > 3.2 %}
-   ![Checkbox for enabling or disabling a feature for new repositories](/assets/images/enterprise/3.3/organizations/security-and-analysis-enable-or-disable-feature-checkbox.png)
-   {% endif %}
-   {% ifversion ghes = 3.1 or ghes = 3.2 %}
+   {% ifversion ghes = 3.1 %}
    ![Checkbox for enabling or disabling a feature for new repositories](/assets/images/enterprise/3.1/help/organizations/security-and-analysis-enable-or-disable-feature-checkbox.png)
    {% endif %}
    {% ifversion ghes = 3.0 %}
@@ -111,7 +104,7 @@ You can enable or disable features for all repositories. {% ifversion fpt or ghe
    ![Checkbox for enabling or disabling a feature for new repositories](/assets/images/enterprise/github-ae/organizations/security-and-analysis-enable-or-disable-secret-scanning-checkbox-ghae.png)
    {% endif %}
 
-{% ifversion fpt or ghec or ghes > 3.2 %}
+{% ifversion fpt %}
 
 ## Allowing {% data variables.product.prodname_dependabot %} to access private dependencies
 
@@ -134,7 +127,7 @@ To allow {% data variables.product.prodname_dependabot %} to access a private {%
    !["X" button to remove a repository](/assets/images/help/organizations/dependabot-private-repository-list.png)
 {% endif %}
 
-{% ifversion fpt or ghes > 3.0 or ghec %}
+{% ifversion fpt or ghes > 3.0 %}
 
 ## Removing access to {% data variables.product.prodname_GH_advanced_security %} from individual repositories in an organization
 
@@ -158,7 +151,7 @@ You can manage access to {% data variables.product.prodname_GH_advanced_security
 ## Further reading
 
 - "[Securing your repository](/code-security/getting-started/securing-your-repository)"
-- "[About secret scanning](/github/administering-a-repository/about-secret-scanning)"{% ifversion fpt or ghec %}
+- "[About secret scanning](/github/administering-a-repository/about-secret-scanning)"{% ifversion fpt %}
 - "[Keeping your dependencies updated automatically](/github/administering-a-repository/keeping-your-dependencies-updated-automatically)"{% endif %}{% ifversion not ghae %}
 - "[About the dependency graph](/github/visualizing-repository-data-with-graphs/about-the-dependency-graph)"
 - "[Managing vulnerabilities in your project's dependencies](/github/managing-security-vulnerabilities/managing-vulnerabilities-in-your-projects-dependencies)"{% endif %}

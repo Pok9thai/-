@@ -38,14 +38,11 @@
     & > a[class~="doctocat-link"] {
       padding: 8px;
       margin-left: -32px;
-      color: var(--color-fg-muted);
+      color: var(--color-text-secondary);
       &:active,
       &:focus {
         outline: none;
       }
-    }
-    &:target {
-      scroll-margin-top: 75px;
     }
   }
 

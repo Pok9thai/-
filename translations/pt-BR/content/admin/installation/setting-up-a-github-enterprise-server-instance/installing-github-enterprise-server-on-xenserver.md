@@ -6,13 +6,9 @@ redirect_from:
   - /enterprise/admin/installation/installing-github-enterprise-server-on-xenserver
   - /admin/installation/installing-github-enterprise-server-on-xenserver
 versions:
-  ghes: <=3.2
-type: tutorial
+  ghes: '*'
 topics:
-  - Administrator
   - Enterprise
-  - Infrastructure
-  - Set up
 shortTitle: Instalar no XenServer
 ---
 
@@ -59,5 +55,5 @@ shortTitle: Instalar no XenServer
 
 ## Leia mais
 
-- "[Visão geral do sistema](/enterprise/admin/guides/installation/system-overview){% ifversion ghes %}
+- "[Visão geral do sistema](/enterprise/admin/guides/installation/system-overview){% ifversion ghes > 2.22 %}
 - "[Sobre atualizações para novas versões](/admin/overview/about-upgrades-to-new-releases)"{% endif %}

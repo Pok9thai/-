@@ -8,7 +8,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - Community
 shortTitle: 添加支持资源
@@ -18,7 +17,7 @@ shortTitle: 添加支持资源
 
 ![支持指南](/assets/images/help/issues/support_guidelines_in_issue.png)
 
-{% ifversion fpt or ghes or ghec %}
+{% ifversion fpt or ghes %}
 
 您可以为组织或用户帐户创建默认支持资源。 更多信息请参阅“[创建默认社区健康文件](/communities/setting-up-your-project-for-healthy-contributions/creating-a-default-community-health-file)”。
 

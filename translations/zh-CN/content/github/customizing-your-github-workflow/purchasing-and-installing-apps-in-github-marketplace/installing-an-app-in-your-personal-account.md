@@ -6,7 +6,6 @@ redirect_from:
   - /github/customizing-your-github-workflow/installing-an-app-in-your-personal-account
 versions:
   fpt: '*'
-  ghec: '*'
 shortTitle: 安装应用程序用户帐户
 ---
 

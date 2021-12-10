@@ -1,19 +1,18 @@
 ---
 title: Building and testing .NET
 intro: You can create a continuous integration (CI) workflow to build and test your .NET project.
+product: '{% data reusables.gated-features.actions %}'
 redirect_from:
   - /actions/guides/building-and-testing-net
 versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 shortTitle: Build & test .NET
 ---
 
 {% data reusables.actions.enterprise-beta %}
 {% data reusables.actions.enterprise-github-hosted-runners %}
-{% data reusables.actions.ae-beta %}
 
 ## Introduction
 
@@ -129,7 +128,7 @@ steps:
 ```
 {% endraw %}
 
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 
 ### Caching dependencies
 
@@ -239,7 +238,7 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest{% ifversion fpt or ghes > 3.1 or ghae-next or ghec %}
+    runs-on: ubuntu-latest{% ifversion fpt or ghes > 3.1 or ghae-next %}
     permissions:
       packages: write
       contents: read{% endif %}

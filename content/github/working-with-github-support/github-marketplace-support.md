@@ -5,7 +5,6 @@ redirect_from:
   - /articles/github-marketplace-support
 versions:
   fpt: '*'
-  ghec: '*'
 topics:
   - Jobs
 shortTitle: GitHub Marketplace

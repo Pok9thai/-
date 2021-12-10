@@ -10,13 +10,8 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - Pull requests
-  - Issues
-  - Projects
-  - Project management
-type: how_to
 ---
 {% data reusables.projects.project_boards_old %}
 
@@ -93,7 +88,7 @@ You can also configure workflow automations to keep your project board in sync w
 ## Further reading
 
 - "[About projects boards](/articles/about-project-boards)"
-- "[Editing a project board](/articles/editing-a-project-board)"{% ifversion fpt or ghec %}
+- "[Editing a project board](/articles/editing-a-project-board)"{% ifversion fpt %}
 - "[Copying a project board](/articles/copying-a-project-board)"{% endif %}
 - "[Closing a project board](/articles/closing-a-project-board)"
 - "[About automation for project boards](/articles/about-automation-for-project-boards)"

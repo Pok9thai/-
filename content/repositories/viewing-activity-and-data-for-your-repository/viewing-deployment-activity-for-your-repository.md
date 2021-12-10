@@ -9,7 +9,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - Repositories
 shortTitle: View deployment activity
@@ -31,4 +30,4 @@ You can also see deployment information on the "Conversation" tab of a pull requ
 ![Environments on the right of the repository page](/assets/images/help/repository/environments.png)
 
 ## Further reading
- - "[About pull requests](/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests)"
+ - "[About pull requests](/articles/about-pull-requests)"

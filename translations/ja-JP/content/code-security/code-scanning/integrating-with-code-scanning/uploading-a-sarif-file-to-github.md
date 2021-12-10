@@ -11,9 +11,8 @@ redirect_from:
   - /code-security/secure-coding/integrating-with-code-scanning/uploading-a-sarif-file-to-github
 versions:
   fpt: '*'
-  ghes: '*'
+  ghes: '>=3.0'
   ghae: '*'
-  ghec: '*'
 type: how_to
 topics:
   - Advanced Security
@@ -37,10 +36,10 @@ SARIF ファイルに `partialFingerprints` が含まれていない場合、`up
 
 SARIF ファイルは、{% data variables.product.prodname_codeql %} を含む多くの静的解析セキュリティテストツールを使用して生成できます。 生成するファイルは、SARIF バージョン 2.1.0 である必要があります。 詳しい情報については「[{% data variables.product.prodname_code_scanning %}の SARIF サポート](/code-security/secure-coding/sarif-support-for-code-scanning)」を参照してください。
 
-結果のアップロードは、{% data variables.product.prodname_actions %}、{% data variables.product.prodname_code_scanning %} API、{% ifversion fpt or ghes > 3.0 or ghae-next or ghec %}{% data variables.product.prodname_codeql_cli %}、{% endif %}{% data variables.product.prodname_codeql_runner %}を使って行えます。 最適なアップロード方法は、SARIF ファイルの生成方法によって異なります。以下、例を示します。
+結果のアップロードは、{% data variables.product.prodname_actions %}、{% data variables.product.prodname_code_scanning %} API、{% ifversion fpt or ghes > 3.0 or ghae-next %}{% data variables.product.prodname_codeql_cli %}、{% endif %}{% data variables.product.prodname_codeql_runner %}を使って行えます。 最適なアップロード方法は、SARIF ファイルの生成方法によって異なります。以下、例を示します。
 
 - {% data variables.product.prodname_actions %} を使用して {% data variables.product.prodname_codeql %} アクションを実行している場合、追加のアクションは不要です。 SARIF ファイルは、ファイルのアップロードに使用したものと同じ {% data variables.product.prodname_actions %} ワークフローで実行する SARIF 互換の分析ツールから生成できます。
-- "[ワークフロー実行の管理](/actions/configuring-and-managing-workflows/managing-a-workflow-run#viewing-your-workflow-history)" {% ifversion fpt or ghes > 3.0 or ghae-next or ghec %}
+- "[ワークフロー実行の管理](/actions/configuring-and-managing-workflows/managing-a-workflow-run#viewing-your-workflow-history)" {% ifversion fpt or ghes > 3.0 or ghae-next %}
  - CIシステムで{% data variables.product.prodname_code_scanning %}を実行する{% data variables.product.prodname_codeql_cli %}を使って結果を{% data variables.product.prodname_dotcom %}にアップロードできます（詳しい情報については「[CIシステムへの{% data variables.product.prodname_codeql_cli %}のインストール](/code-security/secure-coding/using-codeql-code-scanning-with-your-existing-ci-system/installing-codeql-cli-in-your-ci-system)」を参照してください）。{% endif %}
 - {% data variables.product.prodname_dotcom %} は、リポジトリにアップロードされた SARIF ファイルからの {% data variables.product.prodname_code_scanning %} アラートを表示します。 自動的なアップロードをブロックしている場合、結果をアップロードする準備ができたら `upload` コマンドを使用できます (詳しい情報については、「[CI システムでの{% data variables.product.prodname_codeql_runner %}の実行](/code-security/secure-coding/running-codeql-runner-in-your-ci-system) 」を参照)。
 - 結果をリポジトリ外に成果物として生成するツールの場合、{% data variables.product.prodname_code_scanning %} API を使用してファイルをアップロードできます (詳しい情報については、「[解析を SARIF データとしてアップロードする](/rest/reference/code-scanning#upload-an-analysis-as-sarif-data)」を参照)。
@@ -81,7 +80,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest{% ifversion fpt or ghes > 3.1 or ghae-next or ghec %}
+    runs-on: ubuntu-latest{% ifversion fpt or ghes > 3.1 or ghae-next %}
     permissions:
       security-events: write{% endif %}
     steps:
@@ -115,21 +114,21 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest{% ifversion fpt or ghes > 3.1 or ghae-next or ghec %}
+    runs-on: ubuntu-latest{% ifversion fpt or ghes > 3.1 or ghae-next %}
     permissions:
       security-events: write{% endif %}
     steps:
       - uses: actions/checkout@v2
       - name: Run npm install
         run: npm install
-      # Runs the ESlint code analysis
+      # ESlintコード分析の実行
       - name: Run ESLint
-        # eslint exits 1 if it finds anything to report
+        # 報告するものを見つけると、eslintは1で終了する
         run: node_modules/.bin/eslint build docs lib script spec-main -f node_modules/@microsoft/eslint-formatter-sarif/sarif.js -o results.sarif || true
-      # Uploads results.sarif to GitHub repository using the upload-sarif action
+      # upload-sarifアクションを使ってresults.sarifをGitHubリポジトリにアップロード
       - uses: github/codeql-action/upload-sarif@v1
         with:
-          # Path to SARIF file relative to the root of the repository
+          # リポジトリのルートに対する相対のSARIFファイルへのパス
           sarif_file: results.sarif
 ```
 

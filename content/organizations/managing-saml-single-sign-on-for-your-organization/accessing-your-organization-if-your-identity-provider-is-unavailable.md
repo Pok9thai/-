@@ -7,7 +7,6 @@ redirect_from:
   - /github/setting-up-and-managing-organizations-and-teams/accessing-your-organization-if-your-identity-provider-is-unavailable
 versions:
   fpt: '*'
-  ghec: '*'
 topics:
   - Organizations
   - Teams

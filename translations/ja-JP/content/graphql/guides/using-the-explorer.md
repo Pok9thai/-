@@ -5,7 +5,6 @@ redirect_from:
   - /v4/guides/using-the-explorer
 versions:
   fpt: '*'
-  ghec: '*'
   ghes: '*'
   ghae: '*'
 topics:
@@ -14,7 +13,7 @@ topics:
 
 ## GraphQL Explorerについて
 
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 
 [GraphQL Explorer](/graphql/overview/explorer)は、「グラフィカルでインタラクティブなブラウザ内のGraphQL IDE」である[ GraphiQL](https://github.com/graphql/graphiql)のインスタンスです。
 

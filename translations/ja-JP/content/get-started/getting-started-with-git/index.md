@@ -11,7 +11,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 children:
   - /setting-your-username-in-git
   - /caching-your-github-credentials-in-git

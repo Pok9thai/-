@@ -27,16 +27,13 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 children:
   - /understanding-github-actions
   - /finding-and-customizing-actions
   - /essential-features-of-github-actions
   - /managing-complex-workflows
-  - /sharing-workflows-secrets-and-runners-with-your-organization
-  - /creating-workflow-templates
+  - /sharing-workflows-with-your-organization
   - /using-workflow-templates
-  - /reusing-workflows
   - /events-that-trigger-workflows
   - /expressions
   - /contexts
@@ -46,4 +43,3 @@ children:
   - /usage-limits-billing-and-administration
 ---
 
-{% data reusables.actions.ae-beta %}

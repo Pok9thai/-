@@ -87,13 +87,12 @@ export const HeaderNotifications = () => {
             data-testid="header-notification"
             data-type={type}
             className={cx(
-              'flash flash-banner',
               styles.container,
-              'text-center f5 color-fg-default py-4 px-6',
-              type === NotificationType.TRANSLATION && 'color-bg-accent',
-              type === NotificationType.RELEASE && 'color-bg-accent',
+              'text-center f5 color-text-primary py-4 px-6',
+              type === NotificationType.TRANSLATION && 'color-bg-info',
+              type === NotificationType.RELEASE && 'color-bg-info',
               type === NotificationType.EARLY_ACCESS && 'color-bg-danger',
-              !isLast && 'border-bottom color-border-default'
+              !isLast && 'border-bottom color-border-tertiary'
             )}
             dangerouslySetInnerHTML={{ __html: content }}
           />

@@ -3,8 +3,7 @@ title: 'Setting up your project for {% data variables.product.prodname_codespace
 intro: '特定の言語のセットアップや構成など、{% data variables.product.prodname_codespaces %} の使用方法を学びます。'
 product: '{% data reusables.gated-features.codespaces %}'
 versions:
-  fpt: '*'
-  ghec: '*'
+  free-pro-team: '*'
 redirect_from:
   - /codespaces/getting-started-with-codespaces
 children:

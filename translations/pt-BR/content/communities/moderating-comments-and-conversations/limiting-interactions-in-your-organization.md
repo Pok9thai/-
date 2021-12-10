@@ -7,7 +7,6 @@ redirect_from:
   - /github/building-a-strong-community/limiting-interactions-in-your-organization
 versions:
   fpt: '*'
-  ghec: '*'
 permissions: Organization owners can limit interactions in an organization.
 topics:
   - Community
@@ -42,4 +41,4 @@ Os proprietários da organização também podem bloquear os usuários por um de
 - "[Denunciar abuso ou spam](/communities/maintaining-your-safety-on-github/reporting-abuse-or-spam)"
 - "[Gerenciar o acesso de um indivíduo a um repositório da organização](/articles/managing-an-individual-s-access-to-an-organization-repository)"
 - "[Níveis de permissão do repositório de conta de usuário](/articles/permission-levels-for-a-user-account-repository)"
-- "[Repository roles for an organization](/organizations/managing-access-to-your-organizations-repositories/repository-roles-for-an-organization)"
+- "[Níveis de permissão do repositório para uma organização](/articles/repository-permission-levels-for-an-organization)"

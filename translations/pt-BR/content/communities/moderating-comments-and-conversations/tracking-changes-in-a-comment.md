@@ -8,7 +8,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - Community
 shortTitle: Rastrear alterações de comentário
@@ -34,5 +33,5 @@ Quando você exclui informações confidenciais do histórico de edição do com
 
 ## Leia mais
 
-{% ifversion fpt or ghec %}- "[Denunciar abuso ou spam](/communities/maintaining-your-safety-on-github/reporting-abuse-or-spam)"{% endif %}
+{% ifversion fpt %}- "[Denunciar abuso ou spam](/communities/maintaining-your-safety-on-github/reporting-abuse-or-spam)"{% endif %}
 - "[Editar um comentário](/articles/editing-a-comment)"

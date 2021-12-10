@@ -1,6 +1,7 @@
 ---
 title: MavenでのJavaのパッケージの公開
 intro: 継続的インテグレーション（CI）ワークフローの一部として、Javaのパッケージをレジストリに公開するためにMavenを利用できます。
+product: '{% data reusables.gated-features.actions %}'
 redirect_from:
   - /actions/language-and-framework-guides/publishing-java-packages-with-maven
   - /actions/guides/publishing-java-packages-with-maven
@@ -8,7 +9,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 type: tutorial
 topics:
   - Packaging
@@ -146,7 +146,7 @@ on:
     types: [created]
 jobs:
   publish:
-    runs-on: ubuntu-latest {% ifversion fpt or ghes > 3.1 or ghae-next or ghec %}
+    runs-on: ubuntu-latest {% ifversion fpt or ghes > 3.1 or ghae-next %}
     permissions: 
       contents: read
       packages: write {% endif %}
@@ -183,7 +183,7 @@ on:
     types: [created]
 jobs:
   publish:
-    runs-on: ubuntu-latest {% ifversion fpt or ghes > 3.1 or ghae-next or ghec %}
+    runs-on: ubuntu-latest {% ifversion fpt or ghes > 3.1 or ghae-next %}
     permissions: 
       contents: read
       packages: write {% endif %}

@@ -13,7 +13,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 shortTitle: Associate text editors
 ---
 {% mac %}

@@ -6,7 +6,6 @@ redirect_from:
   - /graphql/guides/migrating-from-rest
 versions:
   fpt: '*'
-  ghec: '*'
   ghes: '*'
   ghae: '*'
 topics:

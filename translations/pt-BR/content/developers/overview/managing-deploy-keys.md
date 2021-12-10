@@ -8,7 +8,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - API
 ---
@@ -100,18 +99,18 @@ No arquivo de configuração do SSH do servidor (geralmente `~/.ssh/config`), ad
 
 
 ```bash
-Host {% ifversion fpt or ghec %}github.com{% else %}my-GHE-hostname.com{% endif %}-repo-0
-        Hostname {% ifversion fpt or ghec %}github.com{% else %}my-GHE-hostname.com{% endif %}
+Host {% ifversion fpt %}github.com{% else %}my-GHE-hostname.com{% endif %}-repo-0
+        Hostname {% ifversion fpt %}github.com{% else %}my-GHE-hostname.com{% endif %}
         IdentityFile=/home/user/.ssh/repo-0_deploy_key
 
-Host {% ifversion fpt or ghec %}github.com{% else %}my-GHE-hostname.com{% endif %}-repo-1
-        Hostname {% ifversion fpt or ghec %}github.com{% else %}my-GHE-hostname.com{% endif %}
+Host {% ifversion fpt %}github.com{% else %}my-GHE-hostname.com{% endif %}-repo-1
+        Hostname {% ifversion fpt %}github.com{% else %}my-GHE-hostname.com{% endif %}
         IdentityFile=/home/user/.ssh/repo-1_deploy_key
 ```
 
 
-* `Host {% ifversion fpt or ghec %}github.com{% else %}my-GHE-hostname.com{% endif %}-repo-0` - The repository's alias.
-* `Hostname {% ifversion fpt or ghec %}github.com{% else %}my-GHE-hostname.com{% endif %}` - Configures the hostname to use with the alias.
+* `Host {% ifversion fpt %}github.com{% else %}my-GHE-hostname.com{% endif %}-repo-0` - O alias do repositório.
+* `Hostname {% ifversion fpt %}github.com{% else %}my-GHE-hostname.com{% endif %}` - Configura o nome de host a ser usado com o alias.
 * `IdentityFile=/home/user/.ssh/repo-0_deploy_key` - Atribui uma chave privada ao pseudônimo.
 
 Em seguida, você pode usar o apelido do host para interagir com o repositório usando SSH, que usará a chave de deploy exclusiva atribuída a esse pseudônimo. Por exemplo:
@@ -119,7 +118,7 @@ Em seguida, você pode usar o apelido do host para interagir com o repositório 
 
 
 ```bash
-$ git clone git@{% ifversion fpt or ghec %}github.com{% else %}my-GHE-hostname.com{% endif %}-repo-1:OWNER/repo-1.git
+$ git clone git@{% ifversion fpt %}github.com{% else %}my-GHE-hostname.com{% endif %}-repo-1:OWNER/repo-1.git
 ```
 
 
@@ -165,13 +164,13 @@ Uma vez que os aplicativos GitHub são um ator de primeira classe em  {% data va
 
 ## Usuários máquina
 
-If your server needs to access multiple repositories, you can create a new account on {% ifversion ghae %}{% data variables.product.product_name %}{% else %}{% data variables.product.product_location %}{% endif %} and attach an SSH key that will be used exclusively for automation. Since this account on {% ifversion ghae %}{% data variables.product.product_name %}{% else %}{% data variables.product.product_location %}{% endif %} won't be used by a human, it's called a _machine user_. É possível adicionar o usuário máquina como [colaborador][collaborator] em um repositório pessoal (concedendo acesso de leitura e gravação), como [colaborador externo][outside-collaborator] em um repositório da organização (concedendo leitura, acesso gravação, ou administrador) ou como uma [equipe][team], com acesso aos repositórios que precisa automatizar (concedendo as permissões da equipe).
+Se o seu servidor precisar acessar vários repositórios, você poderá criar uma conta nova no {% data variables.product.product_name %} e anexar uma chave SSH que será usada exclusivamente para automação. Como esta conta do {% data variables.product.product_name %} não será usada por uma pessoa, ela será denominada _usuário máquina_. É possível adicionar o usuário máquina como [colaborador][collaborator] em um repositório pessoal (concedendo acesso de leitura e gravação), como [colaborador externo][outside-collaborator] em um repositório da organização (concedendo leitura, acesso gravação, ou administrador) ou como uma [equipe][team], com acesso aos repositórios que precisa automatizar (concedendo as permissões da equipe).
 
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 
 {% tip %}
 
-**Tip:** Our [terms of service][tos] state:
+**Dica:** Nossos [termos de serviço][tos] afirmam que:
 
 
 
@@ -207,7 +206,7 @@ Isto significa que você não pode automatizar a criação de contas. Mas se voc
 
 [ssh-agent-forwarding]: /guides/using-ssh-agent-forwarding/
 [generating-ssh-keys]: /articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/#generating-a-new-ssh-key
-[tos]: /free-pro-team@latest/github/site-policy/github-terms-of-service/
+[tos]: /articles/github-terms-of-service/
 [git-automation]: /articles/git-automation-with-oauth-tokens
 [git-automation]: /articles/git-automation-with-oauth-tokens
 [collaborator]: /articles/inviting-collaborators-to-a-personal-repository

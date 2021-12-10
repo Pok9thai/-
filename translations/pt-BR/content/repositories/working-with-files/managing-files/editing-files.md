@@ -1,5 +1,5 @@
 ---
-title: Editando arquivos
+title: Editing files
 intro: 'Com o editor de arquivos, você pode editar arquivos diretamente no {% data variables.product.product_name %} em qualquer dos seus repositórios.'
 redirect_from:
   - /articles/editing-files/
@@ -13,10 +13,9 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - Repositories
-shortTitle: Editar arquivos
+shortTitle: Edit files
 ---
 
 ## Editar arquivos no repositório
@@ -44,7 +43,7 @@ shortTitle: Editar arquivos
 
 ## Editar arquivos no repositório de outro usuário
 
-Ao editar um arquivo em um repositório de outro usuário, iremos [bifurcar o repositório](/articles/fork-a-repo) automaticamente e [abrir um pull request](/articles/creating-a-pull-request) para você.
+When you edit a file in another user's repository, we'll automatically [fork the repository](/articles/fork-a-repo) and [open a pull request](/articles/creating-a-pull-request) for you.
 
 1. No repositório de outro usuário, navegue até a pasta que contém o arquivo que deseja editar. Clique no nome do arquivo a ser editado.
 2. Acima do conteúdo do arquivo, clique em {% octicon "pencil" aria-label="The edit icon" %}. Neste ponto, o GitHub bifurca o repositório para você.

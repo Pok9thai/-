@@ -27,21 +27,14 @@ describe('webhook payloads', () => {
 
   test('have expected top-level keys', () => {
     payloadVersions.forEach((version) => {
-      // todo: remove if check once we have API/webhook versions for ghec
-      // Docs Engineering issue: 979
-      if (version !== 'ghec') {
-        expect(version in webhookPayloads).toBe(true)
-      }
+      expect(version in webhookPayloads).toBe(true)
     })
   })
 
   test('have a reasonable number of payloads per version', () => {
     payloadVersions.forEach((version) => {
-      // todo: remove if check once we have API/webhook versions for ghec
-      if (version !== 'ghec') {
-        const payloadsPerVersion = Object.keys(webhookPayloads[version])
-        expect(payloadsPerVersion.length).toBeGreaterThan(20)
-      }
+      const payloadsPerVersion = Object.keys(webhookPayloads[version])
+      expect(payloadsPerVersion.length).toBeGreaterThan(20)
     })
   })
 

@@ -8,7 +8,6 @@ redirect_from:
   - /packages/guides/migrating-to-github-container-registry-for-docker-images
 versions:
   fpt: '*'
-  ghec: '*'
 shortTitle: Migrar para registro do contêiner
 ---
 

@@ -1,11 +1,11 @@
 ---
 title: 禁用和启用工作流程
 intro: '您可以使用 {% data variables.product.prodname_dotcom %} UI、REST API 或 {% data variables.product.prodname_cli %} 禁用并重新启用工作流程。'
+product: '{% data reusables.gated-features.actions %}'
 versions:
   fpt: '*'
-  ghes: '*'
+  ghes: '>=3.0'
   ghae: '*'
-  ghec: '*'
 shortTitle: 禁用和启用工作流程
 ---
 

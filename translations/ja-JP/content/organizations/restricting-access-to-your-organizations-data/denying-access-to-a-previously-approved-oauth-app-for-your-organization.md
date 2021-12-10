@@ -7,7 +7,6 @@ redirect_from:
   - /github/setting-up-and-managing-organizations-and-teams/denying-access-to-a-previously-approved-oauth-app-for-your-organization
 versions:
   fpt: '*'
-  ghec: '*'
 topics:
   - Organizations
   - Teams

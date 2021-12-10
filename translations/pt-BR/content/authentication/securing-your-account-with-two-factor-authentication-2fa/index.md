@@ -1,6 +1,6 @@
 ---
 title: Proteger sua conta com a autenticação de dois fatores (2FA)
-intro: 'Você pode configurar sua conta no {% data variables.product.product_location %} para exigir um código de autenticação além da sua senha quando você efetuar o login.'
+intro: 'Você pode configurar a conta do {% data variables.product.product_name %} para exigir um código de autenticação além da senha para efetuar login.'
 redirect_from:
   - /categories/84/articles/
   - /categories/two-factor-authentication-2fa/
@@ -9,7 +9,6 @@ redirect_from:
 versions:
   fpt: '*'
   ghes: '*'
-  ghec: '*'
 topics:
   - 2FA
 children:

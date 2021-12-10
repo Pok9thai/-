@@ -2,9 +2,7 @@
 title: Entender tu cadena de suministro de software
 versions:
   fpt: '*'
-  ghes: '*'
-  ghae: issue-4864
-  ghec: '*'
+  ghes: '>=3.0'
 topics:
   - Dependency graph
   - Dependencies

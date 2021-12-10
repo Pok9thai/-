@@ -8,7 +8,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - Organizations
   - Teams
@@ -21,7 +20,7 @@ Os administradores podem usar essas informações para ajudar pessoas fora do qu
 
 ## Exibir pessoas com acesso ao seu repositório
 
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 {% note %}
 
 **Observação**: Você também pode ver uma visão geral combinada das equipes e pessoas com acesso ao seu repositório. Para obter mais informações, consulte "[Gerenciar equipes e pessoas com acesso ao seu repositório](/github/administering-a-repository/managing-teams-and-people-with-access-to-your-repository). "

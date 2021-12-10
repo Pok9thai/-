@@ -11,9 +11,8 @@ redirect_from:
   - /github/administering-a-repository/managing-repository-settings/managing-security-and-analysis-settings-for-your-repository
 versions:
   fpt: '*'
-  ghes: '*'
+  ghes: '>=3.0'
   ghae: '*'
-  ghec: '*'
 type: how_to
 topics:
   - Dependabot
@@ -25,7 +24,7 @@ topics:
 shortTitle: Segurança & análise
 ---
 
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 ## Habilitar ou desabilitar funcionalidades de segurança e análise para repositórios públicos
 
 É possível gerenciar um subconjunto de recursos de segurança e análise para repositórios públicos. Outros recursos são habilitados permanentemente, incluindo gráfico de dependências e varredura de segredo.
@@ -36,22 +35,21 @@ shortTitle: Segurança & análise
 4. Em "Configurar recursos de segurança e análise", à direita do recurso, clique em **Desabilitar** ou **Habilitar**. ![Botão "Habilitar" ou "Desabilitar" para "Configurar recursos de segurança e análise" em um repositório público](/assets/images/help/repository/security-and-analysis-disable-or-enable-dotcom-public.png)
 {% endif %}
 
-## Habilitar ou desabilitar os recursos de segurança e análise{% ifversion fpt or ghec %} para repositórios privados{% endif %}
+## Habilitar ou desabilitar os recursos de segurança e análise{% ifversion fpt %} para repositórios privados{% endif %}
 
-´Você pode administrar as funcionalidades de segurança e análise para o seu repositório{% ifversion fpt or ghec %}privado ou interno {% endif %}.{% ifversion fpt or ghes or ghec %} Se a sua organização pertencer a uma empresa que tem uma licença para {% data variables.product.prodname_GH_advanced_security %}, haverá opções adicionais disponíveis. {% data reusables.advanced-security.more-info-ghas %}{% endif %}
+´Você pode administrar as funcionalidades de segurança e análise para o seu repositório{% ifversion fpt %}privado ou interno {% endif %}.{% ifversion fpt or ghes > 2.22 %} Se a sua organização pertencer a uma empresa que tem uma licença para {% data variables.product.prodname_GH_advanced_security %}, haverá opções adicionais disponíveis. {% data reusables.advanced-security.more-info-ghas %}{% endif %}
 
 {% data reusables.security.security-and-analysis-features-enable-read-only %}
 
 {% data reusables.repositories.navigate-to-repo %}
 {% data reusables.repositories.sidebar-settings %}
 {% data reusables.repositories.navigate-to-security-and-analysis %}
-{% ifversion fpt or ghes > 3.0 or ghec %}
-4. Em "Configurar recursos de segurança e análise", à direita do recurso, clique em **Desabilitar** ou **Habilitar**. The control for "{% data variables.product.prodname_GH_advanced_security %}" is disabled if your enterprise has no available licenses for {% data variables.product.prodname_advanced_security %}.{% ifversion fpt or ghec %} !["Enable" or "Disable" button for "Configure security and analysis" features](/assets/images/help/repository/security-and-analysis-disable-or-enable-dotcom-private.png){% elsif ghes > 3.2 %}
-!["Enable" or "Disable" button for "Configure security and analysis" features](/assets/images/enterprise/3.3/repository/security-and-analysis-disable-or-enable-ghes.png){% else %}
+{% ifversion fpt or ghes > 3.0 %}
+4. Em "Configurar recursos de segurança e análise", à direita do recurso, clique em **Desabilitar** ou **Habilitar**. O controle para "{% data variables.product.prodname_GH_advanced_security %}" encontra-se desabilitado se a sua empresa não tiver licenças disponíveis para {% data variables.product.prodname_advanced_security %}.{% ifversion fpt %} !["Enable" or "Disable" button for "Configure security and analysis" features](/assets/images/help/repository/security-and-analysis-disable-or-enable-dotcom-private.png){% else %}
 !["Enable" or "Disable" button for "Configure security and analysis" features](/assets/images/enterprise/3.1/help/repository/security-and-analysis-disable-or-enable-ghes.png){% endif %}
   {% note %}
 
-  **Observação:** Se você desabilitar {% data variables.product.prodname_GH_advanced_security %}, {% ifversion fpt or ghec %}revisão de dependência, {% endif %}{% data variables.product.prodname_secret_scanning %} e {% data variables.product.prodname_code_scanning %} ficarão desabilitados. Todos os fluxos de trabalho, uploads de SARIF, ou chamadas de API para {% data variables.product.prodname_code_scanning %} falharão.
+  **Observação:** Se você desabilitar {% data variables.product.prodname_GH_advanced_security %}, {% ifversion fpt %}revisão de dependência, {% endif %}{% data variables.product.prodname_secret_scanning %} e {% data variables.product.prodname_code_scanning %} ficarão desabilitados. Todos os fluxos de trabalho, uploads de SARIF, ou chamadas de API para {% data variables.product.prodname_code_scanning %} falharão.
   {% endnote %}
   {% endif %}
   {% ifversion ghes = 3.0 %}
@@ -75,24 +73,21 @@ Os proprietários da organização e os administradores do repositório só pode
 {% data reusables.repositories.sidebar-settings %}
 {% data reusables.repositories.navigate-to-security-and-analysis %}
 4. Em "Acesso aos alertas", no campo de pesquisa, comece a digitar o nome da pessoa ou equipe que você gostaria de encontrar e, em seguida, clique em um nome na lista de correspondências.
-   {% ifversion fpt or ghec or ghes > 3.2 %}
+   {% ifversion fpt %}
    ![Campo de busca para conceder acesso de pessoas ou equipes aos alertas de segurança](/assets/images/help/repository/security-and-analysis-security-alerts-person-or-team-search.png)
    {% endif %}
-   {% ifversion ghes < 3.3 %}
-   ![Campo de busca para conceder acesso de pessoas ou equipes aos alertas de segurança](/assets/images/enterprise/3.2/repository/security-and-analysis-security-alerts-person-or-team-search.png)
+   {% ifversion ghes > 2.22 %}
+   ![Campo de busca para conceder acesso de pessoas ou equipes aos alertas de segurança](/assets/images/help/repository/security-and-analysis-security-alerts-person-or-team-search-ghe.png)
    {% endif %}
    {% ifversion ghae %}
    ![Campo de busca para conceder acesso de pessoas ou equipes aos alertas de segurança](/assets/images/enterprise/github-ae/repository/security-and-analysis-security-alerts-person-or-team-search-ghae.png)
    {% endif %}
 
 5. Clique em **Save changes** (Salvar alterações).
-   {% ifversion fpt or ghes > 3.2 or ghec %}
+   {% ifversion fpt or ghes > 2.22 %}
    ![Botão de "Salvar as alterações" para alterações nas configurações do alerta de segurança](/assets/images/help/repository/security-and-analysis-security-alerts-save-changes.png)
    {% endif %}
-   {% ifversion ghes < 3.3 %}
-   ![Botão de "Salvar as alterações" para alterações nas configurações do alerta de segurança](/assets/images/enterprise/3.2/repository/security-and-analysis-security-alerts-save-changes.png)
-   {% endif %}
-   {% ifversion ghae %}
+    {% ifversion ghae %}
    ![Botão de "Salvar as alterações" para alterações nas configurações do alerta de segurança](/assets/images/enterprise/github-ae/repository/security-and-analysis-security-alerts-save-changes-ghae.png)
    {% endif %}
 
@@ -102,16 +97,15 @@ Os proprietários da organização e os administradores do repositório só pode
 {% data reusables.repositories.sidebar-settings %}
 {% data reusables.repositories.navigate-to-security-and-analysis %}
 4. Em "Acesso aos alertas", à direita da pessoa ou da equipe cujo acesso você deseja remover, clique em {% octicon "x" aria-label="X symbol" %}.
-   {% ifversion fpt or ghec or ghes > 3.2 %}
+   {% ifversion fpt %}
    ![Botãi "x" para remover o acesso de alguém aos alertas de segurança do seu repositório](/assets/images/help/repository/security-and-analysis-security-alerts-username-x.png)
    {% endif %}
-   {% ifversion ghes < 3.3 %}
-   ![Botãi "x" para remover o acesso de alguém aos alertas de segurança do seu repositório](/assets/images/enterprise/3.2/repository/security-and-analysis-security-alerts-username-x.png)
+   {% ifversion ghes > 2.22 %}
+   ![Botãi "x" para remover o acesso de alguém aos alertas de segurança do seu repositório](/assets/images/help/repository/security-and-analysis-security-alerts-username-x-ghe.png)
    {% endif %}
    {% ifversion ghae %}
    ![Botãi "x" para remover o acesso de alguém aos alertas de segurança do seu repositório](/assets/images/enterprise/github-ae/repository/security-and-analysis-security-alerts-username-x-ghae.png)
    {% endif %}
-  5. Clique em **Save changes** (Salvar alterações).
 
 ## Leia mais
 

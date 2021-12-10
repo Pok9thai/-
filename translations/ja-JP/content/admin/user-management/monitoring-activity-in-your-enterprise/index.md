@@ -5,7 +5,6 @@ redirect_from:
   - /enterprise/admin/installation/monitoring-activity-on-your-github-enterprise-server-instance
   - /enterprise/admin/user-management/monitoring-activity-in-your-enterprise
 versions:
-  ghec: '*'
   ghes: '*'
   ghae: '*'
 topics:
@@ -17,7 +16,6 @@ children:
   - /audited-actions
   - /viewing-push-logs
   - /log-forwarding
-  - /managing-global-webhooks
 shortTitle: Monitor your enterprise
 ---
 

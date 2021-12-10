@@ -7,12 +7,8 @@ redirect_from:
 versions:
   ghes: '*'
   ghae: next
-type: tutorial
 topics:
-  - Actions
   - Enterprise
-  - Networking
-  - Storage
 shortTitle: Tool cache for offline runners
 ---
 

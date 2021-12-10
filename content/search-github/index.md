@@ -10,7 +10,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - GitHub search
 children:
@@ -18,4 +17,3 @@ children:
   - /searching-on-github
 shortTitle: Search on GitHub
 ---
-

@@ -1,7 +1,6 @@
 ---
 title: 人をフォローする
-intro: '{% data variables.product.product_name %} のユーザをフォローして、アクティビティに関する通知を受け取ることができます。{% ifversion fpt or ghec %}また、それらのユーザのコミュニティ内でプロジェクトを見つけることもできます。{% endif %}'
-permissions: '{% data reusables.enterprise-accounts.emu-permission-follow %}'
+intro: '{% data variables.product.product_name %} のユーザをフォローして、アクティビティに関する通知を受け取ることができます。{% ifversion fpt %}また、それらのユーザのコミュニティ内でプロジェクトを見つけることもできます。{% endif %}'
 redirect_from:
   - /articles/following-people
   - /github/getting-started-with-github/following-people
@@ -10,14 +9,13 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - Profile
 ---
 
 ## About followers on {% data variables.product.product_name %}
 
-When you follow people, you'll see their public activity in the activity view of your news feed.{% ifversion fpt or ghec %} If someone you follow stars a public repository, {% data variables.product.product_name %} may recommend the repository to you in the discovery view of your news feed.{% endif %}
+When you follow people, you'll see their public activity in the activity view of your news feed.{% ifversion fpt %} If someone you follow stars a public repository, {% data variables.product.product_name %} may recommend the repository to you in the discovery view of your news feed.{% endif %}
 
 You can unfollow someone if you do not wish to see their public activity on {% data variables.product.product_name %}.
 
@@ -63,7 +61,7 @@ You can unfollow someone if you do not wish to see their public activity on {% d
 
 
 
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 ## 参考リンク
 
 - [Star を付けてリポジトリを保存する](/articles/saving-repositories-with-stars/)

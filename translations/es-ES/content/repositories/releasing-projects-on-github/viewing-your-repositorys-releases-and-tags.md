@@ -11,13 +11,12 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - Repositories
 shortTitle: Visualizar lanzamientos & etiquetas
 ---
 
-{% ifversion fpt or ghae or ghes or ghec %}
+{% ifversion fpt or ghae or ghes %}
 {% tip %}
 
 **Tip**: También puedes ver un lanzamientos utilizando el {% data variables.product.prodname_cli %}. Para obtener más información, consulta la sección "[`gh release view`](https://cli.github.com/manual/gh_release_view)" en la documentación de {% data variables.product.prodname_cli %}.

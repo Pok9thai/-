@@ -11,15 +11,14 @@ redirect_from:
   - /admin/configuration/managing-connections-between-github-enterprise-server-and-github-enterprise-cloud
 versions:
   ghes: '*'
-  ghae: next
-type: how_to
+  ghae: 'next'
 topics:
   - Enterprise
 children:
   - /connecting-your-enterprise-account-to-github-enterprise-cloud
   - /enabling-unified-search-between-your-enterprise-account-and-githubcom
   - /enabling-unified-contributions-between-your-enterprise-account-and-githubcom
-  - /enabling-the-dependency-graph-and-dependabot-alerts-on-your-enterprise-account
+  - /enabling-alerts-for-vulnerable-dependencies-on-github-enterprise-server
   - /enabling-automatic-user-license-sync-between-github-enterprise-server-and-github-enterprise-cloud
 shortTitle: Connect enterprise accounts
 ---

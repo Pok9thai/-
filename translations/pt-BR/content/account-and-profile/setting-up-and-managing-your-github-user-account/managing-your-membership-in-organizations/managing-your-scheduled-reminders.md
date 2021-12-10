@@ -3,7 +3,6 @@ title: Gerenciar seus lembretes agendados
 intro: Receba lembretes no Slack quando você ou sua equipe tiverem pull requests aguardando revisão.
 versions:
   fpt: '*'
-  ghec: '*'
 topics:
   - Accounts
 redirect_from:

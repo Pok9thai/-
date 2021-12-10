@@ -9,9 +9,8 @@ redirect_from:
   - /code-security/secure-coding/automatically-scanning-your-code-for-vulnerabilities-and-errors/about-code-scanning
 versions:
   fpt: '*'
-  ghes: '*'
+  ghes: '>=3.0'
   ghae: '*'
-  ghec: '*'
 type: overview
 topics:
   - Advanced Security
@@ -35,7 +34,7 @@ topics:
 
 要开始 {% data variables.product.prodname_code_scanning %}，请参阅“[为仓库设置 {% data variables.product.prodname_code_scanning %}](/code-security/secure-coding/setting-up-code-scanning-for-a-repository)”。
 
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 
 ## 关于 {% data variables.product.prodname_code_scanning %} 的计费
 

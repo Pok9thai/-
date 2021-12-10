@@ -12,15 +12,13 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 children:
   - /manually-running-a-workflow
-  - /re-running-workflows-and-jobs
+  - /re-running-a-workflow
   - /canceling-a-workflow
   - /approving-workflow-runs-from-public-forks
   - /reviewing-deployments
   - /disabling-and-enabling-a-workflow
-  - /skipping-workflow-runs
   - /deleting-a-workflow-run
   - /downloading-workflow-artifacts
   - /removing-workflow-artifacts
@@ -29,3 +27,4 @@ children:
 {% data reusables.actions.enterprise-beta %}
 {% data reusables.actions.enterprise-github-hosted-runners %}
 {% data reusables.actions.ae-beta %}
+{% ifversion fpt or ghes > 3.0 or ghae %}{% endif %}

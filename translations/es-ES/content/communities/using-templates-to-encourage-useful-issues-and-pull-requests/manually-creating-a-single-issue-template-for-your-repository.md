@@ -9,7 +9,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - Community
 shortTitle: Crear una plantilla de propuesta
@@ -38,13 +37,13 @@ asignados: octocat
 
 {% endnote %}
 
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 
 {% data reusables.repositories.valid-community-issues %}
 
 {% endif %}
 
-{% ifversion fpt or ghes or ghec %}
+{% ifversion fpt or ghes %}
 
 {% data reusables.repositories.default-issue-templates %}
 

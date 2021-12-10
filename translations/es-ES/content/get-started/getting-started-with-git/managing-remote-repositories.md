@@ -22,7 +22,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 shortTitle: Administrar repositorios remotos
 ---
 

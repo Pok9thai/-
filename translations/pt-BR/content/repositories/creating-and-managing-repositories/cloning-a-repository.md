@@ -10,7 +10,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - Repositories
 ---
@@ -90,7 +89,7 @@ Se você não conseguir clonar um repositório, verifique se:
 - Você tem permissão para acessar o repositório que você deseja clonar. Para obter mais informações, consulte "[Erro: Repositório não encontrado](/github/creating-cloning-and-archiving-repositories/error-repository-not-found)".
 - O branch-padrão que você deseja clonar ainda existe. Para obter mais informações, consulte a permissão para acessar o repositório que você deseja clonar. Para ibter mais informações, consulte "[Erro: o HEAD remoto refere-se a uma ref inexistente, incapaz de fazer checkout](/github/creating-cloning-and-archiving-repositories/error-remote-head-refers-to-nonexistent-ref-unable-to-checkout)".
 
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 
 ## Leia mais
 

@@ -6,7 +6,6 @@ redirect_from:
   - /github/supporting-the-open-source-community-with-github-sponsors/managing-your-payouts-from-github-sponsors
 versions:
   fpt: '*'
-  ghec: '*'
 type: how_to
 topics:
   - Sponsors payments

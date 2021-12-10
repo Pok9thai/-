@@ -26,7 +26,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - Community
 children:
@@ -36,4 +35,3 @@ children:
   - /maintaining-your-safety-on-github
   - /documenting-your-project-with-wikis
 ---
-

@@ -4,7 +4,6 @@ intro: 'With the {% data variables.product.prodname_registry %} API, you can man
 product: '{% data reusables.gated-features.packages %}'
 versions:
   fpt: '*'
-  ghec: '*'
 topics:
   - API
 miniTocMaxHeadingLevel: 3

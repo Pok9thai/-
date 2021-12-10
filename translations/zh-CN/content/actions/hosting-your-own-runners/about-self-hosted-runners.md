@@ -8,7 +8,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 type: overview
 ---
 
@@ -58,10 +57,10 @@ type: overview
 * 机器有足够的硬件资源来执行您计划运行的工作流程类型。 自托管运行器应用程序本身只需要很少的资源。
 * 如果您想运行使用 Docker 容器操作或服务容器的工作流程，您必须使用 Linux 机器并安装 Docker。
 
-{% ifversion fpt or ghes > 3.2 or ghec %}
-## 自动缩放自托管运行器
+{% ifversion fpt or ghes > 3.2 %}
+## Autoscaling your self-hosted runners
 
-您可以自动增加或减少环境中自托管运行器的数量，以响应您收到的 web 挂钩事件。 更多信息请参阅“[使用自托管运行器自动缩放](/actions/hosting-your-own-runners/autoscaling-with-self-hosted-runners)”。
+You can automatically increase or decrease the number of self-hosted runners in your environment in response to the webhook events you receive. For more information, see "[Autoscaling with self-hosted runners](/actions/hosting-your-own-runners/autoscaling-with-self-hosted-runners)."
 
 {% endif %}
 
@@ -120,7 +119,7 @@ type: overview
 
 ## 自托管运行器与 {% data variables.product.prodname_dotcom %} 之间的通信
 
-可能需要额外配置才可结合使用来自 {% data variables.product.prodname_dotcom_the_website %} 的操作与 {% data variables.product.prodname_ghe_server %}，或者结合使用 `actions/setup-LANGUAGE` 操作与没有互联网连接的自托管运行器。 更多信息请参阅“[自托管运行器与 {% data variables.product.prodname_dotcom %} 之间的通信](#communication-between-self-hosted-runners-and-github)”。
+Some extra configuration might be required to use actions from {% data variables.product.prodname_dotcom_the_website %} with {% data variables.product.prodname_ghe_server %}, or to use the `actions/setup-LANGUAGE` actions with self-hosted runners that do not have internet access. 更多信息请参阅“[自托管运行器与 {% data variables.product.prodname_dotcom %} 之间的通信](#communication-between-self-hosted-runners-and-github)”。
 
 {% endif %}
 
@@ -130,18 +129,16 @@ type: overview
 
 {% ifversion ghae %}
 您必须确保自托管运行器具有适当的网络访问权限才可与
-{% data variables.product.prodname_ghe_managed %} URL and its subdomains.
-For example, if your instance name is `octoghae`, then you will need to allow the self-hosted runner to access `octoghae.githubenterprise.com`, `api.octoghae.githubenterprise.com`, and `codeload.octoghae.githubenterprise.com`.
+{% data variables.product.prodname_ghe_managed %} URL 通信。
+例如，如果你的实例名称是 `octoghie`，则需要允许自托管运行器访问 `octoghe. ithub.com`。
 如果您对
 
 {% data variables.product.prodname_dotcom %} 组织或企业帐户使用 IP 地址允许列表，必须将自托管运行器的 IP 地址添加到允许列表。 更多信息请参阅“[管理组织允许的 IP 地址](/organizations/keeping-your-organization-secure/managing-allowed-ip-addresses-for-your-organization#using-github-actions-with-an-ip-allow-list)”。
 {% endif %}
 
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 
-Since the self-hosted runner opens a connection to {% data variables.product.prodname_dotcom %}, you do not need to allow {% data variables.product.prodname_dotcom %} to make inbound connections to your self-hosted runner.
-
-You must ensure that the machine has the appropriate network access to communicate with the {% data variables.product.prodname_dotcom %} hosts listed below. Some hosts are required for essential runner operations, while other hosts are only required for certain functionality.
+您必须确保机器具有适当的网络访问权限才可与以下列出的 {% data variables.product.prodname_dotcom %} URL 通信。
 
 {% note %}
 
@@ -149,43 +146,21 @@ You must ensure that the machine has the appropriate network access to communica
 
 {% endnote %}
 
-**Needed for essential operations:**
-
 ```
 github.com
 api.github.com
-```
-
-**Needed for downloading actions:**
-
-```
-codeload.github.com
-```
-
-**Needed for runner version updates:**
-
-```
-objects.githubusercontent.com
-objects-origin.githubusercontent.com
+*.actions.githubusercontent.com
 github-releases.githubusercontent.com
 github-registry-files.githubusercontent.com
-```
-
-**Needed for uploading/downloading caches and workflow artifacts:**
-
-```
+codeload.github.com
+*.pkg.github.com
+pkg-cache.githubusercontent.com
+pkg-containers.githubusercontent.com
+pkg-containers-az.githubusercontent.com
 *.blob.core.windows.net
 ```
 
-**Needed for retrieving OIDC tokens:**
-
-```
-*.actions.githubusercontent.com
-```
-
-In addition, your workflow may require access to other network resources. For example, if your workflow installs packages or publishes containers to {% data variables.product.prodname_dotcom %} Packages, then the runner will also require access to those network endpoints.
-
-如果您对 {% data variables.product.prodname_dotcom %} 组织或企业帐户使用 IP 地址允许列表，必须将自托管运行器的 IP 地址添加到允许列表。 更多信息请参阅“[管理组织允许的 IP 地址](/organizations/keeping-your-organization-secure/managing-allowed-ip-addresses-for-your-organization#using-github-actions-with-an-ip-allow-list)”或“[在企业中实施安全设置策略](/admin/policies/enforcing-policies-for-your-enterprise/enforcing-policies-for-security-settings-in-your-enterprise)”。
+如果您对 {% data variables.product.prodname_dotcom %} 组织或企业帐户使用 IP 地址允许列表，必须将自托管运行器的 IP 地址添加到允许列表。 更多信息请参阅“[管理组织允许的 IP 地址](/organizations/keeping-your-organization-secure/managing-allowed-ip-addresses-for-your-organization#using-github-actions-with-an-ip-allow-list)”或“[在企业帐户中实施安全设置](/github/setting-up-and-managing-your-enterprise/enforcing-security-settings-in-your-enterprise-account#using-github-actions-with-an-ip-allow-list)”。
 
 {% else %}
 
@@ -194,30 +169,6 @@ In addition, your workflow may require access to other network resources. For ex
 {% endif %}
 
 您也可以通过代理服务器使用自托管的运行器。 更多信息请参阅“[将代理服务器与自托管运行器一起使用](/actions/automating-your-workflow-with-github-actions/using-a-proxy-server-with-self-hosted-runners)”。
-
-{% ifversion ghes %}
-
-## 自托管运行器与 {% data variables.product.prodname_dotcom_the_website %} 之间的通信
-
-Self-hosted runners do not need to connect to {% data variables.product.prodname_dotcom_the_website %} unless you have [enabled automatic access to {% data variables.product.prodname_dotcom_the_website %} actions using {% data variables.product.prodname_github_connect %}](/admin/github-actions/managing-access-to-actions-from-githubcom/enabling-automatic-access-to-githubcom-actions-using-github-connect).
-
-If you have enabled automatic access to {% data variables.product.prodname_dotcom_the_website %} actions using {% data variables.product.prodname_github_connect %}, then the self-hosted runner will connect directly to {% data variables.product.prodname_dotcom_the_website %} to download actions.  您必须确保机器具有适当的网络访问权限才可与以下列出的 {% data variables.product.prodname_dotcom %} URL 通信。
-
-{% note %}
-
-**注意：** 下面列出的一些域名使用 `CNAME` 记录。 一些防火墙可能要求您为所有 `CNAME` 记录递归添加规则。 请注意， `CNAME` 记录将来可能会改变，只有下面列出的域名将保持不变。
-
-{% endnote %}
-
-```
-github.com
-api.github.com
-codeload.github.com
-```
-
-{% endif %}
-
-{% ifversion fpt or ghec %}
 
 ## 使用公共仓库的自托管运行器安全性
 
@@ -231,5 +182,3 @@ codeload.github.com
 * 逃避机器的运行器沙盒。
 * 显示对机器网络环境的访问权限。
 * 在机器上保持不需要或危险的数据。
-
-{% endif %}

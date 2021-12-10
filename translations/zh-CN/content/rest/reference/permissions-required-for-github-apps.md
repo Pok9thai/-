@@ -7,7 +7,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - API
 miniTocMaxHeadingLevel: 3
@@ -16,7 +15,7 @@ shortTitle: GitHub 应用程序权限
 
 ### 关于 {% data variables.product.prodname_github_app %} 权限
 
-{% data variables.product.prodname_github_apps %} 是用一组权限创建的。 权限定义了 {% data variables.product.prodname_github_app %} 可以通过 API 访问哪些资源。 更多信息请参阅“[设置 GitHub 的权限](/apps/building-github-apps/setting-permissions-for-github-apps/)”。
+{% data variables.product.prodname_github_apps %} are created with a set of permissions. 权限定义了 {% data variables.product.prodname_github_app %} 可以通过 API 访问哪些资源。 更多信息请参阅“[设置 GitHub 的权限](/apps/building-github-apps/setting-permissions-for-github-apps/)”。
 
 ### 元数据权限
 
@@ -113,7 +112,7 @@ _搜索_
 - [`GET /search/topics`](/rest/reference/search#search-topics)
 - [`GET /search/users`](/rest/reference/search#search-users)
 
-{% ifversion fpt or ghes or ghec %}
+{% ifversion fpt or ghes %}
 ### 有关“操作”的权限
 
 - [`GET /repos/:owner/:repo/actions/artifacts`](/rest/reference/actions#list-artifacts-for-a-repository) (:read)
@@ -143,11 +142,11 @@ _搜索_
 - [`POST /orgs/:org/repos`](/rest/reference/repos#create-an-organization-repository) (:write)
 - [`PATCH /repos/:owner/:repo`](/rest/reference/repos#update-a-repository) (:write)
 - [`DELETE /repos/:owner/:repo`](/rest/reference/repos#delete-a-repository) (:write)
+{% ifversion fpt -%}
 - [`GET /repos/:owner/:repo/actions/runners/downloads`](/rest/reference/actions#list-runner-applications-for-a-repository) (:read)
 - [`GET /repos/:owner/:repo/actions/runners`](/rest/reference/actions#list-self-hosted-runners-for-a-repository) (:read)
 - [`GET /repos/:owner/:repo/actions/runners/:runner_id`](/rest/reference/actions#get-a-self-hosted-runner-for-a-repository) (:read)
 - [`DELETE /repos/:owner/:repo/actions/runners/:runner_id`](/rest/reference/actions#delete-a-self-hosted-runner-from-a-repository) (:write)
-{% ifversion fpt or ghes -%}
 - [`POST /repos/:owner/:repo/actions/runners/registration-token`](/rest/reference/actions#create-a-registration-token-for-a-repository) (:write)
 - [`POST /repos/:owner/:repo/actions/runners/remove-token`](/rest/reference/actions#create-a-remove-token-for-a-repository) (:write)
 {% endif -%}
@@ -238,7 +237,7 @@ _团队_
 - [`PUT /teams/:team_id/repos/:owner/:repo`](/rest/reference/teams#add-or-update-team-repository-permissions) (:write)
 - [`DELETE /teams/:team_id/repos/:owner/:repo`](/rest/reference/teams#remove-a-repository-from-a-team) (:write)
 
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 _流量_
 - [`GET /repos/:owner/:repo/traffic/clones`](/rest/reference/repos#get-repository-clones) (:read)
 - [`GET /repos/:owner/:repo/traffic/popular/paths`](/rest/reference/repos#get-top-referral-paths) (:read)
@@ -246,7 +245,7 @@ _流量_
 - [`GET /repos/:owner/:repo/traffic/views`](/rest/reference/repos#get-page-views) (:read)
 {% endif %}
 
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 ### 有关“阻止”的权限
 
 - [`GET /user/blocks`](/rest/reference/users#list-users-blocked-by-the-authenticated-user) (:read)
@@ -387,7 +386,7 @@ _Git_
 - [`POST /repos/:owner/:repo/git/trees`](/rest/reference/git#create-a-tree) (:write)
 - [`GET /repos/:owner/:repo/git/trees/:sha`](/rest/reference/git#get-a-tree) (:read)
 
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 _导入_
 - [`GET /repos/:owner/:repo/import`](/rest/reference/migrations#get-an-import-status) (:read)
 - [`PUT /repos/:owner/:repo/import`](/rest/reference/migrations#start-an-import) (:write)
@@ -440,7 +439,7 @@ _版本发布_
 - [`POST /repos/:owner/:repo/deployments/:deployment_id/statuses`](/rest/reference/repos#create-a-deployment-status) (:write)
 - [`GET /repos/:owner/:repo/deployments/:deployment_id/statuses/:status_id`](/rest/reference/repos#get-a-deployment-status) (:read)
 
-{% ifversion fpt or ghes or ghec %}
+{% ifversion fpt or ghes %}
 ### 有关“电子邮件”的权限
 
 {% ifversion fpt -%}
@@ -467,7 +466,7 @@ _版本发布_
 - [`GET /user/gpg_keys/:gpg_key_id`](/rest/reference/users#get-a-gpg-key-for-the-authenticated-user) (:read)
 - [`DELETE /user/gpg_keys/:gpg_key_id`](/rest/reference/users#delete-a-gpg-key-for-the-authenticated-user) (:write)
 
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 ### “交互限制”的权限
 
 - [`GET /user/interaction-limits`](/rest/reference/interactions#get-interaction-restrictions-for-your-public-repositories) (:read)
@@ -586,7 +585,7 @@ _键_
 - [`DELETE /scim/v2/orgs/:org/Users/:external_identity_guid`](/rest/reference/scim#delete-a-scim-user-from-an-organization) (:write)
 {% endif %}
 
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 _邀请_
 - [`GET /orgs/:org/invitations`](/rest/reference/orgs#list-pending-organization-invitations) (:read)
 - [`POST /orgs/:org/invitations`](/rest/reference/orgs#create-an-organization-invitation) (:write)
@@ -687,7 +686,7 @@ _团队_
 - [`DELETE /projects/columns/cards/:card_id`](/rest/reference/projects#delete-a-project-card) (:write)
 - [`POST /projects/columns/cards/:card_id/moves`](/rest/reference/projects#move-a-project-card) (:write)
 
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 ### 有关"组织用户阻止"的权限
 
 - [`GET /orgs/:org/blocks`](/rest/reference/orgs#list-users-blocked-by-an-organization) (:read)
@@ -848,7 +847,7 @@ _审查_
 _团队_
 - [`DELETE /teams/:team_id/projects/:project_id`](/rest/reference/teams#remove-a-project-from-a-team) (:read)
 
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 ### 有关“密钥”的权限
 
 - [`GET /repos/:owner/:repo/actions/secrets/public-key`](/rest/reference/actions#get-a-repository-public-key) (:read)
@@ -867,7 +866,7 @@ _团队_
 - [`DELETE /orgs/:org/actions/secrets/:secret_name`](/rest/reference/actions#delete-an-organization-secret) (:write)
 {% endif %}
 
-{% ifversion fpt or ghes > 3.0 or ghec %}
+{% ifversion fpt or ghes > 3.0 %}
 ### 对于“密码扫描警报”的权限
 
 - [`GET /repos/:owner/:repo/secret-scanning/alerts`](/rest/reference/secret-scanning#list-secret-scanning-alerts-for-a-repository) (:read)
@@ -895,7 +894,7 @@ _团队_
 - [`GET /repos/:owner/:repo/code-scanning/sarifs/:sarif_id`](/rest/reference/code-scanning#get-information-about-a-sarif-upload) (:read)
 {% endif -%}
 
-{% ifversion fpt or ghes or ghec %}
+{% ifversion fpt %}
 ### 有关“自托管运行器”的权限
 - [`GET /orgs/:org/actions/runners/downloads`](/rest/reference/actions#list-runner-applications-for-an-organization) (:read)
 - [`POST /orgs/:org/actions/runners/registration-token`](/rest/reference/actions#create-a-registration-token-for-an-organization) (:write)

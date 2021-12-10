@@ -7,7 +7,6 @@ redirect_from:
   - /github/getting-started-with-github/using-github/troubleshooting-connectivity-problems
 versions:
   fpt: '*'
-  ghec: '*'
 shortTitle: Connectivity problems
 ---
 

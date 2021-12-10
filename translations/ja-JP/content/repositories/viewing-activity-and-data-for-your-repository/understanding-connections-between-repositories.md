@@ -1,7 +1,6 @@
 ---
 title: リポジトリ間の接続を理解する
 intro: You can better understand the connections that exist between repositories by viewing a repository's network and forks and the projects that depend on the repository.
-product: '{% data reusables.gated-features.repository-insights %}'
 redirect_from:
   - /articles/viewing-a-repository-s-network
   - /articles/viewing-a-repositorys-network
@@ -18,7 +17,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - Repositories
 shortTitle: Connections between repositories
@@ -26,7 +24,7 @@ shortTitle: Connections between repositories
 
 ## リポジトリのネットワークを表示する
 
-ネットワークグラフには、ルートリポジトリのブランチとネットワークに固有のコミットを含むフォークのブランチを含む、リポジトリネットワーク全体のブランチ履歴が表示されます。
+'The network graph displays the branch history of the entire repository network, including branches of the root repository and branches of forks that contain commits unique to the network.' product: '{% data reusables.gated-features.repository-insights %}'
 
 ![リポジトリネットワークグラフ](/assets/images/help/graphs/repo_network_graph.png)
 
@@ -48,7 +46,7 @@ shortTitle: Connections between repositories
 
 フォークは、リポジトリをフォークしたユーザの名前のアルファベット順に表示されます。 ユーザ名をクリックして、そのユーザの {% data variables.product.product_name %} プロフィール ページにリダイレクトすることも、フォーク名をクリックして、リポジトリの特定のフォークにリダイレクトすることもできます。
 
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 
 ![リポジトリ メンバーグラフ](/assets/images/help/graphs/repo_forks_graph_dotcom.png)
 
@@ -64,7 +62,7 @@ shortTitle: Connections between repositories
 {% data reusables.repositories.accessing-repository-graphs %}
 3. 左サイトバーで [**Forks**] をクリックします。 ![[Forks] タブ](/assets/images/help/graphs/graphs-sidebar-forks-tab.png)
 
-{% ifversion fpt or ghes or ghae-issue-4864 or ghec %}
+{% ifversion fpt or ghes > 2.22 %}
 ## リポジトリの依存関係を表示する
 
 依存関係グラフを使用して、リポジトリが依存するコードを調べることができます。

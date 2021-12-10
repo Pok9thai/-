@@ -4,7 +4,6 @@ intro: A divulgação das vulnerabilidades é um esforço coordenado entre os re
 miniTocMaxHeadingLevel: 3
 versions:
   fpt: '*'
-  ghec: '*'
 type: overview
 topics:
   - Security advisories

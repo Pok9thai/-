@@ -5,7 +5,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 children:
   - /about-github-hosted-runners
   - /customizing-github-hosted-runners
@@ -18,7 +17,5 @@ children:
 shortTitle: 使用 GitHub 托管的运行器
 ---
 
-{% data reusables.actions.ae-hosted-runners-beta %}
 {% data reusables.actions.enterprise-beta %}
 {% data reusables.actions.enterprise-github-hosted-runners %}
-{% data reusables.actions.ae-beta %}

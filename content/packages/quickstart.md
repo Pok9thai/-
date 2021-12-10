@@ -6,12 +6,10 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 shortTitle: Quickstart
 ---
 
 {% data reusables.actions.enterprise-github-hosted-runners %}
-{% data reusables.actions.ae-beta %}
 
 ## Introduction
 
@@ -71,7 +69,7 @@ In this guide, you'll create a {% data variables.product.prodname_actions %} wor
 
       publish-gpr:
         needs: build
-        runs-on: ubuntu-latest{% ifversion fpt or ghes > 3.1 or ghae-next or ghec %}
+        runs-on: ubuntu-latest{% ifversion fpt or ghes > 3.1 or ghae-next %}
         permissions:
           packages: write
           contents: read{% endif %}

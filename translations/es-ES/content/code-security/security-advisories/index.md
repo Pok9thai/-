@@ -7,7 +7,6 @@ redirect_from:
   - /github/managing-security-vulnerabilities/managing-security-vulnerabilities-in-your-project
 versions:
   fpt: '*'
-  ghec: '*'
 topics:
   - Security advisories
   - Vulnerabilities

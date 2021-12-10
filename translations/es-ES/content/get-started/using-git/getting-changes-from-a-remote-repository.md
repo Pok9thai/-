@@ -11,7 +11,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 shortTitle: Obtener cambios desde un remoto
 ---
 
@@ -78,5 +77,5 @@ Como `pull` realiza una fusión en los cambios recuperados, debes asegurarte de 
 
 ## Leer más
 
-- "[Trabajar con remotos" desde el libro _Pro Git_](https://git-scm.com/book/en/Git-Basics-Working-with-Remotes){% ifversion fpt or ghec %}
+- "[Trabajar con remotos" desde el libro _Pro Git_](https://git-scm.com/book/en/Git-Basics-Working-with-Remotes){% ifversion fpt %}
 - "[Solucionar problemas de conectividad ](/articles/troubleshooting-connectivity-problems)"{% endif %}

@@ -8,7 +8,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 intro: This Git cheat sheet is a time saver when you forget a command or don't want to use help in the CLI.
 ---
 

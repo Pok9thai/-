@@ -6,7 +6,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 redirect_from:
   - /actions/automating-your-workflow-with-github-actions/using-databases-and-services
   - /actions/configuring-and-managing-workflows/using-databases-and-service-containers
@@ -17,4 +16,3 @@ children:
   - /creating-redis-service-containers
 ---
 
-{% data reusables.actions.ae-beta %}

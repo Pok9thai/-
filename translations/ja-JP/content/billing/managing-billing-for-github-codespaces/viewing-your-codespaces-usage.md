@@ -6,7 +6,6 @@ permissions: 'To manage billing for Codespaces for an organization, you must be 
 product: '{% data reusables.gated-features.codespaces %}'
 versions:
   fpt: '*'
-  ghec: '*'
 type: overview
 topics:
   - Codespaces

@@ -7,7 +7,6 @@ redirect_from:
   - /code-security/supply-chain-security/customizing-dependency-updates
 versions:
   fpt: '*'
-  ghec: '*'
 type: how_to
 topics:
   - Dependabot

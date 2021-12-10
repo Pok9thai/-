@@ -6,7 +6,6 @@ redirect_from:
   - /v4
 versions:
   fpt: '*'
-  ghec: '*'
   ghes: '*'
   ghae: '*'
 children:

@@ -7,14 +7,13 @@ redirect_from:
   - /github/setting-up-and-managing-organizations-and-teams/viewing-insights-for-your-organization
 versions:
   fpt: '*'
-  ghec: '*'
 topics:
   - Organizations
   - Teams
 shortTitle: Visualizar ideias da organização
 ---
 
-Todos os integrantes de uma organização podem exibir informações da organização. For more information, see "[Roles in an organization](/organizations/managing-peoples-access-to-your-organization-with-roles/roles-in-an-organization)."
+Todos os integrantes de uma organização podem exibir informações da organização. Para obter mais informações, consulte "[Níveis de permissão para uma organização](/articles/permission-levels-for-an-organization)".
 
 Você pode usar informações de atividade da organização para entender melhor como os integrantes da sua organização estão usando o {% data variables.product.product_name %} para colaborar e trabalhar no código. As informações de dependência podem ajudar você a monitorar, reportar e agir de acordo com o uso de código aberto da organização.
 
@@ -38,7 +37,7 @@ Com as informações de atividade da organização, é possível exibir visualiz
 
 {% note %}
 
-**Observação:** Certifique-se que você habilitou o [Gráfico de dependências](/code-security/supply-chain-security/understanding-your-software-supply-chain/about-the-dependency-graph#enabling-the-dependency-graph).
+**Note:** Please make sure you have enabled the [Dependency Graph](/code-security/supply-chain-security/understanding-your-software-supply-chain/about-the-dependency-graph#enabling-the-dependency-graph).
 
 {% endnote %}
 
@@ -55,5 +54,5 @@ Com as informações de dependência, é possível visualizar vulnerabilidades, 
 ## Leia mais
  - "[Sobre organizações](/organizations/collaborating-with-groups-in-organizations/about-organizations)"
  - "[Explorar as dependências de um repositório](/github/visualizing-repository-data-with-graphs/exploring-the-dependencies-of-a-repository)"
- - "[Changing the visibility of your organization's dependency insights](/organizations/managing-organization-settings/changing-the-visibility-of-your-organizations-dependency-insights)"{% ifversion ghec %}
-- "[Enforcing policies for dependency insights in your enterprise](/admin/policies/enforcing-policies-for-your-enterprise/enforcing-policies-for-dependency-insights-in-your-enterprise)"{% endif %}
+ - "[Alterar a visibilidade das informações de dependência da organização](/organizations/managing-organization-settings/changing-the-visibility-of-your-organizations-dependency-insights)"
+ - "[Aplicar uma política nas informações de dependência de sua conta corporativa](/github/setting-up-and-managing-your-enterprise/enforcing-a-policy-on-dependency-insights-in-your-enterprise-account)".

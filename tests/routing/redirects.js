@@ -24,7 +24,7 @@ describe('redirects', () => {
   test('page.redirects is an array', async () => {
     const page = await Page.init({
       relativePath:
-        'pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-branches.md',
+        'github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-branches.md',
       basePath: path.join(__dirname, '../../content'),
       languageCode: 'en',
     })
@@ -80,15 +80,6 @@ describe('redirects', () => {
       expect(res.headers.location).toBe(expected)
     })
 
-    test('have faq= not converted to query=', async () => {
-      // Don't confuse `?faq=` for `?q=` just because they both start with `q=`
-      // Docs internal #21945
-      const res = await get('/en/enterprise/admin?faq=pulls')
-      expect(res.statusCode).toBe(301)
-      const expected = `/en/enterprise-server@${enterpriseServerReleases.latest}/admin?faq=pulls`
-      expect(res.headers.location).toBe(expected)
-    })
-
     test('work with redirected search paths', async () => {
       const res = await get('/en/enterprise/admin/search?utf8=%E2%9C%93&query=pulls')
       expect(res.statusCode).toBe(301)
@@ -131,16 +122,14 @@ describe('redirects', () => {
   describe('home page redirects', () => {
     test('homepage redirects to english by default', async () => {
       const res = await get('/')
-      expect(res.statusCode).toBe(302)
+      expect(res.statusCode).toBe(301)
       expect(res.headers.location).toBe('/en')
-      expect(res.headers['cache-control']).toBe('private, no-store')
     })
 
     test('homepage redirects to preferred language', async () => {
       const res = await get('/', { headers: { 'Accept-Language': 'ja' } })
-      expect(res.statusCode).toBe(302)
+      expect(res.statusCode).toBe(301)
       expect(res.headers.location).toBe('/ja')
-      expect(res.headers['cache-control']).toBe('private, no-store')
     })
   })
 

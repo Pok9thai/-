@@ -10,7 +10,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - Pull requests
 ---
@@ -21,7 +20,7 @@ topics:
 
 If you decide to enable issues again in the future, any issues that were previously added will be available.
 
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 
 {% tip %}
 

@@ -9,7 +9,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - Pull requests
 shortTitle: Filtrar por marco
@@ -32,5 +31,5 @@ shortTitle: Filtrar por marco
 
 ## Leia mais
 
-- "[Filtrando e pesquisando problemas e pull requests](/issues/tracking-your-work-with-issues/filtering-and-searching-issues-and-pull-requests)"
+- "[Filtering and searching issues and pull requests](/issues/tracking-your-work-with-issues/filtering-and-searching-issues-and-pull-requests)"
 - "[Filtrar cartões em um quadro de projeto](/articles/filtering-cards-on-a-project-board)"

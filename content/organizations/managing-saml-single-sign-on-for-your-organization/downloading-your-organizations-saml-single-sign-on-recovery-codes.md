@@ -8,7 +8,6 @@ redirect_from:
 product: '{% data reusables.gated-features.saml-sso %}'
 versions:
   fpt: '*'
-  ghec: '*'
 topics:
   - Organizations
   - Teams

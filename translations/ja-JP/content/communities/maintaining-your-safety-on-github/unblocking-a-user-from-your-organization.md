@@ -6,7 +6,6 @@ redirect_from:
   - /github/building-a-strong-community/unblocking-a-user-from-your-organization
 versions:
   fpt: '*'
-  ghec: '*'
 topics:
   - Community
 shortTitle: Organization からのブロックの解除

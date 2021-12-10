@@ -4,8 +4,7 @@ intro: 'Ejemplos de cómo puedes utilizar las {% data variables.product.prodname
 permissions: 'People with write permissions to a repository can configure {% data variables.product.prodname_actions %} to respond to {% data variables.product.prodname_dependabot %}-created pull requests.'
 miniTocMaxHeadingLevel: 3
 versions:
-  fpt: '*'
-  ghec: '*'
+  free-pro-team: '*'
 type: how_to
 topics:
   - Actions
@@ -15,7 +14,7 @@ topics:
   - Repositories
   - Dependencies
   - Pull requests
-shortTitle: Utiliza el Dependabot con las acciones
+shortTitle: Use Dependabot with actions
 ---
 
 ## Acerca del {% data variables.product.prodname_dependabot %} y de las {% data variables.product.prodname_actions %}

@@ -9,7 +9,6 @@ redirect_from:
   - /enterprise/admin/clustering
   - /enterprise/admin/user-management
 versions:
-  ghec: '*'
   ghes: '*'
   ghae: '*'
 topics:

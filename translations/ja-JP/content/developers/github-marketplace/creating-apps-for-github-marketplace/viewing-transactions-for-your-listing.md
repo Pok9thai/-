@@ -6,7 +6,6 @@ redirect_from:
   - /developers/github-marketplace/viewing-transactions-for-your-listing
 versions:
   fpt: '*'
-  ghec: '*'
 topics:
   - Marketplace
 shortTitle: リストの取引の表示

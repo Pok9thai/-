@@ -9,7 +9,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - Identity
   - Access management
@@ -22,6 +21,6 @@ shortTitle: Review OAuth apps
 {% data reusables.user_settings.review-oauth-apps %}
 
 ## 参考リンク
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 - "[インテグレーションについて](/articles/about-integrations)"{% endif %}
 - 「[許可されたインテグレーションをレビューする](/articles/reviewing-your-authorized-integrations)」

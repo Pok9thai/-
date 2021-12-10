@@ -1,5 +1,5 @@
 import { getDOM } from '../helpers/supertest.js'
-import { oldestSupported } from '../../lib/enterprise-server-releases.js'
+import { oldestSupported, latest } from '../../lib/enterprise-server-releases.js'
 import { jest } from '@jest/globals'
 
 describe('header', () => {
@@ -54,8 +54,7 @@ describe('header', () => {
   })
 
   describe('notices', () => {
-    // Docs engineering issue: 1055
-    test.skip('displays a "localization in progress" notice for WIP languages', async () => {
+    test('displays a "localization in progress" notice for WIP languages', async () => {
       const $ = await getDOM('/de')
       expect($('[data-testid=header-notification][data-type=TRANSLATION]').length).toBe(1)
       expect($('[data-testid=header-notification] a[href="/en"]').length).toBe(1)
@@ -68,7 +67,6 @@ describe('header', () => {
       expect($('[data-testid=header-notification] a[href*="github.com/contact"]').length).toBe(1)
     })
 
-    // Docs Engineering issue: 966
     test.skip('does not display any notices for English', async () => {
       const $ = await getDOM('/en')
       expect($('[data-testid=header-notification]').length).toBe(0)
@@ -142,24 +140,29 @@ describe('header', () => {
       const $ = await getDOM(
         '/en/github/importing-your-projects-to-github/importing-source-code-to-github/about-github-importer'
       )
-      const github = $('[data-testid=product-picker][data-current-product-path="/github"] summary')
+      const github = $('[data-testid=current-product][data-current-product-path="/github"]')
       expect(github.length).toBe(1)
       expect(github.text().trim()).toBe('GitHub')
 
-      const ghec = $(`[data-testid=product-picker] a[href="/en/enterprise-cloud@latest/admin"]`)
-      expect(ghec.length).toBe(1)
-      expect(ghec.text().trim()).toBe('Enterprise administrators')
+      const ghe = $(
+        `[data-testid=product-picker-list] a[href="/en/enterprise-server@${latest}/admin"]`
+      )
+      expect(ghe.length).toBe(1)
+      expect(ghe.text().trim()).toBe('Enterprise administrators')
     })
 
-    // Skipped. Docs Engineering issue: 923
+    // Skipped. See issues/923
     test.skip("point to homepages in the current page's language", async () => {
       const $ = await getDOM(
         '/ja/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests'
       )
       expect(
-        $('[data-testid=product-picker][data-current-product-path="/repositories"]').length
+        $('[data-testid=current-product][data-current-product-path="/repositories"]').length
       ).toBe(1)
-      expect($(`[data-testid=product-picker] a[href="/ja/enterprise-cloud/admin"]`).length).toBe(1)
+      expect(
+        $(`[data-testid=product-picker-list] a[href="/ja/enterprise-server@${latest}/admin"]`)
+          .length
+      ).toBe(1)
     })
 
     test('emphasizes the product that corresponds to the current page', async () => {
@@ -167,7 +170,7 @@ describe('header', () => {
         `/en/enterprise-server@${oldestSupported}/github/importing-your-projects-to-github/importing-source-code-to-github/importing-a-git-repository-using-the-command-line`
       )
 
-      expect($('[data-testid=product-picker] summary').text()).toBe('GitHub')
+      expect($('[data-testid=current-product]').text()).toBe('GitHub')
     })
   })
 })

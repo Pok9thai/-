@@ -2,7 +2,7 @@
 title: GitHub Actions の High Availability
 intro: 'High Availability 設定で {% data variables.product.prodname_actions %} を管理するための特別な留意点がいくつかあります。'
 versions:
-  ghes: '*'
+  ghes: '>=3.0'
 type: reference
 topics:
   - Actions

@@ -8,7 +8,6 @@ redirect_from:
 versions:
   fpt: '*'
   ghes: '*'
-  ghec: '*'
 topics:
   - Organizations
   - Teams
@@ -21,7 +20,7 @@ Equipes de administradores legadas são equipes que foram criadas com o nível d
 
 Você pode remover essa capacidade migrando suas equipes de administradores legadas para as permissões de organização aprimoradas.
 
-For more information, see "[Repository roles for an organization](/organizations/managing-access-to-your-organizations-repositories/repository-roles-for-an-organization)."
+Para obter mais informações, consulte "[Níveis de permissão do repositório para organizações](/articles/repository-permission-levels-for-an-organization)".
 
 {% warning %}
 

@@ -8,13 +8,12 @@ redirect_from:
 versions:
   fpt: '*'
   ghes: '*'
-  ghec: '*'
 topics:
   - Accounts
   - Notifications
 shortTitle: Add an email address
 ---
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 
 {% note %}
 

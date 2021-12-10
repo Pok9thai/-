@@ -7,12 +7,8 @@ redirect_from:
   - /admin/installation/installing-github-enterprise-server-on-google-cloud-platform
 versions:
   ghes: '*'
-type: tutorial
 topics:
-  - Administrator
   - Enterprise
-  - Infrastructure
-  - Set up
 shortTitle: 在 GCP 上安装
 ---
 
@@ -98,5 +94,5 @@ GCE 虚拟机作为具有防火墙的网络的成员创建。 对于与 {% data 
 
 ## 延伸阅读
 
-- "[系统概述](/enterprise/admin/guides/installation/system-overview)"{% ifversion ghes %}
+- "[系统概述](/enterprise/admin/guides/installation/system-overview)"{% ifversion ghes > 2.22 %}
 - "[关于升级到新版本](/admin/overview/about-upgrades-to-new-releases)"{% endif %}

@@ -6,7 +6,6 @@ versions:
 shortTitle: Use AE hosted runners
 ---
 
-{% data reusables.actions.ae-hosted-runners-beta %}
 {% data reusables.actions.ae-beta %}
 
 ## Using {% data variables.actions.hosted_runner %}s in a workflow
