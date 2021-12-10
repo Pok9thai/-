@@ -4,7 +4,6 @@ intro: '您可以使用 {% data variables.product.prodname_github_codespaces %} 
 product: '{% data reusables.gated-features.codespaces %}'
 versions:
   fpt: '*'
-  ghec: '*'
 topics:
   - Codespaces
 redirect_from:

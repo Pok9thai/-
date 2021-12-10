@@ -6,7 +6,6 @@ redirect_from:
   - /code-security/supply-chain-security/listing-dependencies-configured-for-version-updates
 versions:
   fpt: '*'
-  ghec: '*'
 type: how_to
 topics:
   - Repositories

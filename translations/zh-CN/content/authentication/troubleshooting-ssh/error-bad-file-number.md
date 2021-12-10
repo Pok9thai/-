@@ -9,7 +9,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - SSH
 ---
@@ -44,7 +43,7 @@ $ git clone https://{% data variables.command_line.codeblock %}/<em>username</em
 
 如果您将计算机连接至五防火墙的其他网络，可尝试测试到 {% data variables.product.product_name %} 的 SSH 连接。 如果一切正常，请与网络管理员联系，获取有关更改防火墙设置的帮助，以使到 {% data variables.product.product_name %} 的 SSH 连接成功。
 
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 
 ### 在 HTTPS 端口使用 SSH
 
@@ -52,7 +51,7 @@ $ git clone https://{% data variables.command_line.codeblock %}/<em>username</em
 
 {% endif %}
 
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 
 ## 延伸阅读
 

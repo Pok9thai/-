@@ -2,7 +2,7 @@
 title: Usar um ambiente de preparo
 intro: 'Aprenda a usar {% data variables.product.prodname_actions %} com ambientes de preparo de {% data variables.product.prodname_ghe_server %}.'
 versions:
-  ghes: '*'
+  ghes: '>=3.0'
 type: how_to
 topics:
   - Actions

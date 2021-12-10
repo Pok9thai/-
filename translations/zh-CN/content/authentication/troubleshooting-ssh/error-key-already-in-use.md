@@ -9,7 +9,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - SSH
 ---
@@ -25,10 +24,10 @@ $ ssh -T -ai <em>~/.ssh/id_rsa</em> git@{% data variables.command_line.codeblock
 > provide shell access.
 ```
 
-The *username* in the response is the account on {% ifversion ghae %}{% data variables.product.product_name %}{% else %}{% data variables.product.product_location %}{% endif %} that the key is currently attached to. 如果响应类似于 "username/repo"，则表示密钥已作为[*部署密钥*](/guides/managing-deploy-keys#deploy-keys)附加到仓库。
+响应中的 *username* 是密钥当前附加到的 {% data variables.product.product_name %} 帐户。 如果响应类似于 "username/repo"，则表示密钥已作为[*部署密钥*](/guides/managing-deploy-keys#deploy-keys)附加到仓库。
 
 
-要强制 SSH 仅使用命令行上提供的密钥，请使用 `-o` 添加 `IdentiesOnly=yes` 选项：
+To force SSH to use only the key provided on the command line, use `-o` to add the `IdentitiesOnly=yes` option:
 
 ```shell
 $ ssh -v -o "IdentitiesOnly=yes" -i <em>~/.ssh/id_rsa</em> git@{% data variables.command_line.codeblock %}

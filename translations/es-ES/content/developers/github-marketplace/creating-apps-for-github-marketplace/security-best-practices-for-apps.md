@@ -9,7 +9,6 @@ redirect_from:
 shortTitle: Mejores prácticas de seguridad
 versions:
   fpt: '*'
-  ghec: '*'
 topics:
   - Marketplace
 ---

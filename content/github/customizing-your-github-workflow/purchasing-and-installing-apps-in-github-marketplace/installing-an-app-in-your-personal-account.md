@@ -6,7 +6,6 @@ redirect_from:
   - /github/customizing-your-github-workflow/installing-an-app-in-your-personal-account
 versions:
   fpt: '*'
-  ghec: '*'
 shortTitle: Install app user account
 ---
 {% data reusables.marketplace.marketplace-apps-only %}

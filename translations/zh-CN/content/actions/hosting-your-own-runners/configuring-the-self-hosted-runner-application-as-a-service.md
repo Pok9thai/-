@@ -7,7 +7,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 type: tutorial
 defaultPlatform: linux
 shortTitle: 启动时运行运行器应用程序

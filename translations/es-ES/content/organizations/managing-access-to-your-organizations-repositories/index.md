@@ -10,12 +10,11 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - Organizations
   - Teams
 children:
-  - /repository-roles-for-an-organization
+  - /repository-permission-levels-for-an-organization
   - /setting-base-permissions-for-an-organization
   - /viewing-people-with-access-to-your-repository
   - /managing-an-individuals-access-to-an-organization-repository

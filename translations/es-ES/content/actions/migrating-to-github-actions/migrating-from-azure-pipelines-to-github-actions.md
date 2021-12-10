@@ -8,7 +8,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 type: tutorial
 topics:
   - Azure Pipelines
@@ -205,7 +204,7 @@ jobs:
 </tr>
 </table>
 
-Para obtener más información, consulta la sección "[Expresiones](/actions/learn-github-actions/expressions)".
+For more information, see "[Expressions](/actions/learn-github-actions/expressions)."
 
 ## Dependencias entre jobs
 

@@ -1,6 +1,6 @@
 1. Organization 名の下で、クリックします
 {% octicon "people" aria-label="The people icon" %} **Teams**.
-  {% ifversion fpt or ghes > 3.2 or ghec %}
+  {% ifversion fpt or ghes > 3.2 %}
   ![Teamsタブ](/assets/images/help/organizations/organization-teams-tab-with-overview.png)
   {% else %}
   ![Teamsタブ](/assets/images/help/organizations/organization-teams-tab.png)

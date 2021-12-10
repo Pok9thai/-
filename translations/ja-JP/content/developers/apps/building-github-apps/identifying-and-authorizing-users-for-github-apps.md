@@ -10,7 +10,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - GitHub Apps
 shortTitle: ユーザの特定と認可
@@ -26,7 +25,7 @@ GitHub App がユーザの代わりに動作すると、ユーザからサーバ
 
 ブラウザで動作する標準的なアプリケーションでユーザを認可するには、[Web アプリケーションフロー](#web-application-flow)を利用してください。
 
-{% ifversion fpt or ghae or ghes > 3.0 or ghec %}
+{% ifversion fpt or ghae or ghes > 3.0 %}
 
 CLI ツールや Git 認証情報マネージャーなどの、ブラウザに直接アクセスしないヘッドレスアプリケーションでユーザを認可するには、[デバイスフロー](#device-flow)を利用します。 デバイスフローは、OAuth 2.0 [Device Authorization Grant](https://tools.ietf.org/html/rfc8628) を利用します。
 
@@ -43,7 +42,6 @@ Web アプリケーションフローを利用して、サイト上のユーザ�
 アプリケーションを作成または変更する際に [**Request user authorization (OAuth) during installation**] を選択した場合、アプリケーションのインストール中にステップ 1 が完了します。 詳しい情報については、「[インストール中のユーザの認可](/apps/installing-github-apps/#authorizing-users-during-installation)」を参照してください。
 
 ### 1. ユーザのGitHubアイデンティティのリクエスト
-ブラウザで次のURLに移動するようユーザに指示します。
 
     GET {% data variables.product.oauth_host_code %}/login/oauth/authorize
 
@@ -51,13 +49,13 @@ GitHub Appが`login`パラメータを指定すると、ユーザに対して利
 
 #### パラメータ
 
-| 名前             | 種類       | 説明                                                                                                                                                                                                                                           |
-| -------------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `client_id`    | `string` | **必須。**GitHub App のクライアント IDです。 アプリケーションを選択したときに、[GitHub App 設定](https://github.com/settings/apps)に表示されます。 **注釈:** アプリケーション ID とクライアント ID は同一ではなく、お互いを置き換えることはできません。                                                                         |
-| `redirect_uri` | `string` | 認可の後にユーザが送られるアプリケーション中のURL。 これは、GitHub App をセットアップする際に{% ifversion fpt or ghes > 3.0 or ghec %}**コールバック URL** として指定された URL の １つ{% else %}[**User authorization callback URL**] フィールドで指定された URL {% endif %}と一致させる必要があり、他の追加パラメータを含めることはできません。 |
-| `state`        | `string` | これはフォージェリアタックを防ぐためにランダムな文字列を含める必要があり、あらゆる任意のデータを含めることができます。                                                                                                                                                                                  |
-| `login`        | `string` | サインインとアプリケーションの認可に使われるアカウントを指示します。                                                                                                                                                                                                           |
-| `allow_signup` | `string` | OAuthフローの間に、認証されていないユーザに対して{% data variables.product.prodname_dotcom %}へのサインアップの選択肢が提示されるかどうか。 デフォルトは `true` です。 ポリシーでサインアップが禁止されている場合は`false`を使ってください。                                                                                      |
+| 名前             | 種類       | 説明                                                                                                                                                                                                                                   |
+| -------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `client_id`    | `string` | **必須。**GitHub App のクライアント IDです。 アプリケーションを選択したときに、[GitHub App 設定](https://github.com/settings/apps)に表示されます。 **注釈:** アプリケーション ID とクライアント ID は同一ではなく、お互いを置き換えることはできません。                                                                 |
+| `redirect_uri` | `string` | 認可の後にユーザが送られるアプリケーション中のURL。 これは、GitHub App をセットアップする際に{% ifversion fpt or ghes > 3.0 %}**コールバック URL** として指定された URL の １つ{% else %}[**User authorization callback URL**] フィールドで指定された URL {% endif %}と一致させる必要があり、他の追加パラメータを含めることはできません。 |
+| `state`        | `string` | これはフォージェリアタックを防ぐためにランダムな文字列を含める必要があり、あらゆる任意のデータを含めることができます。                                                                                                                                                                          |
+| `login`        | `string` | サインインとアプリケーションの認可に使われるアカウントを指示します。                                                                                                                                                                                                   |
+| `allow_signup` | `string` | OAuthフローの間に、認証されていないユーザに対して{% data variables.product.prodname_dotcom %}へのサインアップの選択肢が提示されるかどうか。 デフォルトは `true` です。 ポリシーでサインアップが禁止されている場合は`false`を使ってください。                                                                              |
 
 {% note %}
 
@@ -75,23 +73,21 @@ GitHub Appが`login`パラメータを指定すると、ユーザに対して利
 
 {% endnote %}
 
-この `code` をアクセストークンと交換します。  トークンの期限設定が有効になっている場合、アクセストークンは 8 時間で期限切れとなり、リフレッシュトークンは 6 か月で期限切れとなります。 トークンを更新するたびに、新しいリフレッシュトークンを取得します。 詳しい情報については、「[ユーザからサーバーに対するアクセストークンをリフレッシュする](/developers/apps/refreshing-user-to-server-access-tokens)」を参照してください。
+この `code` をアクセストークンと交換します。  When expiring tokens are enabled, the access token expires in 8 hours and the refresh token expires in 6 months. トークンを更新するたびに、新しいリフレッシュトークンを取得します。 詳しい情報については、「[ユーザからサーバーに対するアクセストークンをリフレッシュする](/developers/apps/refreshing-user-to-server-access-tokens)」を参照してください。
 
 ユーザトークンの期限設定は、現在のところオプション機能であり、変更される可能性があります。 ユーザからサーバーに対するトークンの期限設定にオプトインするには、「[アプリケーションのオプション機能を有効化する](/developers/apps/activating-optional-features-for-apps)」を参照してください。
-
-アクセストークンを受け取るため、次のエンドポイントをリクエストします。
 
     POST {% data variables.product.oauth_host_code %}/login/oauth/access_token
 
 #### パラメータ
 
-| 名前              | 種類       | 説明                                                                                                                                                                                                                                           |
-| --------------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `client_id`     | `string` | **必須。**GitHub App のクライアント ID。                                                                                                                                                                                                                |
-| `client_secret` | `string` | **必須。**GitHub App のクライアントシークレット。                                                                                                                                                                                                             |
-| `コード`           | `string` | **必須。** ステップ1でレスポンスとして受け取ったコード。                                                                                                                                                                                                              |
-| `redirect_uri`  | `string` | 認可の後にユーザが送られるアプリケーション中のURL。 これは、GitHub App をセットアップする際に{% ifversion fpt or ghes > 3.0 or ghec %}**コールバック URL** として指定された URL の １つ{% else %}[**User authorization callback URL**] フィールドで指定された URL {% endif %}と一致させる必要があり、他の追加パラメータを含めることはできません。 |
-| `state`         | `string` | ステップ1で提供した推測できないランダムな文字列。                                                                                                                                                                                                                    |
+| 名前              | 種類       | 説明                                                                                                                                                                                                                                   |
+| --------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `client_id`     | `string` | **必須。**GitHub App のクライアント ID。                                                                                                                                                                                                        |
+| `client_secret` | `string` | **必須。**GitHub App のクライアントシークレット。                                                                                                                                                                                                     |
+| `コード`           | `string` | **必須。** ステップ1でレスポンスとして受け取ったコード。                                                                                                                                                                                                      |
+| `redirect_uri`  | `string` | 認可の後にユーザが送られるアプリケーション中のURL。 これは、GitHub App をセットアップする際に{% ifversion fpt or ghes > 3.0 %}**コールバック URL** として指定された URL の １つ{% else %}[**User authorization callback URL**] フィールドで指定された URL {% endif %}と一致させる必要があり、他の追加パラメータを含めることはできません。 |
+| `state`         | `string` | ステップ1で提供した推測できないランダムな文字列。                                                                                                                                                                                                            |
 
 #### レスポンス
 
@@ -99,9 +95,9 @@ GitHub Appが`login`パラメータを指定すると、ユーザに対して利
 
 ```json
 {
-  "access_token": "{% ifversion fpt or ghes > 3.1 or ghae-next or ghec %}ghu_16C7e42F292c6912E7710c838347Ae178B4a{% else %}e72e16c7e42f292c6912e7710c838347ae178b4a{% endif %}",
+  "access_token": "{% ifversion fpt or ghes > 3.1 or ghae-next %}ghu_16C7e42F292c6912E7710c838347Ae178B4a{% else %}e72e16c7e42f292c6912e7710c838347ae178b4a{% endif %}",
   "expires_in": 28800,
-  "refresh_token": "{% ifversion fpt or ghes > 3.1 or ghae-next or ghec %}ghr_1B4a2e77838347a7E420ce178F2E7c6912E169246c34E1ccbF66C46812d16D5B1A9Dc86A1498{% else %}r1.c1b4a2e77838347a7e420ce178f2e7c6912e1692{% endif %}",
+  "refresh_token": "{% ifversion fpt or ghes > 3.1 or ghae-next %}ghr_1B4a2e77838347a7E420ce178F2E7c6912E169246c34E1ccbF66C46812d16D5B1A9Dc86A1498{% else %}r1.c1b4a2e77838347a7e420ce178f2e7c6912e1692{% endif %}",
   "refresh_token_expires_in": 15811200,
   "scope": "",
   "token_type": "bearer"
@@ -121,7 +117,7 @@ GitHub Appが`login`パラメータを指定すると、ユーザに対して利
 curl -H "Authorization: token OAUTH-TOKEN" {% data variables.product.api_url_pre %}/user
 ```
 
-{% ifversion fpt or ghae or ghes > 3.0 or ghec %}
+{% ifversion fpt or ghae or ghes > 3.0 %}
 
 ## デバイスフロー
 
@@ -168,11 +164,11 @@ curl -H "Authorization: token OAUTH-TOKEN" {% data variables.product.api_url_pre
 
 ## ユーザからサーバーへのリクエスト
 
-While most of your API インタラクションのほとんどは、サーバーからサーバーへのインストールアクセストークンを用いて行われますが、一部のエンドポイントでは、ユーザアクセストークンを使用し、API 経由でアクションを実行できます。 [GraphQL v4]({% ifversion ghec %}/free-pro-team@latest{% endif %}/graphql) または [REST v3](/rest) エンドポイントを使用して、アプリケーションは次のリクエストを行うことができます。
+While most of your API インタラクションのほとんどは、サーバーからサーバーへのインストールアクセストークンを用いて行われますが、一部のエンドポイントでは、ユーザアクセストークンを使用し、API 経由でアクションを実行できます。 [GraphQL v4](/graphql) または [REST v3](/rest) エンドポイントを使用して、アプリケーションは次のリクエストを行うことができます。
 
 ### 対応しているエンドポイント
 
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 #### Actions ランナー
 
 * [リポジトリのランナーアプリケーションの一覧表示](/rest/reference/actions#list-runner-applications-for-a-repository)
@@ -206,7 +202,7 @@ While most of your API インタラクションのほとんどは、サーバー
 * [Organizationのシークレットの削除](/rest/reference/actions#delete-an-organization-secret)
 {% endif %}
 
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 #### 成果物
 
 * [リポジトリの成果物の一覧表示](/rest/reference/actions#list-artifacts-for-a-repository)
@@ -248,7 +244,7 @@ While most of your API インタラクションのほとんどは、サーバー
 
 * [デプロイメントの一覧表示](/rest/reference/repos#list-deployments)
 * [デプロイメントの作成](/rest/reference/repos#create-a-deployment)
-* [デプロイメントの取得](/rest/reference/repos#get-a-deployment){% ifversion fpt or ghes or ghae or ghec %}
+* [デプロイメントの取得](/rest/reference/repos#get-a-deployment){% ifversion fpt or ghes or ghae %}
 * [デプロイメントの削除](/rest/reference/repos#delete-a-deployment){% endif %}
 
 #### イベント
@@ -296,7 +292,7 @@ While most of your API インタラクションのほとんどは、サーバー
 
 * [ユーザアクセストークンでアクセスできるリポジトリの一覧表示](/rest/reference/apps#list-repositories-accessible-to-the-user-access-token)
 
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 #### インタラクションの制限
 
 * [Organizationのインタラクション制限の取得](/rest/reference/interactions#get-interaction-restrictions-for-an-organization)
@@ -341,7 +337,7 @@ While most of your API インタラクションのほとんどは、サーバー
 * [Issueのロック](/rest/reference/issues#lock-an-issue)
 * [Issueのロック解除](/rest/reference/issues#unlock-an-issue)
 
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 #### ジョブ
 
 * [ワークフローランのジョブを取得](/rest/reference/actions#get-a-job-for-a-workflow-run)
@@ -394,7 +390,7 @@ While most of your API インタラクションのほとんどは、サーバー
 * [Organizationのwebhookの削除](/rest/reference/orgs#webhooks/#delete-an-organization-webhook)
 * [Organizationのwebhookのping](/rest/reference/orgs#webhooks/#ping-an-organization-webhook)
 
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 #### Organizationの招待
 
 * [保留中のOrganizationの招待の一覧表示](/rest/reference/orgs#list-pending-organization-invitations)
@@ -430,7 +426,7 @@ While most of your API インタラクションのほとんどは、サーバー
 * [Organizationのためのpre-receiveフックの強制の削除](/enterprise/user/rest/reference/enterprise-admin#remove-pre-receive-hook-enforcement-for-an-organization)
 {% endif %}
 
-{% ifversion fpt or ghes or ghae or ghec %}
+{% ifversion fpt or ghes or ghae %}
 #### OrganizationのTeamのプロジェクト
 
 * [Teamプロジェクトの一覧表示](/rest/reference/teams#list-team-projects)
@@ -446,7 +442,7 @@ While most of your API インタラクションのほとんどは、サーバー
 * [Teamリポジトリ権限の追加あるいは更新](/rest/reference/teams#add-or-update-team-repository-permissions)
 * [Teamからのリポジトリの削除](/rest/reference/teams#remove-a-repository-from-a-team)
 
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 #### Organization Team Sync
 
 * [Teamのidpグループの一覧表示](/rest/reference/teams#list-idp-groups-for-a-team)
@@ -461,7 +457,7 @@ While most of your API インタラクションのほとんどは、サーバー
 * [名前でのTeamの取得](/rest/reference/teams#get-a-team-by-name)
 * [Teamの更新](/rest/reference/teams#update-a-team)
 * [Teamの削除](/rest/reference/teams#delete-a-team)
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 * [保留中のTeamの招待の一覧表示](/rest/reference/teams#list-pending-team-invitations)
 {% endif %}
 * [Teamメンバーの一覧表示](/rest/reference/teams#list-team-members)
@@ -482,14 +478,14 @@ While most of your API インタラクションのほとんどは、サーバー
 * [認証されたユーザのOrganizationの一覧表示](/rest/reference/orgs#list-organizations-for-the-authenticated-user)
 * [ユーザのOrganizationの一覧表示](/rest/reference/orgs#list-organizations-for-a-user)
 
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 #### Organizationのクレデンシャルの認証
 
 * [OrganizationのSAML SSO認証の一覧表示](/rest/reference/orgs#list-saml-sso-authorizations-for-an-organization)
 * [OrganizationのSAML SSO認証の削除](/rest/reference/orgs#remove-a-saml-sso-authorization-for-an-organization)
 {% endif %}
 
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 #### OrganizationのSCIM
 
 * [SCIMでプロビジョニングされたアイデンティティの一覧表示](/rest/reference/scim#list-scim-provisioned-identities)
@@ -500,7 +496,7 @@ While most of your API インタラクションのほとんどは、サーバー
 * [OrganizationからのSCIMユーザの削除](/rest/reference/scim#delete-a-scim-user-from-an-organization)
 {% endif %}
 
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 #### ソースのインポート
 
 * [インポートステータスの取得](/rest/reference/migrations#get-an-import-status)
@@ -583,7 +579,7 @@ While most of your API インタラクションのほとんどは、サーバー
 
 #### リアクション
 
-{% ifversion fpt or ghes or ghae or ghec %}* [リアクションの削除](/rest/reference/reactions#delete-a-reaction-legacy){% else %}* [リアクションの削除](/rest/reference/reactions#delete-a-reaction){% endif %}
+{% ifversion fpt or ghes or ghae %}* [Delete a reaction](/rest/reference/reactions#delete-a-reaction-legacy){% else %}* [リアクションの削除](/rest/reference/reactions#delete-a-reaction){% endif %}
 * [コミットコメントへのリアクションの一覧表示](/rest/reference/reactions#list-reactions-for-a-commit-comment)
 * [コミットコメントへのリアクションの作成](/rest/reference/reactions#create-reaction-for-a-commit-comment)
 * [Issueへのリアクションの一覧表示](/rest/reference/reactions#list-reactions-for-an-issue)
@@ -595,7 +591,7 @@ While most of your API インタラクションのほとんどは、サーバー
 * [Teamディスカッションコメントへのリアクションの一覧表示](/rest/reference/reactions#list-reactions-for-a-team-discussion-comment)
 * [Teamディスカッションコメントへのリアクションの作成](/rest/reference/reactions#create-reaction-for-a-team-discussion-comment)
 * [Teamディスカッションへのリアクションの一覧表示](/rest/reference/reactions#list-reactions-for-a-team-discussion)
-* [Teamディスカッションへのリアクションの作成](/rest/reference/reactions#create-reaction-for-a-team-discussion){% ifversion fpt or ghes or ghae or ghec %}
+* [Teamディスカッションへのリアクションの作成](/rest/reference/reactions#create-reaction-for-a-team-discussion){% ifversion fpt or ghes or ghae %}
 * [コミットコメントへのリアクションの削除](/rest/reference/reactions#delete-a-commit-comment-reaction)
 * [Issueへのリアクションの削除](/rest/reference/reactions#delete-an-issue-reaction)
 * [コミットコメントへのリアクションの削除](/rest/reference/reactions#delete-an-issue-comment-reaction)
@@ -633,7 +629,7 @@ While most of your API インタラクションのほとんどは、サーバー
 * [認証されたユーザのためにリポジトリをStar解除](/rest/reference/activity#unstar-a-repository-for-the-authenticated-user)
 * [ユーザが Watch しているリポジトリの一覧表示](/rest/reference/activity#list-repositories-watched-by-a-user)
 
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 #### リポジトリの自動化されたセキュリティ修正
 
 * [自動化されたセキュリティ修正の有効化](/rest/reference/repos#enable-automated-security-fixes)
@@ -702,7 +698,7 @@ While most of your API インタラクションのほとんどは、サーバー
 #### リポジトリのコミュニティ
 
 * [リポジトリの行動規範の取得](/rest/reference/codes-of-conduct#get-the-code-of-conduct-for-a-repository)
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 * [コミュニティプロフィールのメトリクスの取得](/rest/reference/repos#get-community-profile-metrics)
 {% endif %}
 
@@ -715,7 +711,7 @@ While most of your API インタラクションのほとんどは、サーバー
 * [リポジトリのREADMEの取得](/rest/reference/repos#get-a-repository-readme)
 * [リポジトリのライセンスの取得](/rest/reference/licenses#get-the-license-for-a-repository)
 
-{% ifversion fpt or ghes or ghae or ghec %}
+{% ifversion fpt or ghes or ghae %}
 #### リポジトリのイベントのディスパッチ
 
 * [リポジトリディスパッチイベントの作成](/rest/reference/repos#create-a-repository-dispatch-event)
@@ -789,7 +785,7 @@ While most of your API インタラクションのほとんどは、サーバー
 * [週間のコミットカウントの取得](/rest/reference/repos#get-the-weekly-commit-count)
 * [各日の毎時のコミットカウントの取得](/rest/reference/repos#get-the-hourly-commit-count-for-each-day)
 
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 #### リポジトリ脆弱性アラート
 
 * [脆弱性アラートの有効化](/rest/reference/repos#enable-vulnerability-alerts)
@@ -835,7 +831,7 @@ While most of your API インタラクションのほとんどは、サーバー
 * [すべてのリポジトリTopicsの取得](/rest/reference/repos#get-all-repository-topics)
 * [すべてのリポジトリTopicsの置き換え](/rest/reference/repos#replace-all-repository-topics)
 
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 #### トラフィック
 
 * [リポジトリのクローンの取得](/rest/reference/repos#get-repository-clones)
@@ -844,7 +840,7 @@ While most of your API インタラクションのほとんどは、サーバー
 * [ページビューの取得](/rest/reference/repos#get-page-views)
 {% endif %}
 
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 #### ユーザのブロック
 
 * [認証されたユーザによってブロックされたユーザの一覧表示](/rest/reference/users#list-users-blocked-by-the-authenticated-user)
@@ -857,10 +853,10 @@ While most of your API インタラクションのほとんどは、サーバー
 * [ゆーざのブロックを解除](/rest/reference/users#unblock-a-user)
 {% endif %}
 
-{% ifversion fpt or ghes or ghec %}
+{% ifversion fpt or ghes %}
 #### ユーザのメール
 
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 * [認証されたユーザのプライマリメールの可視性を設定](/rest/reference/users#set-primary-email-visibility-for-the-authenticated-user)
 {% endif %}
 * [認証されたユーザのメールアドレスの一覧表示](/rest/reference/users#list-email-addresses-for-the-authenticated-user)
@@ -898,13 +894,13 @@ While most of your API インタラクションのほとんどは、サーバー
 
 * [認証されたユーザの取得](/rest/reference/users#get-the-authenticated-user)
 * [ユーザアクセストークンでアクセスできるアプリケーションのインストールの一覧表示](/rest/reference/apps#list-app-installations-accessible-to-the-user-access-token)
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 * [認証されたユーザのサブスクリプションのリスト](/rest/reference/apps#list-subscriptions-for-the-authenticated-user)
 {% endif %}
 * [ユーザの一覧表示](/rest/reference/users#list-users)
 * [ユーザの取得](/rest/reference/users#get-a-user)
 
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 #### ワークフローラン
 
 * [リポジトリのワークフローランの一覧表示](/rest/reference/actions#list-workflow-runs-for-a-repository)
@@ -917,7 +913,7 @@ While most of your API インタラクションのほとんどは、サーバー
 * [ワークフローランの利用状況の取得](/rest/reference/actions#get-workflow-run-usage)
 {% endif %}
 
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 #### ワークフロー
 
 * [リポジトリワークフローの一覧表示](/rest/reference/actions#list-repository-workflows)
@@ -925,7 +921,7 @@ While most of your API インタラクションのほとんどは、サーバー
 * [ワークフロー利用状況の取得](/rest/reference/actions#get-workflow-usage)
 {% endif %}
 
-{% ifversion fpt or ghes > 3.1 or ghae-next or ghec %}
+{% ifversion fpt or ghes > 3.1 or ghae-next %}
 
 ## 参考リンク
 

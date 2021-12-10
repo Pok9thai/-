@@ -11,7 +11,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - SSH
 shortTitle: SSH 密钥密码
@@ -24,7 +23,7 @@ shortTitle: SSH 密钥密码
 通过输入以下命令，您可以更改现有私钥的密码而无需重新生成密钥对：
 
 ```shell
-$ ssh-keygen -p -f ~/.ssh/id_{% ifversion ghae %}rsa{% else %}ed25519{% endif %}
+$ ssh-keygen -p -f ~/.ssh/id_ed25519
 > Enter old passphrase: <em>[Type old passphrase]</em>
 > Key has comment '<em>your_email@example.com</em>'
 > Enter new passphrase (empty for no passphrase): <em>[Type new passphrase]</em>

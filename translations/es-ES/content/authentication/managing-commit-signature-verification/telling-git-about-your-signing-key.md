@@ -10,7 +10,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - Identity
   - Access management
@@ -21,7 +20,7 @@ shortTitle: Decirle tu llave de firma a Git
 
 ## Informarle a Git acerca de tu llave GPG
 
-If you're using a GPG key that matches your committer identity and your verified email address associated with your account on {% ifversion ghae %}{% data variables.product.product_name %}{% else %}{% data variables.product.product_location %}{% endif %}, then you can begin signing commits and signing tags.
+Si estás usando una llave GPG que coincida con la identidad de la persona que confirma el cambio y tu dirección de correo electrónico verificada con tu cuenta de {% data variables.product.product_name %}, puedes comenzar a firmar confirmaciones y firmar etiquetas.
 
 {% note %}
 
@@ -54,7 +53,7 @@ Si tienes múltiples llaves GPG, le debes decir a Git cuál utilizar.
 
 ## Informarle a Git acerca de tu llave GPG
 
-If you're using a GPG key that matches your committer identity and your verified email address associated with your account on {% ifversion ghae %}{% data variables.product.product_name %}{% else %}{% data variables.product.product_location %}{% endif %}, then you can begin signing commits and signing tags.
+Si estás usando una llave GPG que coincida con la identidad de la persona que confirma el cambio y tu dirección de correo electrónico verificada con tu cuenta de {% data variables.product.product_name %}, puedes comenzar a firmar confirmaciones y firmar etiquetas.
 
 {% note %}
 
@@ -77,7 +76,7 @@ Si tienes múltiples llaves GPG, le debes decir a Git cuál utilizar.
 
 ## Informarle a Git acerca de tu llave GPG
 
-If you're using a GPG key that matches your committer identity and your verified email address associated with your account on {% ifversion ghae %}{% data variables.product.product_name %}{% else %}{% data variables.product.product_location %}{% endif %}, then you can begin signing commits and signing tags.
+Si estás usando una llave GPG que coincida con la identidad de la persona que confirma el cambio y tu dirección de correo electrónico verificada con tu cuenta de {% data variables.product.product_name %}, puedes comenzar a firmar confirmaciones y firmar etiquetas.
 
 {% note %}
 

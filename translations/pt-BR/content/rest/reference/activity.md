@@ -1,13 +1,11 @@
 ---
 title: Atividade
-intro: 'The Activity API allows you to list events and feeds and manage notifications, starring, and watching for the authenticated user.'
 redirect_from:
   - /v3/activity
 versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - API
 miniTocMaxHeadingLevel: 3
@@ -147,11 +145,10 @@ Aqui está uma lista da potencial `razão` para receber uma notificação:
 | `assign`           | O problema foi atribuído a você.                                                                                                                                                                               |
 | `autor`            | Você criou a corrente.                                                                                                                                                                                         |
 | `comentário`       | Você comentou na corrente.                                                                                                                                                                                     |
-| `ci_activity`      | A execução de um fluxo de trabalho {% data variables.product.prodname_actions %} que você acionou foi concluída.                                                                                               |
 | `convite`          | Você aceitou um convite para contribuir com o repositório.                                                                                                                                                     |
 | `manual`           | Você assinou a corrente (por meio de um problema ou pull request).                                                                                                                                             |
 | `menção`           | Você foi especificamente **@mentioned** no conteúdo.                                                                                                                                                           |
-| `review_requested` | You, or a team you're a member of, were requested to review a pull request.{% ifversion fpt or ghec %}
+| `review_requested` | Foi solicitado que você ou uma equipe da qual você é integrante revise um pull request.{% ifversion fpt %}
 | `security_alert`   | O {% data variables.product.prodname_dotcom %} descobriu uma [vulnerabilidade de segurança](/github/managing-security-vulnerabilities/about-alerts-for-vulnerable-dependencies) no seu repositório.{% endif %}
 | `state_change`     | Você alterou o estado da corrente (por exemplo, fechando um problema ou mesclando um pull request).                                                                                                            |
 | `assinado`         | Você está inspecionando o repositório.                                                                                                                                                                         |

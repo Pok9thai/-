@@ -1,6 +1,6 @@
 ---
 title: Gerenciar acessos aos aplicativos da organização
-intro: 'Como proprietário da organização, você pode permitir que os integrantes individuais da organização gerenciem {% data variables.product.prodname_github_apps %} na sua organização.'
+intro: 'As an organization owner, you can allow individual organization members to manage {% data variables.product.prodname_github_apps %} in your organization.'
 redirect_from:
   - /articles/managing-access-to-your-organization-s-apps
   - /articles/managing-access-to-your-organizations-apps
@@ -9,7 +9,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - Organizations
   - Teams

@@ -1,13 +1,13 @@
 ---
 title: Adicionando etiquetas a problemas
 intro: 'Você pode usar {% data variables.product.prodname_actions %} para etiquetar problemas automaticamente.'
+product: '{% data reusables.gated-features.actions %}'
 redirect_from:
   - /actions/guides/adding-labels-to-issues
 versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 type: tutorial
 topics:
   - Workflows
@@ -17,6 +17,7 @@ topics:
 {% data reusables.actions.enterprise-beta %}
 {% data reusables.actions.enterprise-github-hosted-runners %}
 {% data reusables.actions.ae-beta %}
+{% data reusables.actions.ae-self-hosted-runners-notice %}
 
 ## Introdução
 
@@ -41,7 +42,7 @@ No tutorial, primeiro você criará um arquivo de fluxo de trabalho que usa a a�
           - opened
     jobs:
       label_issues:
-        runs-on: ubuntu-latest{% ifversion fpt or ghes > 3.1 or ghae-next or ghec %}
+        runs-on: ubuntu-latest{% ifversion fpt or ghes > 3.1 or ghae-next %}
         permissions:
           issues: write{% endif %}
         steps:

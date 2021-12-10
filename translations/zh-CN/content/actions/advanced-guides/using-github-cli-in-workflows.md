@@ -6,16 +6,13 @@ redirect_from:
   - /actions/guides/using-github-cli-in-workflows
 versions:
   fpt: '*'
-  ghes: '*'
+  ghes: '>=2.22'
   ghae: '*'
-  ghec: '*'
 topics:
   - CLI
   - Workflows
 type: how_to
 ---
-
-{% data reusables.actions.ae-beta %}
 
 {% data reusables.cli.cli-learn-more %}
 

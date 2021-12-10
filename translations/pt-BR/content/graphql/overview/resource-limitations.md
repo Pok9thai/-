@@ -5,7 +5,6 @@ redirect_from:
   - /v4/guides/resource-limitations
 versions:
   fpt: '*'
-  ghec: '*'
   ghes: '*'
   ghae: '*'
 topics:

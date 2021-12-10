@@ -2,6 +2,7 @@
 title: Using workflow templates
 shortTitle: Using templates
 intro: '{% data variables.product.product_name %} provides workflow templates for a variety of languages and tooling.'
+product: '{% data reusables.gated-features.actions %}'
 redirect_from:
   - /articles/setting-up-continuous-integration-using-github-actions
   - /github/automating-your-workflow-with-github-actions/setting-up-continuous-integration-using-github-actions
@@ -12,7 +13,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 type: tutorial
 topics:
   - Workflows
@@ -22,7 +22,6 @@ topics:
 
 {% data reusables.actions.enterprise-beta %}
 {% data reusables.actions.enterprise-github-hosted-runners %}
-{% data reusables.actions.ae-beta %}
 
 ## About workflow templates
 
@@ -50,6 +49,6 @@ Anyone with write permission to a repository can set up {% data variables.produc
 - "[Managing workflow runs](/actions/managing-workflow-runs)"
 - "[About monitoring and troubleshooting](/actions/monitoring-and-troubleshooting-workflows/about-monitoring-and-troubleshooting)"
 - "[Learn {% data variables.product.prodname_actions %}](/actions/learn-github-actions)"
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 - "[Managing billing for {% data variables.product.prodname_actions %}](/billing/managing-billing-for-github-actions)"
 {% endif %}

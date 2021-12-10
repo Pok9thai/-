@@ -10,7 +10,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - GitHub Apps
 shortTitle: 识别和授权用户
@@ -26,7 +25,7 @@ shortTitle: 识别和授权用户
 
 要授权用户使用在浏览器中运行的标准应用程序，请使用 [web 应用程序流程](#web-application-flow)。
 
-{% ifversion fpt or ghae or ghes > 3.0 or ghec %}
+{% ifversion fpt or ghae or ghes > 3.0 %}
 
 要授权用户使用不直接访问浏览器的无头应用程序（例如 CLI 工具或 Git 凭据管理器），请使用[设备流程](#device-flow)。 设备流程使用 OAuth 2.0 [设备授权授予](https://tools.ietf.org/html/rfc8628)。
 
@@ -43,7 +42,6 @@ shortTitle: 识别和授权用户
 如果您在创建或修改应用程序时选择**在安装过程中请求用户授权 (OAuth)**，则步骤 1 将在应用程序安装过程中完成。 更多信息请参阅“[在安装过程中授权用户](/apps/installing-github-apps/#authorizing-users-during-installation)”。
 
 ### 1. 请求用户的 GitHub 身份
-将用户引导到其浏览器中的以下URL：
 
     GET {% data variables.product.oauth_host_code %}/login/oauth/authorize
 
@@ -51,13 +49,13 @@ shortTitle: 识别和授权用户
 
 #### 参数
 
-| 名称             | 类型    | 描述                                                                                                                                                                                                                             |
-| -------------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `client_id`    | `字符串` | **必填。**GitHub 应用程序的客户端 ID。 选择应用程序时，您可以在 [GitHub 应用程序设置](https://github.com/settings/apps)中找到它。 **注意：** 应用程序 ID 和客户端 ID 不相同，无法互换。                                                                                               |
-| `redirect_uri` | `字符串` | 用户获得授权后被发送到的应用程序中的 URL。 它必须完全匹配设置 GitHub 应用程序时 {% ifversion fpt or ghes > 3.0 or ghec %} 作为 **Callback URL（回调 URL）**提供的 URL 之一 {% else %} 在 **User authorization callback URL（用户授权回调 URL）**字段中提供的 URL{% endif %}，并且不能包含任何其他参数。 |
-| `state`        | `字符串` | 它应该包含一个随机字符串以防止伪造攻击，并且可以包含任何其他任意数据。                                                                                                                                                                                            |
-| `login`        | `字符串` | 提供用于登录和授权应用程序的特定账户。                                                                                                                                                                                                            |
-| `allow_signup` | `字符串` | 在 OAuth 流程中，是否向经过验证的用户提供注册 {% data variables.product.prodname_dotcom %} 的选项。 默认值为 `true`。 如有政策禁止注册，请使用 `false`。                                                                                                                |
+| 名称             | 类型    | 描述                                                                                                                                                                                                                     |
+| -------------- | ----- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `client_id`    | `字符串` | **必填。**GitHub 应用程序的客户端 ID。 选择应用程序时，您可以在 [GitHub 应用程序设置](https://github.com/settings/apps)中找到它。 **注意：** 应用程序 ID 和客户端 ID 不相同，无法互换。                                                                                       |
+| `redirect_uri` | `字符串` | 用户获得授权后被发送到的应用程序中的 URL。 它必须完全匹配设置 GitHub 应用程序时 {% ifversion fpt or ghes > 3.0 %} 作为 **Callback URL（回调 URL）**提供的 URL 之一 {% else %} 在 **User authorization callback URL（用户授权回调 URL）**字段中提供的 URL{% endif %}，并且不能包含任何其他参数。 |
+| `state`        | `字符串` | 它应该包含一个随机字符串以防止伪造攻击，并且可以包含任何其他任意数据。                                                                                                                                                                                    |
+| `login`        | `字符串` | 提供用于登录和授权应用程序的特定账户。                                                                                                                                                                                                    |
+| `allow_signup` | `字符串` | 在 OAuth 流程中，是否向经过验证的用户提供注册 {% data variables.product.prodname_dotcom %} 的选项。 默认值为 `true`。 如有政策禁止注册，请使用 `false`。                                                                                                        |
 
 {% note %}
 
@@ -75,23 +73,21 @@ shortTitle: 识别和授权用户
 
 {% endnote %}
 
-将此 `code` 交换为访问令牌。  启用令牌有效期时，访问令牌在 8 小时后过期，刷新令牌在 6 个月后过期。 每次刷新令牌时都会得到一个新的刷新令牌。 更多信息请参阅“[刷新用户到服务器访问令牌](/developers/apps/refreshing-user-to-server-access-tokens)”。
+将此 `code` 交换为访问令牌。  When expiring tokens are enabled, the access token expires in 8 hours and the refresh token expires in 6 months. 每次刷新令牌时都会得到一个新的刷新令牌。 更多信息请参阅“[刷新用户到服务器访问令牌](/developers/apps/refreshing-user-to-server-access-tokens)”。
 
 过期用户令牌目前是一个可选的功能，可能会更改。 要选择使用用户到服务器令牌过期功能，请参阅“[激活应用程序的可选功能](/developers/apps/activating-optional-features-for-apps)”。
-
-向以下端点提出请求以接收访问令牌：
 
     POST {% data variables.product.oauth_host_code %}/login/oauth/access_token
 
 #### 参数
 
-| 名称              | 类型    | 描述                                                                                                                                                                                                                             |
-| --------------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `client_id`     | `字符串` | **必填。**GitHub 应用程序的客户端 ID。                                                                                                                                                                                                     |
-| `client_secret` | `字符串` | **必填。**GitHub 应用程序的客户端密钥。                                                                                                                                                                                                      |
-| `代码`            | `字符串` | **必填。**您收到的响应第 1 步的代码。                                                                                                                                                                                                         |
-| `redirect_uri`  | `字符串` | 用户获得授权后被发送到的应用程序中的 URL。 它必须完全匹配设置 GitHub 应用程序时 {% ifversion fpt or ghes > 3.0 or ghec %} 作为 **Callback URL（回调 URL）**提供的 URL 之一 {% else %} 在 **User authorization callback URL（用户授权回调 URL）**字段中提供的 URL{% endif %}，并且不能包含任何其他参数。 |
-| `state`         | `字符串` | 您在第 1 步提供的不可猜测的随机字符串。                                                                                                                                                                                                          |
+| 名称              | 类型    | 描述                                                                                                                                                                                                                     |
+| --------------- | ----- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `client_id`     | `字符串` | **必填。**GitHub 应用程序的客户端 ID。                                                                                                                                                                                             |
+| `client_secret` | `字符串` | **必填。**GitHub 应用程序的客户端密钥。                                                                                                                                                                                              |
+| `代码`            | `字符串` | **必填。**您收到的响应第 1 步的代码。                                                                                                                                                                                                 |
+| `redirect_uri`  | `字符串` | 用户获得授权后被发送到的应用程序中的 URL。 它必须完全匹配设置 GitHub 应用程序时 {% ifversion fpt or ghes > 3.0 %} 作为 **Callback URL（回调 URL）**提供的 URL 之一 {% else %} 在 **User authorization callback URL（用户授权回调 URL）**字段中提供的 URL{% endif %}，并且不能包含任何其他参数。 |
+| `state`         | `字符串` | 您在第 1 步提供的不可猜测的随机字符串。                                                                                                                                                                                                  |
 
 #### 响应
 
@@ -99,9 +95,9 @@ shortTitle: 识别和授权用户
 
 ```json
 {
-  "access_token": "{% ifversion fpt or ghes > 3.1 or ghae-next or ghec %}ghu_16C7e42F292c6912E7710c838347Ae178B4a{% else %}e72e16c7e42f292c6912e7710c838347ae178b4a{% endif %}",
+  "access_token": "{% ifversion fpt or ghes > 3.1 or ghae-next %}ghu_16C7e42F292c6912E7710c838347Ae178B4a{% else %}e72e16c7e42f292c6912e7710c838347ae178b4a{% endif %}",
   "expires_in": 28800,
-  "refresh_token": "{% ifversion fpt or ghes > 3.1 or ghae-next or ghec %}ghr_1B4a2e77838347a7E420ce178F2E7c6912E169246c34E1ccbF66C46812d16D5B1A9Dc86A1498{% else %}r1.c1b4a2e77838347a7e420ce178f2e7c6912e1692{% endif %}",
+  "refresh_token": "{% ifversion fpt or ghes > 3.1 or ghae-next %}ghr_1B4a2e77838347a7E420ce178F2E7c6912E169246c34E1ccbF66C46812d16D5B1A9Dc86A1498{% else %}r1.c1b4a2e77838347a7e420ce178f2e7c6912e1692{% endif %}",
   "refresh_token_expires_in": 15811200,
   "scope": "",
   "token_type": "bearer"
@@ -121,7 +117,7 @@ shortTitle: 识别和授权用户
 curl -H "Authorization: token OAUTH-TOKEN" {% data variables.product.api_url_pre %}/user
 ```
 
-{% ifversion fpt or ghae or ghes > 3.0 or ghec %}
+{% ifversion fpt or ghae or ghes > 3.0 %}
 
 ## 设备流程
 
@@ -168,11 +164,11 @@ curl -H "Authorization: token OAUTH-TOKEN" {% data variables.product.api_url_pre
 
 ## 用户到服务器请求
 
-虽然大多数 API 交互应使用服务器到服务器安装访问令牌进行，但某些端点允许您使用用户访问令牌通过 API 执行操作。 您的应用程序可以使用[GraphQL v4]({% ifversion ghec %}/free-pro-team@latest{% endif %}/graphql) 或 [REST v3](/rest) 端点发出以下请求。
+虽然大多数 API 交互应使用服务器到服务器安装访问令牌进行，但某些端点允许您使用用户访问令牌通过 API 执行操作。 您的应用程序可以使用[GraphQL v4](/graphql) 或 [REST v3](/rest) 端点发出以下请求。
 
 ### 支持的端点
 
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 #### 操作运行器
 
 * [列出仓库的运行器应用程序](/rest/reference/actions#list-runner-applications-for-a-repository)
@@ -206,7 +202,7 @@ curl -H "Authorization: token OAUTH-TOKEN" {% data variables.product.api_url_pre
 * [删除组织密钥](/rest/reference/actions#delete-an-organization-secret)
 {% endif %}
 
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 #### 构件
 
 * [列出仓库的构件](/rest/reference/actions#list-artifacts-for-a-repository)
@@ -248,7 +244,7 @@ curl -H "Authorization: token OAUTH-TOKEN" {% data variables.product.api_url_pre
 
 * [列出部署](/rest/reference/repos#list-deployments)
 * [创建部署](/rest/reference/repos#create-a-deployment)
-* [获取部署](/rest/reference/repos#get-a-deployment){% ifversion fpt or ghes or ghae or ghec %}
+* [获取部署](/rest/reference/repos#get-a-deployment){% ifversion fpt or ghes or ghae %}
 * [删除部署](/rest/reference/repos#delete-a-deployment){% endif %}
 
 #### 事件
@@ -296,7 +292,7 @@ curl -H "Authorization: token OAUTH-TOKEN" {% data variables.product.api_url_pre
 
 * [列出用户访问令牌可访问的仓库](/rest/reference/apps#list-repositories-accessible-to-the-user-access-token)
 
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 #### 交互限制
 
 * [获取组织的交互限制](/rest/reference/interactions#get-interaction-restrictions-for-an-organization)
@@ -341,7 +337,7 @@ curl -H "Authorization: token OAUTH-TOKEN" {% data variables.product.api_url_pre
 * [锁定议题](/rest/reference/issues#lock-an-issue)
 * [解锁议题](/rest/reference/issues#unlock-an-issue)
 
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 #### Jobs
 
 * [获取工作流程运行的作业](/rest/reference/actions#get-a-job-for-a-workflow-run)
@@ -394,7 +390,7 @@ curl -H "Authorization: token OAUTH-TOKEN" {% data variables.product.api_url_pre
 * [删除组织 web 挂钩](/rest/reference/orgs#webhooks/#delete-an-organization-webhook)
 * [Ping 组织 web 挂钩](/rest/reference/orgs#webhooks/#ping-an-organization-webhook)
 
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 #### 组织邀请
 
 * [列出待处理的组织邀请](/rest/reference/orgs#list-pending-organization-invitations)
@@ -430,7 +426,7 @@ curl -H "Authorization: token OAUTH-TOKEN" {% data variables.product.api_url_pre
 * [删除组织的预接收挂钩实施](/enterprise/user/rest/reference/enterprise-admin#remove-pre-receive-hook-enforcement-for-an-organization)
 {% endif %}
 
-{% ifversion fpt or ghes or ghae or ghec %}
+{% ifversion fpt or ghes or ghae %}
 #### 组织团队项目
 
 * [列出团队项目](/rest/reference/teams#list-team-projects)
@@ -446,7 +442,7 @@ curl -H "Authorization: token OAUTH-TOKEN" {% data variables.product.api_url_pre
 * [添加或更新团队仓库权限](/rest/reference/teams#add-or-update-team-repository-permissions)
 * [从团队删除仓库](/rest/reference/teams#remove-a-repository-from-a-team)
 
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 #### 组织团队同步
 
 * [列出团队的 idp 组](/rest/reference/teams#list-idp-groups-for-a-team)
@@ -461,7 +457,7 @@ curl -H "Authorization: token OAUTH-TOKEN" {% data variables.product.api_url_pre
 * [按名称获取团队](/rest/reference/teams#get-a-team-by-name)
 * [更新团队](/rest/reference/teams#update-a-team)
 * [删除团队](/rest/reference/teams#delete-a-team)
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 * [列出待处理的团队邀请](/rest/reference/teams#list-pending-team-invitations)
 {% endif %}
 * [列出团队成员](/rest/reference/teams#list-team-members)
@@ -482,14 +478,14 @@ curl -H "Authorization: token OAUTH-TOKEN" {% data variables.product.api_url_pre
 * [列出经验证用户的组织](/rest/reference/orgs#list-organizations-for-the-authenticated-user)
 * [列出用户的组织](/rest/reference/orgs#list-organizations-for-a-user)
 
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 #### 组织凭据授权
 
 * [列出组织的 SAML SSO 授权](/rest/reference/orgs#list-saml-sso-authorizations-for-an-organization)
 * [删除组织的 SAML SSO 授权](/rest/reference/orgs#remove-a-saml-sso-authorization-for-an-organization)
 {% endif %}
 
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 #### 组织 SCIM
 
 * [列出 SCIM 预配标识](/rest/reference/scim#list-scim-provisioned-identities)
@@ -500,7 +496,7 @@ curl -H "Authorization: token OAUTH-TOKEN" {% data variables.product.api_url_pre
 * [从组织中删除 SCIM 用户](/rest/reference/scim#delete-a-scim-user-from-an-organization)
 {% endif %}
 
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 #### 源导入
 
 * [获取导入状态](/rest/reference/migrations#get-an-import-status)
@@ -583,7 +579,7 @@ curl -H "Authorization: token OAUTH-TOKEN" {% data variables.product.api_url_pre
 
 #### 反应
 
-{% ifversion fpt or ghes or ghae or ghec %}* [删除反应](/rest/reference/reactions#delete-a-reaction-legacy){% else %}* [删除反应](/rest/reference/reactions#delete-a-reaction){% endif %}
+{% ifversion fpt or ghes or ghae %}* [删除反应](/rest/reference/reactions#delete-a-reaction-legacy){% else %}* [删除反应](/rest/reference/reactions#delete-a-reaction){% endif %}
 * [列出提交注释的反应](/rest/reference/reactions#list-reactions-for-a-commit-comment)
 * [创建提交注释的反应](/rest/reference/reactions#create-reaction-for-a-commit-comment)
 * [列出议题的反应](/rest/reference/reactions#list-reactions-for-an-issue)
@@ -595,7 +591,7 @@ curl -H "Authorization: token OAUTH-TOKEN" {% data variables.product.api_url_pre
 * [列出团队讨论注释的反应](/rest/reference/reactions#list-reactions-for-a-team-discussion-comment)
 * [创建团队讨论注释的反应](/rest/reference/reactions#create-reaction-for-a-team-discussion-comment)
 * [列出团队讨论的反应](/rest/reference/reactions#list-reactions-for-a-team-discussion)
-* [创建团队讨论的反应](/rest/reference/reactions#create-reaction-for-a-team-discussion){% ifversion fpt or ghes or ghae or ghec %}
+* [创建团队讨论的反应](/rest/reference/reactions#create-reaction-for-a-team-discussion){% ifversion fpt or ghes or ghae %}
 * [删除提交注释反应](/rest/reference/reactions#delete-a-commit-comment-reaction)
 * [删除议题反应](/rest/reference/reactions#delete-an-issue-reaction)
 * [删除对提交注释的反应](/rest/reference/reactions#delete-an-issue-comment-reaction)
@@ -633,7 +629,7 @@ curl -H "Authorization: token OAUTH-TOKEN" {% data variables.product.api_url_pre
 * [取消标星经验证用户的仓库](/rest/reference/activity#unstar-a-repository-for-the-authenticated-user)
 * [列出用户关注的仓库](/rest/reference/activity#list-repositories-watched-by-a-user)
 
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 #### 仓库自动安全修复
 
 * [启用自动安全修复](/rest/reference/repos#enable-automated-security-fixes)
@@ -702,7 +698,7 @@ curl -H "Authorization: token OAUTH-TOKEN" {% data variables.product.api_url_pre
 #### 仓库社区
 
 * [获取仓库的行为准则](/rest/reference/codes-of-conduct#get-the-code-of-conduct-for-a-repository)
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 * [获取社区资料指标](/rest/reference/repos#get-community-profile-metrics)
 {% endif %}
 
@@ -715,7 +711,7 @@ curl -H "Authorization: token OAUTH-TOKEN" {% data variables.product.api_url_pre
 * [获取仓库自述文件](/rest/reference/repos#get-a-repository-readme)
 * [获取仓库许可](/rest/reference/licenses#get-the-license-for-a-repository)
 
-{% ifversion fpt or ghes or ghae or ghec %}
+{% ifversion fpt or ghes or ghae %}
 #### 仓库事件调度
 
 * [创建仓库调度事件](/rest/reference/repos#create-a-repository-dispatch-event)
@@ -789,7 +785,7 @@ curl -H "Authorization: token OAUTH-TOKEN" {% data variables.product.api_url_pre
 * [获取每周提交计数](/rest/reference/repos#get-the-weekly-commit-count)
 * [获取每天的每小时提交计数](/rest/reference/repos#get-the-hourly-commit-count-for-each-day)
 
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 #### 仓库漏洞警报
 
 * [启用漏洞警报](/rest/reference/repos#enable-vulnerability-alerts)
@@ -835,7 +831,7 @@ curl -H "Authorization: token OAUTH-TOKEN" {% data variables.product.api_url_pre
 * [获取所有仓库主题](/rest/reference/repos#get-all-repository-topics)
 * [替换所有仓库主题](/rest/reference/repos#replace-all-repository-topics)
 
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 #### 流量
 
 * [获取仓库克隆](/rest/reference/repos#get-repository-clones)
@@ -844,7 +840,7 @@ curl -H "Authorization: token OAUTH-TOKEN" {% data variables.product.api_url_pre
 * [获取页面视图](/rest/reference/repos#get-page-views)
 {% endif %}
 
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 #### 用户阻止
 
 * [列出经验证用户阻止的用户](/rest/reference/users#list-users-blocked-by-the-authenticated-user)
@@ -857,10 +853,10 @@ curl -H "Authorization: token OAUTH-TOKEN" {% data variables.product.api_url_pre
 * [取消阻止用户](/rest/reference/users#unblock-a-user)
 {% endif %}
 
-{% ifversion fpt or ghes or ghec %}
+{% ifversion fpt or ghes %}
 #### 用户电子邮件
 
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 * [设置经验证用户的主电子邮件地址可见性](/rest/reference/users#set-primary-email-visibility-for-the-authenticated-user)
 {% endif %}
 * [列出经验证用户的电子邮件地址](/rest/reference/users#list-email-addresses-for-the-authenticated-user)
@@ -898,13 +894,13 @@ curl -H "Authorization: token OAUTH-TOKEN" {% data variables.product.api_url_pre
 
 * [获取经验证的用户](/rest/reference/users#get-the-authenticated-user)
 * [列出用户访问令牌可访问的应用程序安装设施](/rest/reference/apps#list-app-installations-accessible-to-the-user-access-token)
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 * [列出经验证用户的订阅](/rest/reference/apps#list-subscriptions-for-the-authenticated-user)
 {% endif %}
 * [列出用户](/rest/reference/users#list-users)
 * [获取用户](/rest/reference/users#get-a-user)
 
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 #### 工作流程运行
 
 * [列出仓库的工作流程运行](/rest/reference/actions#list-workflow-runs-for-a-repository)
@@ -917,7 +913,7 @@ curl -H "Authorization: token OAUTH-TOKEN" {% data variables.product.api_url_pre
 * [获取工作流程运行使用情况](/rest/reference/actions#get-workflow-run-usage)
 {% endif %}
 
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 #### 工作流程
 
 * [列出仓库工作流程](/rest/reference/actions#list-repository-workflows)
@@ -925,7 +921,7 @@ curl -H "Authorization: token OAUTH-TOKEN" {% data variables.product.api_url_pre
 * [获取工作流程使用情况](/rest/reference/actions#get-workflow-usage)
 {% endif %}
 
-{% ifversion fpt or ghes > 3.1 or ghae-next or ghec %}
+{% ifversion fpt or ghes > 3.1 or ghae-next %}
 
 ## 延伸阅读
 

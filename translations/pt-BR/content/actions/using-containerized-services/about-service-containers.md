@@ -1,6 +1,7 @@
 ---
 title: Sobre os contêineres de serviço
 intro: 'Você pode usar contêineres de serviço para conectar bancos de dados, serviços web, memória cache e outras ferramentas ao seu fluxo de trabalho.'
+product: '{% data reusables.gated-features.actions %}'
 redirect_from:
   - /actions/automating-your-workflow-with-github-actions/about-service-containers
   - /actions/configuring-and-managing-workflows/about-service-containers
@@ -9,7 +10,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 type: overview
 topics:
   - Containers

@@ -5,9 +5,8 @@ intro: 'Você pode analisar o seu código com {% data variables.product.prodname
 product: '{% data reusables.gated-features.code-scanning %}'
 versions:
   fpt: '*'
-  ghes: '*'
+  ghes: '>=3.0'
   ghae: '*'
-  ghec: '*'
 topics:
   - Advanced Security
   - Code scanning
@@ -29,14 +28,14 @@ redirect_from:
 
 ## Sobre {% data variables.product.prodname_codeql %} {% data variables.product.prodname_code_scanning %} no seu sistema de CI
 
-{% data reusables.code-scanning.about-code-scanning %} Para obter informações, consulte "[Sobre {% data variables.product.prodname_code_scanning %} com {% data variables.product.prodname_codeql %}](/code-security/secure-coding/automatically-scanning-your-code-for-vulnerabilities-and-errors/about-code-scanning-with-codeql)."
+{% data reusables.code-scanning.about-code-scanning %} For information, see "[About {% data variables.product.prodname_code_scanning %} with {% data variables.product.prodname_codeql %}](/code-security/secure-coding/automatically-scanning-your-code-for-vulnerabilities-and-errors/about-code-scanning-with-codeql)."
 
-{% data reusables.code-scanning.codeql-context-for-actions-and-third-party-tools %}
+Você pode executar {% data variables.product.prodname_codeql %} {% data variables.product.prodname_code_scanning %} em {% data variables.product.product_name %} usando {% data variables.product.prodname_actions %}. Como alternativa, se você usar um sistema de integração contínua ou um sistema de entrega/Continuous Delivery (CI/CD) de terceiros você poderá executar a análise {% data variables.product.prodname_codeql %} no seu sistema existente e enviar os resultados para {% data variables.product.product_location %}.
 
-{% ifversion fpt or ghes > 3.1 or ghae-next or ghec %}
+{% ifversion fpt or ghes > 3.1 or ghae-next %}
 <!--Content for GitHub.com, GHAE next, and GHES 3.2 and onward. CodeQL CLI is the preferred method, and CodeQL runner is deprecated. -->
 
-{% data reusables.code-scanning.codeql-cli-context-for-third-party-tools %}
+Se você adicionar {% data variables.product.prodname_codeql_cli %} ao seu sistema de terceiros, chame a ferramenta para analisar o código e fazer o upload dos resultados do SARIF para {% data variables.product.product_name %}. Os alertas de {% data variables.product.prodname_code_scanning %} resultantes são exibidos junto com todos os alertas gerados dentro de {% data variables.product.product_name %}.
 
 {% data reusables.code-scanning.upload-sarif-ghas %}
 
@@ -92,8 +91,8 @@ Para obter mais informações, consulte "[Executar o {% data variables.product.p
 
 {% endif %}
 
-<!--Content for GHES 3.0 only. Only CodeQL runner is available -->
-{% ifversion ghes = 3.0 %}
+<!--Content for GHAE and GHES 3.0 only. Only CodeQL runner is available -->
+{% ifversion ghes = 3.0 or ghae %}
 {% data reusables.code-scanning.upload-sarif-ghas %}
 
 Se você adicionar {% data variables.product.prodname_codeql_runner %} ao seu sistema de terceiros, chame a ferramenta para analisar o código e fazer o upload dos resultados do SARIF para {% data variables.product.product_name %}. Os alertas de {% data variables.product.prodname_code_scanning %} resultantes são exibidos junto com todos os alertas gerados dentro de {% data variables.product.product_name %}.

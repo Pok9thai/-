@@ -14,13 +14,11 @@ redirect_from:
 product: '{% data reusables.gated-features.pages %}'
 versions:
   fpt: '*'
-  ghec: '*'
 topics:
   - Pages
 children:
   - /about-custom-domains-and-github-pages
   - /managing-a-custom-domain-for-your-github-pages-site
-  - /verifying-your-custom-domain-for-github-pages
   - /troubleshooting-custom-domains-and-github-pages
 shortTitle: Configurar um domínio personalizado
 ---

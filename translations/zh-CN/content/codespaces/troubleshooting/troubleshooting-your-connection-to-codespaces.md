@@ -4,7 +4,6 @@ intro: 'Troubleshooting help for connecting to {% data variables.product.prodnam
 product: '{% data reusables.gated-features.codespaces %}'
 versions:
   fpt: '*'
-  ghec: '*'
 type: reference
 topics:
   - Codespaces

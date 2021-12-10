@@ -12,7 +12,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 children:
   - /working-with-the-container-registry
   - /working-with-the-docker-registry
@@ -26,7 +25,7 @@ children:
 
 {% data reusables.package_registry.packages-ghes-release-stage %}
 {% data reusables.package_registry.packages-ghae-release-stage %}
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 ![Docker、コンテナレジストリ、RubyGems、npm、Apache Maven、NuGet、Gradle のパッケージサポートを示す図](/assets/images/help/package-registry/packages-diagram-with-container-registry.png)
 {% else %}
 ![Docker、RubyGems、npm、Apache Maven、Gradle、Nugetに対するパッケージサポートを示す図](/assets/images/help/package-registry/packages-diagram-without-container-registry.png)

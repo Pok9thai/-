@@ -10,7 +10,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - Accounts
 children:
@@ -23,7 +22,6 @@ children:
   - /deleting-your-user-account
   - /permission-levels-for-a-user-account-repository
   - /permission-levels-for-user-owned-project-boards
-  - /managing-accessibility-settings
   - /managing-the-default-branch-name-for-your-repositories
   - /managing-security-and-analysis-settings-for-your-user-account
   - /managing-access-to-your-user-accounts-project-boards

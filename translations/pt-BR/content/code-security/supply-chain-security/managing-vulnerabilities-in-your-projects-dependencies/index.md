@@ -9,9 +9,7 @@ redirect_from:
   - /github/managing-security-vulnerabilities/managing-vulnerabilities-in-your-projects-dependencies
 versions:
   fpt: '*'
-  ghes: '*'
-  ghae: issue-4864
-  ghec: '*'
+  ghes: '>=3.0'
 topics:
   - Repositories
   - Dependabot

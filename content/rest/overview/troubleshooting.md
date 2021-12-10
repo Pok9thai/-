@@ -7,7 +7,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - API
 ---
@@ -39,7 +38,7 @@ API call uses the same structure. Instead, extract the pagination information fr
 
 [oap-guide]: https://developer.github.com/changes/2015-01-19-an-integrators-guide-to-organization-application-policies/
 
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 ## Basic authentication errors
 
 On November 13, 2020 username and password authentication to the REST API and the OAuth Authorizations API were deprecated and no longer work.

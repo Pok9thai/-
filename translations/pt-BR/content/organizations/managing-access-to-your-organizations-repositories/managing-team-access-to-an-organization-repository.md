@@ -9,7 +9,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - Organizations
   - Teams
@@ -52,4 +51,4 @@ Você pode remover o acesso de uma equipe a um repositório se a equipe tiver ac
 
 ## Leia mais
 
-- "[Repository roles for an organization](/organizations/managing-access-to-your-organizations-repositories/repository-roles-for-an-organization)"
+- "[Níveis de permissão do repositório para uma organização](/articles/repository-permission-levels-for-an-organization)"

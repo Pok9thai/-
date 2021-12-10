@@ -4,7 +4,6 @@ intro: 'Puedes administrar y revisar la forma en que los usuarios de tu organiza
 product: '{% data reusables.gated-features.codespaces %}'
 versions:
   fpt: '*'
-  ghec: '*'
 topics:
   - Codespaces
 children:
@@ -13,6 +12,6 @@ children:
   - /managing-encrypted-secrets-for-your-repository-and-organization-for-codespaces
   - /managing-repository-access-for-your-organizations-codespaces
   - /reviewing-your-organizations-audit-logs-for-codespaces
-shortTitle: Admnistrar tu organización
+shortTitle: Managing your organization
 ---
 

@@ -10,7 +10,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 shortTitle: Non-fast-forward error
 ---
 If another person has pushed to the same branch as you, Git won't be able to push your changes:

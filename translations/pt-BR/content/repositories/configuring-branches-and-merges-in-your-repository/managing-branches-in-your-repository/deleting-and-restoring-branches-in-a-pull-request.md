@@ -12,10 +12,9 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - Repositories
-shortTitle: Excluir & restaurar branches
+shortTitle: Delete & restore branches
 ---
 
 ## Excluindo um branch usado para uma pull request

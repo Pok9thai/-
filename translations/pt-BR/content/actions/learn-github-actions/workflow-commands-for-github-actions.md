@@ -2,6 +2,7 @@
 title: Comandos do fluxo de trabalho para o GitHub Actions
 shortTitle: Comandos do fluxo de trabalho
 intro: Você pode usar comandos do fluxo de trabalho ao executar comandos do shell em um fluxo de trabalho ou no código de uma ação.
+product: '{% data reusables.gated-features.actions %}'
 redirect_from:
   - /articles/development-tools-for-github-actions
   - /github/automating-your-workflow-with-github-actions/development-tools-for-github-actions
@@ -13,7 +14,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 ---
 
 {% data reusables.actions.enterprise-beta %}
@@ -24,7 +24,11 @@ versions:
 
 As ações podem comunicar-se com a máquina do executor para definir as variáveis de ambiente, valores de saída usados por outras ações, adicionar mensagens de depuração aos registros de saída e outras tarefas.
 
+{% ifversion fpt or ghes > 2.22 or ghae %}
 A maioria dos comandos de fluxo de trabalho usa o comando `echo` em um formato específico, enquanto outros são chamados escrevendo um arquivo. Para obter mais informações, consulte ["Arquivos de ambiente".](#environment-files)
+{% else %}
+Os comandos do gluxo de trabalho usam o comando `echo` em um formato específico.
+{% endif %}
 
 ``` bash
 echo "::workflow-command parameter1={data},parameter2={data}::{command value}"
@@ -64,24 +68,44 @@ Você pode usar o comando `set-output` no seu fluxo de trabalho para definir o m
 
 A tabela a seguir mostra quais funções do conjunto de ferramentas estão disponíveis dentro de um fluxo de trabalho:
 
-| Função do kit de ferramentas | Comando equivalente do fluxo de trabalho                              |
-| ---------------------------- | --------------------------------------------------------------------- |
-| `core.addPath`               | Acessível usando o arquivo de ambiente `GITHUB_PATH`                  |
-| `core.debug`                 | `debug` |{% ifversion fpt or ghes > 3.2 or ghae-issue-4929 or ghec %}
-| `core.notice`                | `notice` 
+| Função do kit de ferramentas                                                                                               | Comando equivalente do fluxo de trabalho                         |
+| -------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- |
+| `core.addPath`                                                                                                             |                                                                  |
+| {% ifversion fpt or ghes > 2.22 or ghae %}Accessible using environment file `GITHUB_PATH`{% else %} `add-path` {% endif %} |                                                                  |
+|                                                                                                                            |                                                                  |
+| `core.debug`                                                                                                               | `debug` |{% ifversion fpt or ghes > 3.2 or ghae-issue-4929 %}
+| `core.notice`                                                                                                              | `notice` 
 {% endif %}
-| `core.error`                 | `erro`                                                                |
-| `core.endGroup`              | `endgroup`                                                            |
-| `core.exportVariable`        | Acessível usando o arquivo de ambiente `GITHUB_ENV`                   |
-| `core.getInput`              | Acessível por meio do uso da variável de ambiente `INPUT_{NAME}`      |
-| `core.getState`              | Acessível por meio do uso da variável de ambiente `STATE_{NAME}`      |
-| `core.isDebug`               | Acessível por meio do uso da variável de ambiente `RUNNER_DEBUG`      |
-| `core.saveState`             | `save-state`                                                          |
-| `core.setFailed`             | Usado como um atalho para `::error` e `exit 1`                        |
-| `core.setOutput`             | `set-output`                                                          |
-| `core.setSecret`             | `add-mask`                                                            |
-| `core.startGroup`            | `grupo`                                                               |
-| `core.warning`               | `aviso`                                                               |
+| `core.error`                                                                                                               | `erro`                                                           |
+| `core.endGroup`                                                                                                            | `endgroup`                                                       |
+| `core.exportVariable`                                                                                                      |                                                                  |
+| {% ifversion fpt or ghes > 2.22 or ghae %}Accessible using environment file `GITHUB_ENV`{% else %} `set-env` {% endif %}   |                                                                  |
+|                                                                                                                            |                                                                  |
+| `core.getInput`                                                                                                            | Acessível por meio do uso da variável de ambiente `INPUT_{NAME}` |
+| `core.getState`                                                                                                            | Acessível por meio do uso da variável de ambiente `STATE_{NAME}` |
+| `core.isDebug`                                                                                                             | Acessível por meio do uso da variável de ambiente `RUNNER_DEBUG` |
+| `core.saveState`                                                                                                           | `save-state`                                                     |
+| `core.setFailed`                                                                                                           | Usado como um atalho para `::error` e `exit 1`                   |
+| `core.setOutput`                                                                                                           | `set-output`                                                     |
+| `core.setSecret`                                                                                                           | `add-mask`                                                       |
+| `core.startGroup`                                                                                                          | `grupo`                                                          |
+| `core.warning`                                                                                                             | `arquivo de aviso`                                               |
+
+{% ifversion ghes < 3.0 %}
+## Definir uma variável de ambiente
+
+```
+::set-env name={name}::{value}
+```
+
+Creates or updates an environment variable for any steps running next in a job. The step that creates or updates the environment variable does not have access to the new value, but all subsequent steps in a job will have access. As variáveis de ambiente diferenciam maiúsculas de minúsculas e podem ter pontuação.
+
+### Exemplo
+
+``` bash
+echo "::set-env name=action_state::yellow"
+```
+{% endif %}
 
 ## Definir um parâmetro de saída
 
@@ -99,6 +123,22 @@ Opcionalmente, você também pode declarar os parâmetros de saída no arquivo d
 echo "::set-output name=action_fruit::strawberry"
 ```
 
+{% ifversion ghes < 3.0 %}
+## Adicionar um caminho do sistema
+
+```
+::add-path::{path}
+```
+
+Agrega um diretório à variável de sistema `PATH` para todas as ações subsequentes no trabalho atual. A ação que está em execução não pode acessar a nova variável de caminho.
+
+### Exemplo
+
+``` bash
+echo "::add-path::/path/to/dir"
+```
+{% endif %}
+
 ## Configurar uma mensagem de depuração
 
 ```
@@ -113,15 +153,15 @@ Imprime uma mensagem de erro no log. Você deve criar um segredo nomeado `ACTION
 echo "::debug::Set the Octocat variable"
 ```
 
-{% ifversion fpt or ghes > 3.2 or ghae-issue-4929 or ghec %}
+{% ifversion fpt or ghes > 3.2 or ghae-issue-4929 %}
 
-## Configurando uma mensagem de aviso
+## Setting a notice message
 
 ```
 ::notice file={name},line={line},endLine={endLine},title={title}::{message}
 ```
 
-Cria uma mensagem de aviso e a imprime no registro. {% data reusables.actions.message-annotation-explanation %}
+Creates a notice message and prints the message to the log. {% data reusables.actions.message-annotation-explanation %}
 
 {% data reusables.actions.message-parameters %}
 
@@ -215,11 +255,11 @@ echo "::add-mask::$MY_NAME"
 
 Para de processar quaisquer comandos de fluxo de trabalho. Esse comando especial permite fazer o registro do que você desejar sem executar um comando do fluxo de trabalho acidentalmente. Por exemplo, é possível parar o log para gerar um script inteiro que tenha comentários.
 
-Para parar o processamento de comandos de fluxo de trabalho, passe um token único para `stop-commands`. Para retomar os comandos do fluxo de trabalho, passe o mesmo token que você usou para parar os comandos do fluxo de trabalho.
+To stop the processing of workflow commands, pass a unique token to `stop-commands`. To resume processing workflow commands, pass the same token that you used to stop workflow commands.
 
 {% warning %}
 
-**Aviso:** Certifique-se de que o token que você está usando é gerado aleatoriamente e exclusivo para cada execução. Como demonstrado no exemplo abaixo, você pode gerar um hash exclusivo do seu `github.token` para cada execução.
+**Warning:** Make sure the token you're using is randomly generated and unique for each run. As demonstrated in the example below, you can generate a unique hash of your `github.token` for each run.
 
 {% endwarning %}
 
@@ -227,7 +267,7 @@ Para parar o processamento de comandos de fluxo de trabalho, passe um token úni
 ::{endtoken}::
 ```
 
-### Exemplo de parar e iniciar comandos de workflow
+### Example stopping and starting workflow commands
 
 {% raw %}
 
@@ -267,39 +307,19 @@ A variável `STATE_processID` está exclusivamente disponível para o script de 
 console.log("O PID em execução a partir da ação principal é: " +  process.env.STATE_processID);
 ```
 
+{% ifversion fpt or ghes > 2.22 or ghae %}
 ## Arquivos de Ambiente
 
 Durante a execução de um fluxo de trabalho, o executor gera arquivos temporários que podem ser usados para executar certas ações. O caminho para esses arquivos são expostos através de variáveis de ambiente. Você precisará usar a codificação UTF-8 ao escrever para esses arquivos para garantir o processamento adequado dos comandos. Vários comandos podem ser escritos no mesmo arquivo, separados por novas linhas.
 
 {% warning %}
 
-**Aviso:** no Windows, o PowerShell de legado (`shell: powershell`) não usa UTF-8 por padrão. Certifique-se de escrever os arquivos usando a codificação correta. Por exemplo, você deve definir a codificação UTF-8 ao definir o caminho:
+**Aviso:** O Powershell não usa UTF-8 por padrão. Certifique-se de escrever os arquivos usando a codificação correta. Por exemplo, você deve definir a codificação UTF-8 ao definir o caminho:
 
 ```yaml
-jobs:
-  legacy-powershell-example:
-    uses: windows-2019
-    steps:
-      - shell: powershell
-        run: echo "mypath" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
+steps:
+  - run: echo "mypath" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
 ```
-
-Ou mude para PowerShell Core, cujo padrão é UTF-8:
-
-```yaml
-jobs:
-  modern-pwsh-example:
-    uses: windows-2019
-    steps:
-      - shell: pwsh
-        run: echo "mypath" | Out-File -FilePath $env:GITHUB_PATH -Append # no need for -Encoding utf8
-```
-
-More detail about UTF-8 and PowerShell Core found on this great [Stack Overflow answer](https://stackoverflow.com/a/40098904/162694):
-
-> ### Leitura opcional: A perspectiva entre plataformas: PowerShell _Core_:
-> 
-> [PowerShell is now cross-platform](https://blogs.msdn.microsoft.com/powershell/2016/08/18/powershell-on-linux-and-open-source-2/), via its **[PowerShell _Core_](https://github.com/PowerShell/PowerShell)** edition, whose encoding - sensibly - ***defaults to ***BOM-less UTF-8******, in line with Unix-like platforms.
 
 {% endwarning %}
 
@@ -309,13 +329,7 @@ More detail about UTF-8 and PowerShell Core found on this great [Stack Overflow 
 echo "{name}={value}" >> $GITHUB_ENV
 ```
 
-Cria ou atualiza uma variável de ambiente para quaisquer etapas a serem executadas em seguida no trabalho. A etapa que cria ou atualiza a variável de ambiente não tem acesso ao novo valor, mas todos os passos subsequentes em um trabalho terão acesso. As variáveis de ambiente diferenciam maiúsculas de minúsculas e podem ter pontuação.
-
-{% note %}
-
-**Observação:** As variáveis de ambiente devem ser referenciadas explicitamente usando o [`env` contexto](/actions/reference/context-and-expression-syntax-for-github-actions#env-context) na sintaxe de expressão ou por meio do uso do arquivo `$GITHUB_ENV` diretamente. As variáveisde ambiente não estão implicitamente disponíveis nos comandos do shell.
-
-{% endnote %}
+Creates or updates an environment variable for any steps running next in a job. The step that creates or updates the environment variable does not have access to the new value, but all subsequent steps in a job will have access. As variáveis de ambiente diferenciam maiúsculas de minúsculas e podem ter pontuação.
 
 ### Exemplo
 
@@ -362,7 +376,7 @@ steps:
 echo "{path}" >> $GITHUB_PATH
 ```
 
-Prepara um diretório para a variável `PATH` do sistema e disponibiliza automaticamente para todas as ações subsequentes no trabalho atual; a ação atualmente em execução não pode acessar a variável de caminho atualizada. Para ver os caminhos atualmente definidos para o seu trabalho, você pode usar o `echo "$PATH"` em uma etapa ou ação.
+Prepara um diretório para a variável `PATH` do sistema e o torna disponível para todas as ações subsequentes no trabalho atual; a ação atualmente em execução não pode acessar a variável de caminho atualizada. Para ver os caminhos atualmente definidos para o seu trabalho, você pode usar o `echo "$PATH"` em uma etapa ou ação.
 
 ### Exemplo
 
@@ -371,3 +385,4 @@ Este exemplo demonstra como adicionar o diretório `$HOME/.local/bin` ao `PATH`:
 ``` bash
 echo "$HOME/.local/bin" >> $GITHUB_PATH
 ```
+{% endif %}

@@ -11,7 +11,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - SSH
 shortTitle: Generate new SSH key
@@ -21,7 +20,7 @@ shortTitle: Generate new SSH key
 
 If you don't already have an SSH key, you must generate a new SSH key to use for authentication. If you're unsure whether you already have an SSH key, you can check for existing keys. For more information, see "[Checking for existing SSH keys](/github/authenticating-to-github/checking-for-existing-ssh-keys)."
 
-{% ifversion fpt or ghae-next or ghes > 3.1 or ghec %}
+{% ifversion fpt %}
 
 If you want to use a hardware security key to authenticate to {% data variables.product.product_name %}, you must generate a new SSH key for your hardware security key. You must connect your hardware security key to your computer when you authenticate with the key pair. For more information, see the [OpenSSH 8.2 release notes](https://www.openssh.com/txt/release-8.2).
 
@@ -32,12 +31,6 @@ If you don't want to reenter your passphrase every time you use your SSH key, yo
 
 {% data reusables.command_line.open_the_multi_os_terminal %}
 2. 以下のテキストを貼り付けます。メールアドレスは自分の {% data variables.product.product_name %} メールアドレスに置き換えてください。
-    {% ifversion ghae %}
-    <!-- GitHub AE is FIPS 140-2 compliant. FIPS does not yet permit keys that use the ed25519 algorithm. -->
-  ```shell
-  $ ssh-keygen -t rsa -b 4096 -C "<em>your_email@example.com</em>" 
-  ```
-    {% else %}
   ```shell
   $ ssh-keygen -t ed25519 -C "<em>your_email@example.com</em>"
   ```
@@ -45,22 +38,20 @@ If you don't want to reenter your passphrase every time you use your SSH key, yo
 
   **注釈:** Ed25519 アルゴリズムをサポートしないレガシーシステムを使用している場合は、以下を使用します。
   ```shell
-   $ ssh-keygen -t rsa -b 4096 -C "<em>your_email@example.com</em>"
+   $ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
   ```
 
   {% endnote %}
-  {% endif %}
-
   This creates a new SSH key, using the provided email as a label.
   ```shell
-  > Generating public/private <em>algorithm</em> key pair.
+  > Generating public/private ed25519 key pair.
   ```
 3. 「Enter a file in which to save the key」というメッセージが表示されたら、Enter キーを押します。 これにより、デフォルトのファイル場所が受け入れられます。
 
   {% mac %}
 
   ```shell
-  > Enter a file in which to save the key (/Users/<em>you</em>/.ssh/id_<em>algorithm</em>): <em>[Press enter]</em>
+  > Enter a file in which to save the key (/Users/<em>you</em>/.ssh/id_ed25519): <em>[Press enter]</em>
   ```
 
   {% endmac %}
@@ -68,7 +59,7 @@ If you don't want to reenter your passphrase every time you use your SSH key, yo
   {% windows %}
 
   ```shell
-  > Enter a file in which to save the key (/c/Users/<em>you</em>/.ssh/id_<em>algorithm</em>):<em>[Press enter]</em>
+  > Enter a file in which to save the key (/c/Users/<em>you</em>/.ssh/id_ed25519):<em>[Press enter]</em>
   ```
 
   {% endwindows %}
@@ -76,7 +67,7 @@ If you don't want to reenter your passphrase every time you use your SSH key, yo
   {% linux %}
 
   ```shell
-  > Enter a file in which to save the key (/home/<em>you</em>/.ssh/<em>algorithm</em>): <em>[Press enter]</em>
+  > Enter a file in which to save the key (/home/<em>you</em>/.ssh/id_ed25519): <em>[Press enter]</em>
   ```
 
   {% endlinux %}
@@ -116,7 +107,7 @@ Before adding a new SSH key to the ssh-agent to manage your keys, you should hav
       Host *
         AddKeysToAgent yes
         UseKeychain yes
-        IdentityFile ~/.ssh/id_{% ifversion ghae %}ecdsa{% else %}ed25519{% endif %}
+        IdentityFile ~/.ssh/id_ed25519
       ```
 
      {% note %}
@@ -146,15 +137,13 @@ Before adding a new SSH key to the ssh-agent to manage your keys, you should hav
 
 3. SSH 秘密鍵を ssh-agent に追加して、パスフレーズをキーチェーンに保存します。 {% data reusables.ssh.add-ssh-key-to-ssh-agent %}
    ```shell
-   $ ssh-add -K ~/.ssh/id_{% ifversion ghae %}rsa{% else %}ed25519{% endif %}
+   $ ssh-add -K ~/.ssh/id_ed25519
   ```
   {% note %}
 
   **Note:** The `-K` option is Apple's standard version of `ssh-add`, which stores the passphrase in your keychain for you when you add an SSH key to the ssh-agent. キーにパスフレーズを追加しない場合は、`-K` オプションを指定せずにコマンドを実行します。
 
   Apple の標準バージョンをインストールしていない場合は、エラーが発生する場合があります。 このエラーの解決方法についての詳細は、「[エラー: ssh-add: illegal option -- K](/articles/error-ssh-add-illegal-option-k)」を参照してください。
-
-  In MacOS Monterey (12.0), the `-K` and `-A` flags are deprecated and have been replaced by the `--apple-use-keychain` and `--apple-load-keychain` flags, respectively.
 
   {% endnote %}
 
@@ -191,7 +180,7 @@ Before adding a new SSH key to the ssh-agent to manage your keys, you should hav
 
 {% endlinux %}
 
-{% ifversion fpt or ghae-next or ghes > 3.1 or ghec %}
+{% ifversion fpt or ghae-next or ghes > 3.1 %}
 ## Generating a new SSH key for a hardware security key
 
 If you are using macOS or Linux, you may need to update your SSH client or install a new SSH client prior to generating a new SSH key. For more information, see "[Error: Unknown key type](/github/authenticating-to-github/error-unknown-key-type)."
@@ -200,10 +189,8 @@ If you are using macOS or Linux, you may need to update your SSH client or insta
 {% data reusables.command_line.open_the_multi_os_terminal %}
 3. Paste the text below, substituting in the email address for your account on {% data variables.product.product_name %}.
   ```shell
-  $ ssh-keygen -t {% ifversion ghae %}ecdsa{% else %}ed25519{% endif %}-sk -C "<em>your_email@example.com</em>"
+  $ ssh-keygen -t ed25519-sk -C "<em>your_email@example.com</em>"
   ```
-
-  {% ifversion not ghae %}
   {% note %}
 
   **Note:** If the command fails and you receive the error `invalid format` or `feature not supported,` you may be using a hardware security key that does not support the Ed25519 algorithm. Enter the following command instead.
@@ -212,14 +199,13 @@ If you are using macOS or Linux, you may need to update your SSH client or insta
   ```
 
   {% endnote %}
-  {% endif %}
 4. When you are prompted, touch the button on your hardware security key.
 5. When you are prompted to "Enter a file in which to save the key," press Enter to accept the default file location.
 
   {% mac %}
 
   ```shell
-  > Enter a file in which to save the key (/Users/<em>you</em>/.ssh/id_{% ifversion ghae %}ecdsa{% else %}ed25519{% endif %}_sk): <em>[Press enter]</em>
+  > Enter a file in which to save the key (/Users/<em>you</em>/.ssh/id_ed25519_sk): <em>[Press enter]</em>
   ```
 
   {% endmac %}
@@ -227,7 +213,7 @@ If you are using macOS or Linux, you may need to update your SSH client or insta
   {% windows %}
 
   ```shell
-  > Enter a file in which to save the key (/c/Users/<em>you</em>/.ssh/id_{% ifversion ghae %}ecdsa{% else %}ed25519{% endif %}_sk):<em>[Press enter]</em>
+  > Enter a file in which to save the key (/c/Users/<em>you</em>/.ssh/id_ed25519_sk):<em>[Press enter]</em>
   ```
 
   {% endwindows %}
@@ -235,7 +221,7 @@ If you are using macOS or Linux, you may need to update your SSH client or insta
   {% linux %}
 
   ```shell
-  > Enter a file in which to save the key (/home/<em>you</em>/.ssh/id_{% ifversion ghae %}ecdsa{% else %}ed25519{% endif %}_sk): <em>[Press enter]</em>
+  > Enter a file in which to save the key (/home/<em>you</em>/.ssh/id_ed25519_sk): <em>[Press enter]</em>
   ```
 
   {% endlinux %}

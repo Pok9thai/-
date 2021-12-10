@@ -10,7 +10,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - Pull requests
 ---
@@ -21,7 +20,7 @@ topics:
 
 プロジェクトボードのカードには、ラベル、アサインされた人、スタータス、オープンした人など、Issueやプルリクエストに関連するメタデータが含まれます。 {% data reusables.project-management.edit-in-project %}
 
-タスクのリマインダとして機能するノートを列内に作成し、{% data variables.product.product_location %} 上の任意のリポジトリからの Issue やプルリクエストを参照させたり、プロジェクトボードに関係する情報を追加したりすることができます。 ノートにリンクを追加することで、他のプロジェクトを参照するカードを作成することもできます。 ノートでは要求を満たせない場合、ノートを Issue に変換することができます。 プロジェクトボードのノートのIssueへの変換に関する詳しい情報については[プロジェクトボードへのノートの追加](/articles/adding-notes-to-a-project-board)を参照してください。
+タスクのリマインダとして機能するノートを列内に作成し、{% data variables.product.product_name %} 上の任意のリポジトリからの Issue やプルリクエストを参照させたり、プロジェクトボードに関係する情報を追加したりすることができます。 ノートにリンクを追加することで、他のプロジェクトを参照するカードを作成することもできます。 ノートでは要求を満たせない場合、ノートを Issue に変換することができます。 プロジェクトボードのノートのIssueへの変換に関する詳しい情報については[プロジェクトボードへのノートの追加](/articles/adding-notes-to-a-project-board)を参照してください。
 
 プロジェクトボードには以下の種類があります:
 
@@ -67,7 +66,7 @@ Organization が所有するプロジェクトボードに、あなたが表示�
 ## 参考リンク
 
 - [プロジェクトボードの作成](/articles/creating-a-project-board)
-- [プロジェクトボードの編集](/articles/editing-a-project-board){% ifversion fpt or ghec %}
+- [プロジェクトボードの編集](/articles/editing-a-project-board){% ifversion fpt %}
 - [プロジェクトボードのコピー](/articles/copying-a-project-board)
 {% endif %}
 - [プロジェクトボードへの Issue およびプルリクエストの追加](/articles/adding-issues-and-pull-requests-to-a-project-board)

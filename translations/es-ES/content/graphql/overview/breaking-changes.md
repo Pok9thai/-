@@ -5,7 +5,6 @@ redirect_from:
   - /v4/breaking_changes
 versions:
   fpt: '*'
-  ghec: '*'
   ghes: '*'
   ghae: '*'
 topics:

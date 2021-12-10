@@ -22,7 +22,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 shortTitle: Gerenciar repositórios remotos
 ---
 
@@ -173,7 +172,7 @@ $ git remote -v
 
 ### Solução de problemas: Não foi possível renomear a seção de configuração 'remote.[old name]' para 'remote.[new name]'
 
-This error means that the old remote name you typed doesn't exist.
+Esse erro informa que o nome do remote antigo que você inseriu não existe.
 
 Você pode consultar os remotes existentes no momento com o comando `git remote -v`:
 

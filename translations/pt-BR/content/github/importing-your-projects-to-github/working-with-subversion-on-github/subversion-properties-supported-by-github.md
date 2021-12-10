@@ -7,7 +7,6 @@ redirect_from:
 versions:
   fpt: '*'
   ghes: '*'
-  ghec: '*'
 shortTitle: Propriedades compatíveis com o GitHub
 ---
 

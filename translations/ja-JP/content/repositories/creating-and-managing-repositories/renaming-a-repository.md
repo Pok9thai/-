@@ -9,7 +9,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - Repositories
 ---
@@ -31,7 +30,7 @@ $ git remote set-url origin <em>新しい URL</em>
 
 For more information, see "[Managing remote repositories](/github/getting-started-with-github/managing-remote-repositories)."
 
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 
 {% data variables.product.prodname_pages %}サイトを持つリポジトリの名前を変更する場合は、サイトにカスタムドメインを使用することをお勧めします。 これにより、リポジトリの名前を変更してもサイトの URL は影響を受けません。 詳細は「[カスタムドメインおよび{% data variables.product.prodname_pages %}サイトについて](/pages/configuring-a-custom-domain-for-your-github-pages-site/about-custom-domains-and-github-pages)」を参照してください。
 

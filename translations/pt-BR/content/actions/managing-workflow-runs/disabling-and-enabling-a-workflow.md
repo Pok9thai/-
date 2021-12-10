@@ -1,11 +1,11 @@
 ---
 title: Desabilitar e habilitar um fluxo de trabalho
 intro: 'Você pode desabilitar e habilitar novamente um fluxo de trabalho usando a interface do usuário de {% data variables.product.prodname_dotcom %}, a API REST, ou {% data variables.product.prodname_cli %}.'
+product: '{% data reusables.gated-features.actions %}'
 versions:
   fpt: '*'
-  ghes: '*'
+  ghes: '>=3.0'
   ghae: '*'
-  ghec: '*'
 shortTitle: Desabilitar & habilitar um fluxo de trabalho
 ---
 

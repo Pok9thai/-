@@ -12,10 +12,9 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - Repositories
-shortTitle: Borrar & restablecer las ramas
+shortTitle: Delete & restore branches
 ---
 
 ## Borrar la rama utilizada para una solicitud de extracción

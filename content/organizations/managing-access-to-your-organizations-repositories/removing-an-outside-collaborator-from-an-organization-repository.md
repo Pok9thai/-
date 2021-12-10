@@ -8,14 +8,13 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - Organizations
   - Teams
 shortTitle: Remove collaborator
 ---
 
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 
 {% warning %}
 

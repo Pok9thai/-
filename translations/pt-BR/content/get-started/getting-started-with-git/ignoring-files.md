@@ -12,7 +12,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 ---
 
 ## Configurar arquivos ignorados para um único repositório
@@ -27,8 +26,6 @@ O GitHub mantém uma lista oficial de arquivos *.gitignore* recomendados para mu
    ```shell
    $ touch .gitignore
   ```
-
-   If the command succeeds, there will be no output.
 
 Por obter um exemplo do arquivo *.gitignore*, consulte "[Algumas configurações comuns do .gitignore](https://gist.github.com/octocat/9257657)" no repositório do Octocat.
 

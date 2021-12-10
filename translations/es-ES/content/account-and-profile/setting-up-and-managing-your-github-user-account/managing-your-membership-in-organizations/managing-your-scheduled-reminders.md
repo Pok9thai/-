@@ -3,7 +3,6 @@ title: Administrar tus recordatorios programados
 intro: Obtén recordatorios en Slack cuando tú o tu equipo tenga solicitudes de extracción pendientes de revisión.
 versions:
   fpt: '*'
-  ghec: '*'
 topics:
   - Accounts
 redirect_from:

@@ -1,4 +1,5 @@
-- [最小要件](#minimum-requirements)
+- [最小要件](#minimum-requirements){% ifversion ghes = 2.22 %}
+- [{% data variables.product.prodname_ghe_server %} 2.22のベータ機能](#beta-features-in-github-enterprise-server-222){% endif %}
 - [ストレージ](#storage)
 - [CPU及びメモリ](#cpu-and-memory)
 
@@ -16,11 +17,11 @@
 
 {% ifversion ghes %}
 
-To configure {% data variables.product.prodname_actions %}, you must provide external blob storage. 詳しい情報については、「[{% data variables.product.prodname_ghe_server %} の {% data variables.product.prodname_actions %} を使ってみる](/admin/github-actions/getting-started-with-github-actions-for-github-enterprise-server##external-storage-requirements)」を参照してください。
+{% data variables.product.prodname_actions %}{% ifversion ghes = 2.22 %}のベータ{% endif %}を設定するには、外部のblobストレージを用意しなければなりません。 詳しい情報については、「[{% data variables.product.prodname_ghe_server %} の {% data variables.product.prodname_actions %} を使ってみる](/admin/github-actions/getting-started-with-github-actions-for-github-enterprise-server##external-storage-requirements)」を参照してください。
 
 {% endif %}
 
-The available space on the root filesystem will be 50% of the total disk size. 新しいインスタンスを構築するか、既存のインスタンスを利用して、インスタンスのルートディスクのサイズを変更できます。 For more information, see "[System overview](/enterprise/admin/guides/installation/system-overview#storage-architecture)" and "[Increasing storage capacity](/enterprise/{{ currentVersion }}/admin/guides/installation/increasing-storage-capacity)."
+新しいインスタンスを構築するか、既存のインスタンスを利用して、インスタンスのルートディスクのサイズを変更できます。 詳しい情報については「[ストレージ容量の増加](/enterprise/{{ currentVersion }}/admin/guides/installation/increasing-storage-capacity)」を参照してください。
 
 ### CPU及びメモリ
 
@@ -28,7 +29,7 @@ The available space on the root filesystem will be 50% of the total disk size. �
 
 {% ifversion ghes %}
 
-If you plan to enable {% data variables.product.prodname_actions %} for the users of your {% data variables.product.prodname_ghe_server %} instance, you may need to provision additional CPU and memory resources for your instance. 詳しい情報については「[{% data variables.product.prodname_ghe_server %}のための{% data variables.product.prodname_actions %}の利用開始](/admin/github-actions/getting-started-with-github-actions-for-github-enterprise-server#review-hardware-considerations)」を参照してください。
+{% data variables.product.prodname_ghe_server %}インスタンスのユーザに対して{% data variables.product.prodname_actions %}{% ifversion ghes = 2.22 %}のベータを有効化する{% else %}を有効化する計画{% endif %}なら、インスタンスに追加のCPU及びメモリリソースをプロビジョニングしなければならないことがあります。 詳しい情報については「[{% data variables.product.prodname_ghe_server %}のための{% data variables.product.prodname_actions %}の利用開始](/admin/github-actions/getting-started-with-github-actions-for-github-enterprise-server#review-hardware-considerations)」を参照してください。
 
 {% endif %}
 

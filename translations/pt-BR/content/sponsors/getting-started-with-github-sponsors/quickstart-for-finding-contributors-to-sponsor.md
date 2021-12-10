@@ -3,7 +3,6 @@ title: Início rápido para encontrar contribuidores para patrocinar
 intro: Aprenda algumas prática recomendada para encontrar contribuidores de código aberto para patrocinar.
 versions:
   fpt: '*'
-  ghec: '*'
 type: quick_start
 topics:
   - Open Source

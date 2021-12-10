@@ -1,11 +1,10 @@
 ---
-title: Solucionar problemas en los Codespaces
+title: Troubleshooting Codespaces
 shortTitle: Solución de problemas
 product: '{% data reusables.gated-features.codespaces %}'
-intro: 'Estas guías te proporcionan información para solucionar los problemas de los {% data variables.product.prodname_codespaces %}'
+intro: 'These guides provide information for troubleshooting {% data variables.product.prodname_codespaces %}'
 versions:
   fpt: '*'
-  ghec: '*'
 redirect_from:
   - /codespaces/codespaces-reference/troubleshooting-your-codespace
   - /github/developing-online-with-github-codespaces/troubleshooting-your-codespace

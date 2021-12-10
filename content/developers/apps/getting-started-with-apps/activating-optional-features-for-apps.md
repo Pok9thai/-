@@ -8,7 +8,6 @@ versions:
   fpt: '*'
   ghae: '*'
   ghes: '*'
-  ghec: '*'
 topics:
   - GitHub Apps
 shortTitle: Activate optional features

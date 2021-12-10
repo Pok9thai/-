@@ -23,9 +23,7 @@ shortTitle: Importar hacia tu empresa
 
 ## Aplicar los datos importados en {% data variables.product.prodname_ghe_server %}
 
-Before you can migrate data to your enterprise, you must prepare the data and resolve any conflicts. Para obtener más información, consulta la sección "[Cómo prepararte para migrar datos a tu empresa](/admin/user-management/preparing-to-migrate-data-to-your-enterprise)".
-
-After you prepare the data and resolve conflicts, you can apply the imported data on {% data variables.product.product_name %}.
+Una vez que hayas [preparado tu migración](/admin/user-management/preparing-to-migrate-data-to-your-enterprise), puedes utilizar los siguientes pasos para completar la migración.
 
 {% data reusables.enterprise_installation.ssh-into-target-instance %}
 

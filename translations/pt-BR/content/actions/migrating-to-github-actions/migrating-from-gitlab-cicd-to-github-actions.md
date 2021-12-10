@@ -7,7 +7,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 type: tutorial
 topics:
   - GitLab
@@ -134,7 +133,7 @@ Para obter mais informações, consulte "[Sintaxe do fluxo de trabalho para {% d
 
 ## Imagens do Docker
 
-Tanto o GitLab CI/CD quanto o {% data variables.product.prodname_actions %} são compatíveis com trabalhos executados em uma imagem do Docker. Na CI/CD do GitLab, as imagens do Docker são definidas com uma chave `de imagem`, enquanto em {% data variables.product.prodname_actions %}, isso é feito com a chave `contêiner`.
+Tanto o GitLab CI/CD quanto o {% data variables.product.prodname_actions %} são compatíveis com trabalhos executados em uma imagem do Docker. In GitLab CI/CD, Docker images are defined with an `image` key, while in {% data variables.product.prodname_actions %} it is done with the `container` key.
 
 Abaixo, há um exemplo da sintaxe para cada sistema:
 
@@ -213,7 +212,7 @@ jobs:
 </tr>
 </table>
 
-Para obter mais informações, consulte "[Expressões](/actions/learn-github-actions/expressions)".
+For more information, see "[Expressions](/actions/learn-github-actions/expressions)."
 
 ## Dependências entre trabalhos
 
@@ -360,7 +359,7 @@ jobs:
 </tr>
 </table>
 
-O cache de {% data variables.product.prodname_actions %} só é aplicável para repositórios hospedados em {% data variables.product.prodname_dotcom_the_website %}. Para obter mais informações, consulte "<a href="/actions/guides/caching-dependencies-to-speed-up-workflows" class="dotcom-only">Memorizar dependências para acelerar fluxos de trabalho</a>".
+O armazenamento em cache de {% data variables.product.prodname_actions %} só é aplicável a executores hospedados em {% data variables.product.prodname_dotcom %}. Para obter mais informações, consulte "<a href="/actions/guides/caching-dependencies-to-speed-up-workflows" class="dotcom-only">Memorizar dependências para acelerar fluxos de trabalho</a>".
 
 ## Artefatos
 

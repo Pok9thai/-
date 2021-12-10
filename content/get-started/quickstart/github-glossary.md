@@ -9,7 +9,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 ---
 {% for term in site.data.glossaries.external %}
   ### {% data glossaries.external[forloop.index0].term %}

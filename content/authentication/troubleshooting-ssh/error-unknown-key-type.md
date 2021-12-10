@@ -4,8 +4,7 @@ intro: 'This error means that the SSH key type you used was unrecognized or is u
 versions:
   fpt: '*'
   ghes: '>=3.2'
-  ghae: next
-  ghec: '*'
+  ghae: 'next'
 topics:
   - SSH
 redirect_from:

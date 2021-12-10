@@ -3,7 +3,6 @@ title: Administrar la configuración de seguridad y análisis para tu cuenta de 
 intro: 'Puedes controlar las características que dan seguridad y analizan tu código en tus proyectos dentro de {% data variables.product.prodname_dotcom %}.'
 versions:
   fpt: '*'
-  ghec: '*'
 topics:
   - Accounts
 redirect_from:
@@ -44,4 +43,4 @@ Para obtener un resumen de la seguridad a nivel de repositorio, consulta la secc
 
 - "[Acerca de la gráfica de dependencias](/github/visualizing-repository-data-with-graphs/about-the-dependency-graph)"
 - "[Administrar las vulnerabilidades en las dependencias de tu proyecto](/github/managing-security-vulnerabilities/managing-vulnerabilities-in-your-projects-dependencies)"
-{% ifversion fpt or ghec %}- "![Mantener tus dependencias actualizadas automáticamente](/github/administering-a-repository/keeping-your-dependencies-updated-automatically)"{% endif %}
+{% ifversion fpt %}- "![Mantener tus dependencias actualizadas automáticamente](/github/administering-a-repository/keeping-your-dependencies-updated-automatically)"{% endif %}

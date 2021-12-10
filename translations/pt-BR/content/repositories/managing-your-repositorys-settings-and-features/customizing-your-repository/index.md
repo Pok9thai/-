@@ -1,11 +1,10 @@
 ---
-title: Personalizando seu repositório
-intro: Você pode escolher como o repositório aparece personalizando seu repositório.
+title: Customizing your repository
+intro: You can choose the way your repository appears by customizing your repository.
 versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - Repositories
 children:
@@ -17,6 +16,6 @@ children:
   - /about-code-owners
   - /about-repository-languages
   - /about-citation-files
-shortTitle: Personalize seu repositório
+shortTitle: Customize your repository
 ---
 

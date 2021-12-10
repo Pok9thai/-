@@ -4,7 +4,6 @@ intro: Diretrizes para a criação de um aplicativo fácil de usar e entender.
 shortTitle: Práticas recomendadas de experiência do cliente
 versions:
   fpt: '*'
-  ghec: '*'
 topics:
   - Marketplace
 redirect_from:

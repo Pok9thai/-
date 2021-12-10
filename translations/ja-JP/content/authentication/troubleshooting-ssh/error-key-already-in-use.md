@@ -9,7 +9,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - SSH
 ---
@@ -25,7 +24,7 @@ $ ssh -T -ai <em>~/.ssh/id_rsa</em> git@{% data variables.command_line.codeblock
 > provide shell access.
 ```
 
-The *username* in the response is the account on {% ifversion ghae %}{% data variables.product.product_name %}{% else %}{% data variables.product.product_location %}{% endif %} that the key is currently attached to. 応答が「username/repo」のようなものである場合は、キーがリポジトリに[*デプロイキー*](/guides/managing-deploy-keys#deploy-keys)として添付されています。
+応答の *username* は、キーが現在添付されている {% data variables.product.product_name %} アカウントです。 応答が「username/repo」のようなものである場合は、キーがリポジトリに[*デプロイキー*](/guides/managing-deploy-keys#deploy-keys)として添付されています。
 
 
 To force SSH to use only the key provided on the command line, use `-o` to add the `IdentitiesOnly=yes` option:

@@ -75,7 +75,7 @@ export const Editor: React.FC<Props> = ({ article }) => {
             return (
               <button
                 className={cx('btn-link Link--secondary no-underline mr-2 f6 py-2 px-3', {
-                  'color-bg-subtle': i === selectedFileIndex,
+                  'color-bg-tertiary': i === selectedFileIndex,
                 })}
                 onClick={() => setSelectedFileIndex(i)}
               >
@@ -98,7 +98,7 @@ export const Editor: React.FC<Props> = ({ article }) => {
                 let className = ''
                 for (const highlight of normalizedHighlight) {
                   if (lineNumber >= highlight[0] && lineNumber <= highlight[1]) {
-                    className = 'color-bg-accent'
+                    className = 'color-bg-info'
                   }
                 }
                 return { style: { display: 'block' }, class: className }

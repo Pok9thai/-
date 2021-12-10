@@ -9,7 +9,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - Repositories
 shortTitle: 配置提交压缩
@@ -26,5 +25,5 @@ shortTitle: 配置提交压缩
 
 ## 延伸阅读
 
-- "[关于拉取请求合并](/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/about-pull-request-merges)"
-- "[合并拉取请求](/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/merging-a-pull-request)"
+- "[关于拉取请求合并](/articles/about-pull-request-merges)"
+- "[合并拉取请求](/articles/merging-a-pull-request)"

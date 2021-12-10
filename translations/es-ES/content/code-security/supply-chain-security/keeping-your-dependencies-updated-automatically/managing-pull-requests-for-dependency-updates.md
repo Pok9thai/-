@@ -6,7 +6,6 @@ redirect_from:
   - /code-security/supply-chain-security/managing-pull-requests-for-dependency-updates
 versions:
   fpt: '*'
-  ghec: '*'
 type: how_to
 topics:
   - Repositories

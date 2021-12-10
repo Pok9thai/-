@@ -5,7 +5,6 @@ redirect_from:
   - /articles/exploring-integrations
 versions:
   fpt: '*'
-  ghec: '*'
 children:
   - /about-integrations
   - /about-github-marketplace

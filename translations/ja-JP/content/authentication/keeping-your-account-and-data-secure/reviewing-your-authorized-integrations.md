@@ -9,7 +9,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - Identity
   - Access management
@@ -31,6 +30,6 @@ shortTitle: Authorized integrations
 3. Review the {% data variables.product.prodname_github_apps %} that have access to your account. 覚えていないか古くなっている場合は、[**Revoke**] をクリックします。 To revoke all {% data variables.product.prodname_github_apps %}, click **Revoke all**. ![許可された {% data variables.product.prodname_github_app %} のリスト](/assets/images/help/settings/revoke-github-app.png)
 
 ## 参考リンク
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 - "[インテグレーションについて](/articles/about-integrations)"{% endif %}
 - "[許可されたアプリケーション (OAuth) をレビューする](/articles/reviewing-your-authorized-applications-oauth)"

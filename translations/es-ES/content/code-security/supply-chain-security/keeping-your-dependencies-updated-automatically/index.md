@@ -5,7 +5,6 @@ redirect_from:
   - /github/administering-a-repository/keeping-your-dependencies-updated-automatically
 versions:
   fpt: '*'
-  ghec: '*'
 topics:
   - Repositories
   - Dependabot

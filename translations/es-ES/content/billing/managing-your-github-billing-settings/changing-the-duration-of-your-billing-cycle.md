@@ -10,7 +10,6 @@ redirect_from:
   - /github/setting-up-and-managing-billing-and-payments-on-github/managing-your-github-billing-settings/changing-the-duration-of-your-billing-cycle
 versions:
   fpt: '*'
-  ghec: '*'
 type: how_to
 topics:
   - Organizations

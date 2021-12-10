@@ -8,7 +8,6 @@ redirect_from:
 versions:
   fpt: '*'
   ghes: '*'
-  ghec: '*'
 topics:
   - Organizations
   - Teams
@@ -21,7 +20,7 @@ Los equipos de administración heredados son equipos que fueron creados con el n
 
 Puedes eliminar esta capacidad al migrar tus equipos de administradores heredados a los permisos mejorados de la organización.
 
-For more information, see "[Repository roles for an organization](/organizations/managing-access-to-your-organizations-repositories/repository-roles-for-an-organization)."
+Para obtener más información, consulta "[Niveles de permiso del repositorio para una organización](/articles/permission-levels-for-an-organization)".
 
 {% warning %}
 

@@ -6,7 +6,6 @@ redirect_from:
   - /graphql/guides/intro-to-graphql
 versions:
   fpt: '*'
-  ghec: '*'
   ghes: '*'
   ghae: '*'
 topics:

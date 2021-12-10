@@ -1,6 +1,7 @@
 ---
 title: 构建和测试 Node.js
 intro: 您可以创建持续集成 (CI) 工作流程来构建和测试您的 Node.js 项目。
+product: '{% data reusables.gated-features.actions %}'
 redirect_from:
   - /actions/automating-your-workflow-with-github-actions/using-nodejs-with-github-actions
   - /actions/language-and-framework-guides/using-nodejs-with-github-actions
@@ -9,7 +10,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 type: tutorial
 hidden: true
 topics:
@@ -268,7 +268,7 @@ steps:
 - run: yarn test
 ```
 
-以下示例缓存 pnpm (v6.10+) 的依赖项。
+The following example caches dependencies for pnpm (v6.10+).
 
 ```yaml{:copy}
 {% data reusables.actions.actions-not-certified-by-github-comment %}
@@ -288,7 +288,7 @@ steps:
 - run: pnpm test
 ```
 
-要缓存依赖，您必须在仓库的根目录有 `package-lock.json`、`yarn.lock` 或 `pnpm-lock.yaml` 文件。 如果您需要更灵活的自定义功能，可以使用 [`cache` 操作](https://github.com/marketplace/actions/cache)。 更多信息请参阅“<a href="/actions/guides/caching-dependencies-to-speed-up-workflows" class="dotcom-only">缓存依赖项以加快工作流程</a>”。
+To cache dependencies, you must have a `package-lock.json`, `yarn.lock`, or `pnpm-lock.yaml` file in the root of the repository. 如果您需要更灵活的自定义功能，可以使用 [`cache` 操作](https://github.com/marketplace/actions/cache)。 更多信息请参阅“<a href="/actions/guides/caching-dependencies-to-speed-up-workflows" class="dotcom-only">缓存依赖项以加快工作流程</a>”。
 
 ## 构建和测试代码
 

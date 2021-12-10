@@ -11,7 +11,6 @@ redirect_from:
   - /github/setting-up-and-managing-billing-and-payments-on-github/managing-your-github-billing-settings/removing-a-payment-method
 versions:
   fpt: '*'
-  ghec: '*'
 type: how_to
 topics:
   - Organizations

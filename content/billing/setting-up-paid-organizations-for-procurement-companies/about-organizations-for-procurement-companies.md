@@ -8,7 +8,6 @@ redirect_from:
   - /github/setting-up-and-managing-billing-and-payments-on-github/setting-up-paid-organizations-for-procurement-companies/about-organizations-for-procurement-companies
 versions:
   fpt: '*'
-  ghec: '*'
 type: overview
 topics:
   - Organizations

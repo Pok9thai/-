@@ -9,13 +9,12 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - Accounts
 shortTitle: Membresía de la organización
 ---
 
-Un propietario de la organización puede invitarte a unirte a su organización como miembro, gerente de facturación o propietario. Un miembro o propietario de la organización con privilegios de administrador para un repositorio puede invitarte a colaborar en uno o más repositorios como un colaborador externo. For more information, see "[Roles in an organization](/organizations/managing-peoples-access-to-your-organization-with-roles/roles-in-an-organization)."
+Un propietario de la organización puede invitarte a unirte a su organización como miembro, gerente de facturación o propietario. Un miembro o propietario de la organización con privilegios de administrador para un repositorio puede invitarte a colaborar en uno o más repositorios como un colaborador externo. Para obtener más información, consulta "[Niveles de permisos para una organización](/articles/permission-levels-for-an-organization)".
 
 Puedes acceder a las organizaciones de las que eres miembro en tu página de perfil. Para obtener más información, consulta "[Acceder a una organización](/articles/accessing-an-organization)".
 
@@ -39,9 +38,9 @@ Para obtener más información, consulta la <a href="/articles/github-privacy-st
 
 Por defecto, la visibilidad de los miembros de tu organización se establece como privada. Puede elegir publicar miembros individuales de la organización en tu perfil. Para obtener más información, consulta "[Publicar u ocultar los miembros de la organización](/articles/publicizing-or-hiding-organization-membership)".
 
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 
-Si tu organización pertenece a una cuenta de empresa, automáticamente eres un miembro de la cuenta de empresa y visible para los propietarios de la cuenta de empresa. Para obtener más información, consulta "[Acerca de las cuentas de empresa](/admin/overview/about-enterprise-accounts)".
+Si tu organización pertenece a una cuenta de empresa, automáticamente eres un miembro de la cuenta de empresa y visible para los propietarios de la cuenta de empresa. Para obtener más información, consulta "[Acerca de las cuentas de empresa](/articles/about-enterprise-accounts)".
 
 {% endif %}
 

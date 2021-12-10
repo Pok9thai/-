@@ -5,7 +5,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - CLI
 type: overview
@@ -25,7 +24,7 @@ redirect_from:
 
 ## {% data variables.product.prodname_cli %}のインストール
 
-{% data reusables.cli.cli-installation %}
+[{% data variables.product.prodname_cli %} ページ](https://cli.github.com)にある macOS、Windows、および Linux のインストール手順 {% data variables.product.prodname_cli %} を表示します。
 
 ## フィードバックを送る
 

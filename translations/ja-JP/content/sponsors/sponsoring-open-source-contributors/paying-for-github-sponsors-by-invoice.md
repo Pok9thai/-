@@ -4,7 +4,6 @@ shortTitle: Paying by invoice
 intro: 'If your company pays {% data variables.product.company_short %} by invoice, you can join the Sponsors for Companies service.'
 versions:
   fpt: '*'
-  ghec: '*'
 type: how_to
 topics:
   - Sponsors

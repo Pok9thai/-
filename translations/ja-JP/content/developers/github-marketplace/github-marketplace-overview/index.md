@@ -3,7 +3,6 @@ title: GitHub Marketplaceの概要
 intro: '{% data variables.product.prodname_marketplace %}の{% data variables.product.company_short %}コミュニティでアプリケーションやアクションを共有する方法を学びましょう。'
 versions:
   fpt: '*'
-  ghec: '*'
 children:
   - /about-github-marketplace
   - /about-marketplace-badges

@@ -2,6 +2,7 @@
 title: Crear contenedores de servicio Redis
 shortTitle: Contenedores de servicio de Redis
 intro: Puedes usar los contenedores de servicio para crear un cliente Redis en tu flujo de trabajo. En esta guía se muestran ejemplos de cómo crear un servicio Redis para los trabajos que se ejecutan en contenedores o directamente en la máquina ejecutor.
+product: '{% data reusables.gated-features.actions %}'
 redirect_from:
   - /actions/automating-your-workflow-with-github-actions/creating-redis-service-containers
   - /actions/configuring-and-managing-workflows/creating-redis-service-containers
@@ -10,7 +11,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 type: tutorial
 topics:
   - Containers

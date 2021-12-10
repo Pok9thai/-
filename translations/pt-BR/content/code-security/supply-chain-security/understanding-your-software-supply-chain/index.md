@@ -2,9 +2,7 @@
 title: Entender sua cadeia de suprimentos de software
 versions:
   fpt: '*'
-  ghes: '*'
-  ghae: issue-4864
-  ghec: '*'
+  ghes: '>=3.0'
 topics:
   - Dependency graph
   - Dependencies
@@ -13,6 +11,6 @@ children:
   - /about-the-dependency-graph
   - /exploring-the-dependencies-of-a-repository
   - /about-dependency-review
-shortTitle: Entenda sua cadeia de suprimentos
+shortTitle: Entenda a cadeia de suprimentos
 ---
 

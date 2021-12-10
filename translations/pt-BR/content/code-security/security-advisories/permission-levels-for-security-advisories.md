@@ -7,7 +7,6 @@ redirect_from:
   - /github/managing-security-vulnerabilities/permission-levels-for-security-advisories
 versions:
   fpt: '*'
-  ghec: '*'
 type: reference
 topics:
   - Security advisories

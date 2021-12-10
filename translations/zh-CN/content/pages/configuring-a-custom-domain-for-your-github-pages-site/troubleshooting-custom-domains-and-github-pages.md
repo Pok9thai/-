@@ -10,7 +10,6 @@ redirect_from:
 product: '{% data reusables.gated-features.pages %}'
 versions:
   fpt: '*'
-  ghec: '*'
 topics:
   - Pages
 shortTitle: 排除自定义域的故障
@@ -33,10 +32,10 @@ shortTitle: 排除自定义域的故障
 
 如果将站点的默认域指向自定义域时遇到问题，请联系 DNS 提供商。
 
-您还可以使用以下方法之一来测试自定义域的 DNS 记录是否正确配置：
+You can also use one of the following methods to test whether your custom domain's DNS records are configured correctly:
 
-- CLI 工具，如 `dig`。 更多信息请参阅“[管理 {% data variables.product.prodname_pages %} 网站的自定义域](/articles/managing-a-custom-domain-for-your-github-pages-site)。
-- 在线 DNS 查找工具。
+- A CLI tool such as `dig`. For more information, see "[Managing a custom domain for your {% data variables.product.prodname_pages %} site](/articles/managing-a-custom-domain-for-your-github-pages-site)".
+- An online DNS lookup tool.
 
 ## 自定义域名不受支持
 
@@ -55,7 +54,7 @@ shortTitle: 排除自定义域的故障
 
 ## HTTPS 错误
 
-通过 `CNAME`、`ALIAS`、`ANAME` 或 `A` DNS 记录正确配置的使用自定义域的 {% data variables.product.prodname_pages %} 站点可通过 HTTPS 进行访问。 更多信息请参阅“[使用 HTTPS 保护 {% data variables.product.prodname_pages %} 站点](/articles/securing-your-github-pages-site-with-https)”。
+通过 _CNAME_、`ALIAS`、`ANAME` 或 `A` DNS 记录正确配置的使用自定义域的 {% data variables.product.prodname_pages %} 站点可通过 HTTPS 进行访问。 更多信息请参阅“[使用 HTTPS 保护 {% data variables.product.prodname_pages %} 站点](/articles/securing-your-github-pages-site-with-https)”。
 
 配置自定义域后，您的站点可能需要最多一个小时才能通过 HTTPS 访问。 更新现有 DNS 设置后，您可能需要删除自定义域并将其重新添加到站点仓库，以触发启用 HTTPS 的进程。 更多信息请参阅“[管理 {% data variables.product.prodname_pages %} 网站的自定义域](/articles/managing-a-custom-domain-for-your-github-pages-site)。
 

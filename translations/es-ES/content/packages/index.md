@@ -30,7 +30,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 children:
   - /quickstart
   - /learn-github-packages

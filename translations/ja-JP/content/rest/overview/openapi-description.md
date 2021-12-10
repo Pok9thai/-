@@ -4,7 +4,6 @@ intro: '{% data variables.product.product_name %} の REST API は、OpenAPI 3.0
 versions:
   fpt: '*'
   ghes: '*'
-  ghec: '*'
 topics:
   - API
 ---

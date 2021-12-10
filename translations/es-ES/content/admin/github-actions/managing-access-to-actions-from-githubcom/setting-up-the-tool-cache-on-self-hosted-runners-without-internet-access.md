@@ -7,12 +7,8 @@ redirect_from:
 versions:
   ghes: '*'
   ghae: next
-type: tutorial
 topics:
-  - Actions
   - Enterprise
-  - Networking
-  - Storage
 shortTitle: Caché de herramientas para los ejecutores sin conexión
 ---
 

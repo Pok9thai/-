@@ -5,9 +5,8 @@ intro: '您可以在第三方持续集成 系统中用 {% data variables.product
 product: '{% data reusables.gated-features.code-scanning %}'
 versions:
   fpt: '*'
-  ghes: '*'
+  ghes: '>=3.0'
   ghae: '*'
-  ghec: '*'
 topics:
   - Advanced Security
   - Code scanning
@@ -31,12 +30,12 @@ redirect_from:
 
 {% data reusables.code-scanning.about-code-scanning %} For information, see "[About {% data variables.product.prodname_code_scanning %} with {% data variables.product.prodname_codeql %}](/code-security/secure-coding/automatically-scanning-your-code-for-vulnerabilities-and-errors/about-code-scanning-with-codeql)."
 
-{% data reusables.code-scanning.codeql-context-for-actions-and-third-party-tools %}
+您可以使用 {% data variables.product.prodname_actions %} 在 {% data variables.product.product_name %} 内运行 {% data variables.product.prodname_codeql %} {% data variables.product.prodname_code_scanning %} 。 或者，如果您使用第三方持续集成或持续交付/部署 （CI/CD） 系统，您可以在现有系统中运行 {% data variables.product.prodname_codeql %} 分析并将结果上传到 {% data variables.product.product_location %}。
 
-{% ifversion fpt or ghes > 3.1 or ghae-next or ghec %}
+{% ifversion fpt or ghes > 3.1 or ghae-next %}
 <!--Content for GitHub.com, GHAE next, and GHES 3.2 and onward. CodeQL CLI is the preferred method, and CodeQL runner is deprecated. -->
 
-{% data reusables.code-scanning.codeql-cli-context-for-third-party-tools %}
+将 {% data variables.product.prodname_codeql_cli %} 添加到第三方系统，然后调用工具分析代码并将 SARIF 结果上传到 {% data variables.product.product_name %}。 由此产生的 {% data variables.product.prodname_code_scanning %} 警报与 {% data variables.product.product_name %} 内生成的任何警报一起显示。
 
 {% data reusables.code-scanning.upload-sarif-ghas %}
 
@@ -92,8 +91,8 @@ redirect_from:
 
 {% endif %}
 
-<!--Content for GHES 3.0 only. Only CodeQL runner is available -->
-{% ifversion ghes = 3.0 %}
+<!--Content for GHAE and GHES 3.0 only. Only CodeQL runner is available -->
+{% ifversion ghes = 3.0 or ghae %}
 {% data reusables.code-scanning.upload-sarif-ghas %}
 
 将 {% data variables.product.prodname_codeql_runner %} 添加到第三方系统，然后调用工具分析代码并将 SARIF 结果上传到 {% data variables.product.product_name %}。 由此产生的 {% data variables.product.prodname_code_scanning %} 警报与 {% data variables.product.product_name %} 内生成的任何警报一起显示。

@@ -6,7 +6,6 @@ redirect_from:
   - /developers/github-marketplace/viewing-transactions-for-your-listing
 versions:
   fpt: '*'
-  ghec: '*'
 topics:
   - Marketplace
 shortTitle: 查看列表交易
@@ -32,8 +31,8 @@ shortTitle: 查看列表交易
 * **amount_in_cents：**交易金额，以美分为单位。 如果该值小于计划金额，则表示用户已升级并按比例分配给新计划。 值为零表示用户已取消其计划。
 * **renewal_frequency：**续订频率，即 `Monthly` 或 `Yearly`。
 * **marketplace_listing_plan_id：**订阅计划的 `id`。
-* **region：**帐单地址中显示的区域名称。
-* **postal_code：**帐单地址中显示的邮政编码值。
+* **region:** The name of the region present in billing address.
+* **postal_code:** The postal code value present in billing address.
 
 ![Marketplace insights](/assets/images/marketplace/marketplace_transactions.png)
 

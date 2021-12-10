@@ -6,7 +6,6 @@ redirect_from:
   - /github/setting-up-and-managing-organizations-and-teams/canceling-or-editing-an-invitation-to-join-your-organization
 versions:
   fpt: '*'
-  ghec: '*'
 topics:
   - Organizations
   - Teams
@@ -26,7 +25,7 @@ shortTitle: 招待のキャンセルあるいは編集
 
 ## 参考リンク
 
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 - [Organization に参加するようユーザを招待する](/articles/inviting-users-to-join-your-organization)"
 {% endif %}
 - [Team へのOrganization メンバーの追加](/articles/adding-organization-members-to-a-team)

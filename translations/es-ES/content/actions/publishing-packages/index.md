@@ -1,12 +1,11 @@
 ---
 title: Publicar paquetes
 shortTitle: Publicar paquetes
-intro: 'Puedes publicar paquetes automáticamente utilizando las {% data variables.product.prodname_actions %}.'
+intro: 'You can automatically publish packages using {% data variables.product.prodname_actions %}.'
 versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 redirect_from:
   - /actions/publishing-packages-with-github-actions
 children:
@@ -17,4 +16,3 @@ children:
   - /publishing-nodejs-packages
 ---
 
-{% data reusables.actions.ae-beta %}

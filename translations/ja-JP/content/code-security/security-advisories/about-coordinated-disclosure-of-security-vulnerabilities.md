@@ -4,7 +4,6 @@ intro: 脆弱性の開示は、セキュリティの報告者とリポジトリ�
 miniTocMaxHeadingLevel: 3
 versions:
   fpt: '*'
-  ghec: '*'
 type: overview
 topics:
   - Security advisories

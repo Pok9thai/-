@@ -6,7 +6,6 @@ redirect_from:
   - /github/importing-your-projects-to-github/about-github-importer
 versions:
   fpt: '*'
-  ghec: '*'
 ---
 
 GitHub Importerは、コミットやリビジョン履歴を含めてソースコードリポジトリを素早くインポートしてくれます。

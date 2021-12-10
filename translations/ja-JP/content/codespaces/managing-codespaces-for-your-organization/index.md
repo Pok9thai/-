@@ -4,7 +4,6 @@ intro: 'Organization 内のユーザの {% data variables.product.prodname_githu
 product: '{% data reusables.gated-features.codespaces %}'
 versions:
   fpt: '*'
-  ghec: '*'
 topics:
   - Codespaces
 children:

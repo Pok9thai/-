@@ -7,7 +7,6 @@ redirect_from:
   - /github/authenticating-to-github/troubleshooting-ssh/deleted-or-missing-ssh-keys
 versions:
   fpt: '*'
-  ghec: '*'
 topics:
   - SSH
 shortTitle: Claves SSH eliminadas o faltantes

@@ -35,7 +35,6 @@
 | Finicity                  | Finicity App Key                                    |
 | Frame.io                  | Frame.io JSON Web Token                             |
 | Frame.io                  | Frame.io Developer Token                            |
-| FullStory                 | FullStory API Key                                   |
 | GitHub                    | GitHub Personal Access Token                        |
 | GitHub                    | GitHub OAuthアクセストークン                                |
 | GitHub                    | GitHub Refreshトークン                                  |
@@ -55,7 +54,6 @@
 | Mailchimp                 | Mandrill API Key                                    |
 | Mailgun                   | Mailgun API Key                                     |
 | MessageBird               | MessageBird API Key                                 |
-| メタ情報                      | Facebook Access Token                               |
 | npm                       | npm Access Token                                    |
 | NuGet                     | NuGet API Key                                       |
 | OpenAI                    | OpenAI API Key                                      |

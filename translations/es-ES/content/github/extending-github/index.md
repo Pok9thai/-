@@ -8,7 +8,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 children:
   - /getting-started-with-the-api
   - /git-automation-with-oauth-tokens

@@ -7,7 +7,6 @@ redirect_from:
   - /marketplace/integrating-with-the-github-marketplace-api
 versions:
   fpt: '*'
-  ghec: '*'
 topics:
   - Marketplace
 children:

@@ -1,6 +1,6 @@
 ---
 title: 表情符号
-intro: '使用 Emojis API，您可以列出和查看在 {% data variables.product.product_name %} 使用的所有可用表情符号。'
+intro: 'With the Emojis API, you can list and view all the available emojis to use in {% data variables.product.product_name %}.'
 redirect_from:
   - /v3/emojis
   - /v3/misc
@@ -8,7 +8,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - API
 miniTocMaxHeadingLevel: 3

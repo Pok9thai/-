@@ -9,7 +9,6 @@ redirect_from:
   - /github/authenticating-to-github/keeping-your-account-and-data-secure/githubs-ssh-key-fingerprints
 versions:
   fpt: '*'
-  ghec: '*'
 topics:
   - Identity
   - Access management

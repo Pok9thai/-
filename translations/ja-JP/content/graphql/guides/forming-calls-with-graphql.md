@@ -6,7 +6,6 @@ redirect_from:
   - /graphql/guides/forming-calls
 versions:
   fpt: '*'
-  ghec: '*'
   ghes: '*'
   ghae: '*'
 topics:
@@ -20,7 +19,7 @@ GraphQLサーバーと通信するには、適切なスコープを持つOAuth�
 
 トークンを作成するには、「[個人アクセストークンを作成する](/github/authenticating-to-github/creating-a-personal-access-token)」のステップに従ってください。 必要なスコープは、リクエストしようとしているデータの種類によります。 たとえば、ユーザデータをリクエストするには**User**スコープを選択してください。 リポジトリ情報にアクセスする必要があるなら、適切な**Repository**スコープを選択してください。
 
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 
 [GraphQL Explorer](/graphql/guides/using-the-explorer)の動作とマッチさせるためには、以下のスコープをリクエストしてください。
 

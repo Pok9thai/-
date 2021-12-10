@@ -11,7 +11,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - Accounts
 shortTitle: Tu tablero personal
@@ -45,18 +44,18 @@ En la sección "All activity" (Todas las actividades) de tus noticias, puedes ve
 
 Verás actualizaciones en tus noticias cuando un usuario que sigues:
 - Destaca un repositorio.
-- Sigue otro usuario.{% ifversion fpt or ghes or ghec %}
+- Sigue otro usuario.{% ifversion fpt or ghes %}
 - Crea un repositorio público.{% endif %}
 - Abre una propuesta o una solicitud de extracción con la etiqueta "se busca ayuda" o "primera buena propuesta" en un repositorio que estás mirando.
-- Sube las confirmaciones a un repositorio que estés observando.{% ifversion fpt or ghes or ghec %}
+- Sube las confirmaciones a un repositorio que estés observando.{% ifversion fpt or ghes %}
 - Bifurque un repositorio público.{% endif %}
-- Publica un lanzamiento nuevo.
+- Publishes a new release.
 
 Para obtener más información acerca de cómo destacar repositorios y seguir personas, consulta "[Guardar repositorios con estrellas](/articles/saving-repositories-with-stars/)" y "[Seguir a personas](/articles/following-people)".
 
 ## Explorar los repositorios recomendados
 
-Puedes explorar los repositorios recomendados en tus comunidades en la sección "Explorar repositorios" en el costado derecho de tu tablero. Las recomendaciones se basan en repositorios que has visitado o a los que has marcado con una estrella, las personas que sigues, y la actividad dentro de los repositorios a los cuales tienes acceso. {% ifversion fpt or ghec %}Para obtener más información, consulta "[Encontrar maneras de contribuir al código abierto en {% data variables.product.prodname_dotcom %}](/github/getting-started-with-github/finding-ways-to-contribute-to-open-source-on-github)".{% endif %}
+Puedes explorar los repositorios recomendados en tus comunidades en la sección "Explorar repositorios" en el costado derecho de tu tablero. Las recomendaciones se basan en repositorios que has visitado o a los que has marcado con una estrella, las personas que sigues, y la actividad dentro de los repositorios a los cuales tienes acceso. {% ifversion fpt %}Para obtener más información, consulta "[Encontrar maneras de contribuir al código abierto en {% data variables.product.prodname_dotcom %}](/github/getting-started-with-github/finding-ways-to-contribute-to-open-source-on-github)".{% endif %}
 
 ## Leer más
 

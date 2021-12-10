@@ -9,7 +9,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - OAuth Apps
 shortTitle: Solucionar problemas de solicitação do token

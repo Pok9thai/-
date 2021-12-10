@@ -13,7 +13,6 @@ redirect_from:
   - /articles/managing-your-github-billing-settings
 versions:
   fpt: '*'
-  ghec: '*'
 children:
   - /about-billing-on-github
   - /viewing-your-subscriptions-and-billing-date

@@ -11,7 +11,6 @@ redirect_from:
 versions:
   fpt: '*'
   ghes: '*'
-  ghec: '*'
 topics:
   - 2FA
 shortTitle: Access GitHub with 2FA
@@ -21,7 +20,7 @@ shortTitle: Access GitHub with 2FA
 
 ## Web サイトへのサインインの際に 2FA コードを提供
 
-パスワードを使用して {% data variables.product.product_name %}にサインインした後、{% ifversion fpt or ghec %}テキストメッセージまたは {% endif %}TOTP アプリケーションから、認証コードを入力するよう求められます。
+パスワードを使用して {% data variables.product.product_name %}にサインインした後、{% ifversion fpt %}テキストメッセージまたは {% endif %}TOTP アプリケーションから、認証コードを入力するよう求められます。
 
 {% data variables.product.product_name %}が 2FA 認証コードを再度求めるのは、ログアウトした場合、新しいデバイスを使う場合、またはセッションが期限切れになった場合のみです。
 
@@ -31,7 +30,7 @@ shortTitle: Access GitHub with 2FA
 
 2 要素認証を設定した後にモバイルアプリケーションを削除した場合、アカウントにアクセスする際にリカバリコードを入力しなければなりません。 詳しい情報については[2FA クレデンシャルをなくした際のアカウントの回復](/articles/recovering-your-account-if-you-lose-your-2fa-credentials)を参照してください。
 
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 
 ### テキストメッセージの受信
 

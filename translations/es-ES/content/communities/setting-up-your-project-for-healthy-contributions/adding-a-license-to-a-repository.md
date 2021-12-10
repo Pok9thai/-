@@ -7,7 +7,6 @@ redirect_from:
 versions:
   fpt: '*'
   ghes: '*'
-  ghec: '*'
 topics:
   - Community
 shortTitle: Agrega una licencia a un repositorio
@@ -22,7 +21,7 @@ Las licencias de código abierto permiten que otras personas usen, cambien y dis
 ## Incluir una licencia de código abierto en tu repositorio
 
 <!--Dotcom version uses the license tool-->
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 {% data reusables.repositories.navigate-to-repo %}
 {% data reusables.files.add-file %}
 3. En el campo del nombre del archivo, escribe *LICENSE* o *LICENSE.md* (todo en mayúscula).

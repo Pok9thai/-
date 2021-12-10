@@ -6,7 +6,6 @@ redirect_from:
   - /github/building-a-strong-community/adding-a-code-of-conduct-to-your-project
 versions:
   fpt: '*'
-  ghec: '*'
 topics:
   - Community
 shortTitle: 添加行为准则

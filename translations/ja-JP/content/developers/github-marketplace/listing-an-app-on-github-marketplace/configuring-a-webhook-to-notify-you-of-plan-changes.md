@@ -10,7 +10,6 @@ redirect_from:
   - /developers/github-marketplace/configuring-a-webhook-to-notify-you-of-plan-changes
 versions:
   fpt: '*'
-  ghec: '*'
 topics:
   - Marketplace
 shortTitle: プラン変更のwebhook

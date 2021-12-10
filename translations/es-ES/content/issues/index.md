@@ -15,8 +15,7 @@ featuredLinks:
   guideCards:
     - /issues/trying-out-the-new-projects-experience/automating-projects
     - /issues/tracking-your-work-with-issues/creating-issues/linking-a-pull-request-to-an-issue
-    - '{% ifversion ghes or ghae %}/issues/organizing-your-work-with-project-boards/managing-project-boards/configuring-automation-for-project-boards{% endif %}'
-    - /issues/trying-out-the-new-projects-experience/using-the-api-to-manage-projects
+    - /issues/organizing-your-work-with-project-boards/managing-project-boards/configuring-automation-for-project-boards
   popular:
     - /issues/tracking-your-work-with-issues/creating-issues/about-issues
     - /issues/trying-out-the-new-projects-experience/about-projects
@@ -24,7 +23,7 @@ featuredLinks:
     - /communities/using-templates-to-encourage-useful-issues-and-pull-requests/about-issue-and-pull-request-templates
     - /issues/using-labels-and-milestones-to-track-work/managing-labels
     - /github/managing-your-work-on-github/viewing-all-of-your-issues-and-pull-requests
-    - '{% ifversion ghes or ghae %}/issues/organizing-your-work-with-project-boards/managing-project-boards/about-project-boards{% endif %}'
+    - /issues/organizing-your-work-with-project-boards/managing-project-boards/about-project-boards
 changelog:
   label: issues
 layout: product-landing
@@ -33,13 +32,11 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 children:
   - /tracking-your-work-with-issues
   - /trying-out-the-new-projects-experience
   - /organizing-your-work-with-project-boards
   - /using-labels-and-milestones-to-track-work
-  - /guides
 redirect_from:
   - /github/managing-your-work-on-github/managing-your-work-with-issues-and-pull-requests
   - /github/managing-your-work-on-github/managing-your-work-with-issues

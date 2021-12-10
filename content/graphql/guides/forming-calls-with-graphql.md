@@ -6,7 +6,6 @@ redirect_from:
   - /graphql/guides/forming-calls
 versions:
   fpt: '*'
-  ghec: '*'
   ghes: '*'
   ghae: '*'
 topics:
@@ -20,7 +19,7 @@ To communicate with the GraphQL server, you'll need an OAuth token with the righ
 
 Follow the steps in "[Creating a personal access token](/github/authenticating-to-github/creating-a-personal-access-token)" to create a token. The scopes you require depends on the type of data you're trying to request. For example, select the **User** scopes to request user data. If you need access to repository information, select the appropriate **Repository** scopes.
 
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 
 To match the behavior of the [GraphQL Explorer](/graphql/guides/using-the-explorer), request the following scopes:
 

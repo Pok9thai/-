@@ -6,11 +6,9 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 children:
   - /security-hardening-for-github-actions
   - /encrypted-secrets
   - /automatic-token-authentication
 ---
 
-{% data reusables.actions.ae-beta %}

@@ -3,7 +3,6 @@ title: Encontrar debates a lo largo de varios repositorios
 intro: 'Puedes acceder fácilmente a todos los debates que hayas creado, o en los que hayas participado, a lo largo de varios repositorios.'
 versions:
   fpt: '*'
-  ghec: '*'
 shortTitle: Encontrar debates
 ---
 
@@ -16,6 +15,6 @@ shortTitle: Encontrar debates
 
 ## Leer más
 
-- "[Buscar debates](/search-github/searching-on-github/searching-discussions)"
+- "[Buscar debates](/github/searching-for-information-on-github/searching-discussions)"
 - "[Acerca de los debates](/discussions/collaborating-with-your-community-using-discussions/about-discussions)"
 - "[Administrar debates para tu comunidad](/discussions/managing-discussions-for-your-community)"

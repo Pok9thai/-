@@ -10,14 +10,13 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - GitHub Apps
 ---
 
-{% ifversion fpt or ghec %}Para aprender como usar manifestos do aplicativo GitHub que permitem que pessoas criem aplicativos GitHub pré-configurados, consulte "[Criando aplicativos GitHub a partir de um manifesto](/apps/building-github-apps/creating-github-apps-from-a-manifest/).{% endif %}
+{% ifversion fpt %}Para aprender como usar manifestos do aplicativo GitHub que permitem que pessoas criem aplicativos GitHub pré-configurados, consulte "[Criando aplicativos GitHub a partir de um manifesto](/apps/building-github-apps/creating-github-apps-from-a-manifest/).{% endif %}
 
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 {% note %}
 
   **Observação:** {% data reusables.apps.maximum-github-apps-allowed %}
@@ -35,7 +34,7 @@ topics:
 
 1. Opcionalmente, em "Descrição", digite uma descrição do aplicativo que os usuários irão ver. ![Campo para uma descrição do seu aplicativo GitHub](/assets/images/github-apps/github_apps_description.png)
 1. Em "URL da página inicial", digite a URL completa do site do seu aplicativo. ![Campo para a URL da página inicial do seu aplicativo GitHub](/assets/images/github-apps/github_apps_homepage_url.png)
-{% ifversion fpt or ghes > 3.0 or ghec %}
+{% ifversion fpt or ghes > 3.0 %}
 1. Em "URL de retorno de chamada", digite a URL completa para redirecionar após um usuário autorizar a instalação. Esta URL é usada se o aplicativo precisar identificar e autorizar solicitações de usuário para servidor.
 
   Você pode usar **Adicionar URL de retorno de chamada** para fornecer URLs de retorno de chamadas adicionais até o limite máximo de 10.

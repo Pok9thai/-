@@ -5,7 +5,6 @@ redirect_from:
   - /v4/reference/enum
 versions:
   fpt: '*'
-  ghec: '*'
   ghes: '*'
   ghae: '*'
 topics:

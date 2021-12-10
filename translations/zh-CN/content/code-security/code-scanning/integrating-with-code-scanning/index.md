@@ -9,9 +9,8 @@ redirect_from:
   - /code-security/secure-coding/integrating-with-code-scanning
 versions:
   fpt: '*'
-  ghes: '*'
+  ghes: '>=3.0'
   ghae: '*'
-  ghec: '*'
 topics:
   - Advanced Security
   - Code scanning

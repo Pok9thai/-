@@ -1,4 +1,4 @@
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 {% note %}
 
 **注**：您不能对公共仓库禁用默认启用的一些安全和分析功能。

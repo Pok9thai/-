@@ -3,7 +3,6 @@ title: スポンサーにコントリビューターを見つけるためのク�
 intro: スポンサーにオープンソース コントリビューターを見つけるためのベスト プラクティスを学びましょう。
 versions:
   fpt: '*'
-  ghec: '*'
 type: quick_start
 topics:
   - Open Source

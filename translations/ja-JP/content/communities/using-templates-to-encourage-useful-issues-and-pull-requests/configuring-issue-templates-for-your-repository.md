@@ -9,19 +9,18 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - Community
 shortTitle: 設定
 ---
 
-{% ifversion fpt or ghes or ghec %}
+{% ifversion fpt or ghes %}
 
 {% data reusables.repositories.default-issue-templates %}
 
 {% endif %}
 
-{% ifversion fpt or ghae or ghes or ghec %}
+{% ifversion fpt or ghae or ghes %}
 
 ## Issue テンプレートを作成する
 
@@ -36,10 +35,10 @@ shortTitle: 設定
 7. デフォルトの Issue タイトルを自動的に設定するには、リポジトリへの読み取りアクセスを持つ人に Issue を割り当てるか、ラベルを Issue テンプレートに適用し、こうした詳細な情報を [Optional additional information] の下に入力します。 このような詳細情報を Issue テンプレートに、`title`、`labels`、または `assignees` を YAML frontmatter フォーマットで使用して、追加することもできます。 ![Issue テンプレートの追加情報](/assets/images/help/repository/additional-issue-template-info.png)
 8. テンプレートの編集とプレビューが終了したら、ページ右上隅にある [**Propose changes**] をクリックします。 ![[Propose changes] ボタン](/assets/images/help/repository/propose-changes-button.png)
 9. 変更内容を説明するコミットメッセージを入力します。 ![Issue テンプレートコミットメッセージフィールド](/assets/images/help/repository/issue-template-commit-message-field.png)
-10. コミットメッセージフィールドの下で、テンプレートを直接デフォルトブランチにコミットするか、新しいブランチを作成してプルリクエストを開くか判断します。 プルリクエストに関する詳しい情報については「[プルリクエストについて](/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests)」を参照してください。 ![Issue テンプレートの main へのコミットかプルリクエストを開くかの選択](/assets/images/help/repository/issue-template-commit-to-master-or-open-pull-request.png)
+10. コミットメッセージフィールドの下で、テンプレートを直接デフォルトブランチにコミットするか、新しいブランチを作成してプルリクエストを開くか判断します。 プルリクエストに関する詳しい情報については「[プルリクエストについて](/articles/about-pull-requests)」を参照してください。 ![Issue テンプレートの main へのコミットかプルリクエストを開くかの選択](/assets/images/help/repository/issue-template-commit-to-master-or-open-pull-request.png)
 11. **[Commit changes]** をクリックしてください。 変更がデフォルトブランチにマージされると、コントリビューターがリポジトリで新しい Issue を開くときにテンプレートを使用できるようになります。
 
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 
 ## Issue フォームを作成する
 
@@ -62,7 +61,7 @@ Issueフォームのレンダリングバージョンは次のとおりです。
 
 {% endif %}
 
-{% ifversion fpt or ghae or ghes or ghec %}
+{% ifversion fpt or ghae or ghes %}
 ## テンプレート選択画面を設定する
 
 {% data reusables.repositories.issue-template-config %}

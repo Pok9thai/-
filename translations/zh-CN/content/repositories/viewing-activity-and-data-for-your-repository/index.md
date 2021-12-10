@@ -11,7 +11,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - Repositories
 children:
@@ -22,6 +21,8 @@ children:
   - /viewing-a-projects-contributors
   - /analyzing-changes-to-a-repositorys-content
   - /understanding-connections-between-repositories
+  - /about-the-dependency-graph
+  - /exploring-the-dependencies-of-a-repository
 shortTitle: View activity and data
 ---
 

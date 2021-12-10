@@ -9,7 +9,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - Pull requests
 shortTitle: ボード上のカードのフィルタ
@@ -30,7 +29,7 @@ shortTitle: ボード上のカードのフィルタ
 - `status:pending`、`status:success`、または `status:failure` を使用して、カードをチェックステータスでフィルタリングする
 - `type:issue`、`type:pr`、または `type:note` を使用して、カードをタイプでフィルタリングする
 - `is:open`、`is:closed`、または `is:merged`と、`is:issue`、`is:pr`、または `is:note` とを使用して、カードをステータスとタイプでフィルタリングする
-- `linked:pr`を使用してクローズしているリファレンスによってプルリクエストにリンクされている Issue でカードをフィルタリングする{% ifversion fpt or ghes or ghae or ghec %}
+- `linked:pr`を使用してクローズしているリファレンスによってプルリクエストにリンクされている Issue でカードをフィルタリングする{% ifversion fpt or ghes or ghae %}
 - `repo:ORGANIZATION/REPOSITORY` を使用して、Organization 全体のプロジェクトボード内のリポジトリでカードをフィルタリングする{% endif %}
 
 1. フィルタリングしたいカードが含まれるプロジェクトボードに移動します。

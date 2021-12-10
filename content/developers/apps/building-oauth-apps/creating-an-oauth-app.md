@@ -9,11 +9,10 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - OAuth Apps
 ---
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 {% note %}
 
   **Note:** {% data reusables.apps.maximum-oauth-apps-allowed %}
@@ -47,7 +46,7 @@ topics:
 ![Field for a description of your app](/assets/images/oauth-apps/oauth_apps_application_description.png)
 9. In "Authorization callback URL", type the callback URL of your app.
 ![Field for the authorization callback URL of your app](/assets/images/oauth-apps/oauth_apps_authorization_callback_url.png)
-{% ifversion fpt or ghes > 3.0 or ghec %}
+{% ifversion fpt or ghes > 3.0 %}
    {% note %}
 
    **Note:** OAuth Apps cannot have multiple callback URLs, unlike {% data variables.product.prodname_github_apps %}.

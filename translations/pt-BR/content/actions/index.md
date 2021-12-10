@@ -9,7 +9,6 @@ featuredLinks:
   guides:
     - /actions/learn-github-actions
     - /actions/guides/about-continuous-integration
-    - /actions/deployment/deploying-with-github-actions
     - /actions/guides/about-packaging-with-github-actions
     - /actions/monitoring-and-troubleshooting-workflows/about-monitoring-and-troubleshooting
   guideCards:
@@ -43,23 +42,21 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 children:
   - /quickstart
   - /learn-github-actions
-  - /managing-workflow-runs
+  - /creating-actions
+  - /security-guides
   - /automating-builds-and-tests
   - /deployment
-  - /using-containerized-services
-  - /publishing-packages
   - /managing-issues-and-pull-requests
-  - /migrating-to-github-actions
+  - /publishing-packages
+  - /using-containerized-services
+  - /advanced-guides
+  - /managing-workflow-runs
   - /monitoring-and-troubleshooting-workflows
   - /using-github-hosted-runners
   - /hosting-your-own-runners
-  - /security-guides
-  - /advanced-guides
-  - /creating-actions
-  - /guides
+  - /migrating-to-github-actions
 ---
 

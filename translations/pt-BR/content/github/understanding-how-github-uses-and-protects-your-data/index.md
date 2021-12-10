@@ -4,7 +4,6 @@ redirect_from:
   - /categories/understanding-how-github-uses-and-protects-your-data
 versions:
   fpt: '*'
-  ghec: '*'
 children:
   - /about-githubs-use-of-your-data
   - /requesting-an-archive-of-your-personal-accounts-data

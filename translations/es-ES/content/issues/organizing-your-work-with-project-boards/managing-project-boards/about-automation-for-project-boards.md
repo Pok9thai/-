@@ -9,7 +9,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - Pull requests
 shortTitle: Automatización para tableros de proyecto
@@ -44,5 +43,5 @@ Puedes rastrear el progreso en tu tablero de proyecto. Las tarjetas en las colum
 Para obtener más información, consulta la sección "[Rastrear el progreso en tu tablero de proyecto](/github/managing-your-work-on-github/tracking-progress-on-your-project-board)".
 
 ## Leer más
-- "[Configurar automatización para tableros de proyecto](/articles/configuring-automation-for-project-boards)"{% ifversion fpt or ghec %}
+- "[Configurar automatización para tableros de proyecto](/articles/configuring-automation-for-project-boards)"{% ifversion fpt %}
 - "[Copying a project board](/articles/copying-a-project-board)"{% endif %}

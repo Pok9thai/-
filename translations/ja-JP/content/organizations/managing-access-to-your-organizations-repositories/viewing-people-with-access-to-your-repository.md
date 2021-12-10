@@ -8,7 +8,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - Organizations
   - Teams
@@ -21,7 +20,7 @@ shortTitle: アクセス権を持つ人の表示
 
 ## 自分のリポジトリにアクセスできる人を表示する
 
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 {% note %}
 
 **注釈**: リポジトリにアクセスできる Team と人について、組み合わせた概要を確認することもできます。 詳細は、「[リポジトリへのアクセス権を持つ Team と人を管理する](/github/administering-a-repository/managing-teams-and-people-with-access-to-your-repository)」を参照してください。

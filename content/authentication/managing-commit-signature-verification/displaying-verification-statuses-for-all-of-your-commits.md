@@ -4,7 +4,6 @@ shortTitle: Displaying verification for all commits
 intro: You can enable vigilant mode for commit signature verification to mark all of your commits and tags with a signature verification status.
 versions:
   fpt: '*'
-  ghec: '*'
 topics:
   - Identity
   - Access management

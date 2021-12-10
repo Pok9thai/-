@@ -5,7 +5,6 @@ redirect_from:
   - /v4/public_schema
 versions:
   fpt: '*'
-  ghec: '*'
   ghes: '*'
   ghae: '*'
 topics:
@@ -16,7 +15,7 @@ GraphQL APIに対しては、直接[イントロスペクションを行え](/gr
 
 あるいは、こちらから最新バージョンのパブリックスキーマをダウンロードすることもできます。
 
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 
 [{% octicon "desktop-download" aria-label="The desktop download icon" %}`schema.docs.graphql`](/public/schema.docs.graphql)
 

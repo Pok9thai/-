@@ -12,7 +12,6 @@ redirect_from:
   - /github/authenticating-to-github/keeping-your-account-and-data-secure/about-githubs-ip-addresses
 versions:
   fpt: '*'
-  ghec: '*'
 topics:
   - Identity
   - Access management

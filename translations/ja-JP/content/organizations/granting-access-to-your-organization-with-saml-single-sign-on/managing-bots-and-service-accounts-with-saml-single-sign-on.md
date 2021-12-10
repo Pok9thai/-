@@ -7,7 +7,6 @@ redirect_from:
   - /github/setting-up-and-managing-organizations-and-teams/managing-bots-and-service-accounts-with-saml-single-sign-on
 versions:
   fpt: '*'
-  ghec: '*'
 topics:
   - Organizations
   - Teams

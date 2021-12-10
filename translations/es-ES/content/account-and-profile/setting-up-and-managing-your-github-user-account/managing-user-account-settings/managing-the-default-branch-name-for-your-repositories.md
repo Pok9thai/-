@@ -1,11 +1,10 @@
 ---
 title: Administrar el nombre de la rama predeterminada para tus repositorios
-intro: 'Puedes configurar el nombre de la rama predeterminada para los repositorios nuevos que crees en {% data variables.product.product_location %}.'
+intro: 'You can set the default branch name for new repositories that you create on {% data variables.product.product_location %}.'
 versions:
   fpt: '*'
-  ghes: '*'
+  ghes: '>=3.0'
   ghae: '*'
-  ghec: '*'
 topics:
   - Accounts
 redirect_from:

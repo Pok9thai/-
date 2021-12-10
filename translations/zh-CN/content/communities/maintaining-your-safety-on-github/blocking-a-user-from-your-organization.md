@@ -6,7 +6,6 @@ redirect_from:
   - /github/building-a-strong-community/blocking-a-user-from-your-organization
 versions:
   fpt: '*'
-  ghec: '*'
 topics:
   - Community
 shortTitle: 阻止您的组织

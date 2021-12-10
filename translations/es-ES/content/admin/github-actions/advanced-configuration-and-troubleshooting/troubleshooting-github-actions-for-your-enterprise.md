@@ -3,12 +3,9 @@ title: Solucionar problemas en las GitHub Actions de tu empresa
 intro: 'Solucionar problemas comunes que ocurren cuando se utilizan {% data variables.product.prodname_actions %} en {% data variables.product.prodname_ghe_server %}.'
 permissions: 'Site administrators can troubleshoot {% data variables.product.prodname_actions %} issues and modify {% data variables.product.prodname_ghe_server %} configurations.'
 versions:
-  ghes: '*'
-type: how_to
+  ghes: '>=3.0'
 topics:
-  - Actions
   - Enterprise
-  - Troubleshooting
 redirect_from:
   - /admin/github-actions/troubleshooting-github-actions-for-your-enterprise
 shortTitle: Solucionar problemas de las GitHub Actions

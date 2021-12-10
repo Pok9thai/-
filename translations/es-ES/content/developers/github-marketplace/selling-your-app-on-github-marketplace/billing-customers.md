@@ -8,7 +8,6 @@ redirect_from:
   - /developers/github-marketplace/billing-customers
 versions:
   fpt: '*'
-  ghec: '*'
 topics:
   - Marketplace
 ---

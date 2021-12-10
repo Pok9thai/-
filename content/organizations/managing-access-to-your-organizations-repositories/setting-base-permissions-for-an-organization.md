@@ -8,7 +8,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - Organizations
   - Teams
@@ -19,13 +18,9 @@ shortTitle: Set base permissions
 
 You can set base permissions that apply to all members of an organization when accessing any of the organization's repositories. Base permissions do not apply to outside collaborators.
 
-{% ifversion fpt or ghec %}By default, members of an organization will have **Read** permissions to the organization's repositories.{% endif %}
+{% ifversion fpt %}By default, members of an organization will have **Read** permissions to the organization's repositories.{% endif %}
 
-If someone with admin access to an organization's repository grants a member a higher level of access for the repository, the higher level of access overrides the base permission.
-
-{% ifversion ghec %}
-If you've created a custom repository role with an inherited role that is lower access than your organization's base permissions, any members assigned to that role will default to the organization's base permissions rather than the inherited role. For more information, see "[Managing custom repository roles for an organization](/organizations/managing-peoples-access-to-your-organization-with-roles/managing-custom-repository-roles-for-an-organization)."
-{% endif %}
+If someone with admin permissions to an organization's repository grants a member a higher level of permission for the repository, the higher level of permission overrides the base permission.
 
 ## Setting base permissions
 
@@ -39,5 +34,5 @@ If you've created a custom repository role with an inherited role that is lower 
 
 ## Further reading
 
-- "[Repository roles for an organization](/organizations/managing-access-to-your-organizations-repositories/repository-roles-for-an-organization)"
+- "[Repository permission levels for an organization](/organizations/managing-access-to-your-organizations-repositories/repository-permission-levels-for-an-organization#permission-levels-for-repositories-owned-by-an-organization)"
 - "[Adding outside collaborators to repositories in your organization](/organizations/managing-access-to-your-organizations-repositories/adding-outside-collaborators-to-repositories-in-your-organization)"

@@ -8,10 +8,9 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - GitHub Apps
-shortTitle: OAuth Appからの移行
+shortTitle: Migrate from OAuth Apps
 ---
 
 この記事は、OAuth AppをGitHub Appに移行することを検討している既存のインテグレーターにガイドラインを提供します。
@@ -32,7 +31,7 @@ shortTitle: OAuth Appからの移行
 
 ## OAuth AppからGitHub Appへの変換
 
-以下のガイドラインは、{% ifversion fpt or ghec %}GitHub Marketplaceにリストされている、あるいはされていない{% endif %}登録済みのOAuth Appがあることを前提としています。 高いレベルでは、以下のステップに従う必要があります。
+以下のガイドラインは、{% ifversion fpt %}GitHub Marketplaceにリストされている、あるいはされていない{% endif %}登録済みのOAuth Appがあることを前提としています。 高いレベルでは、以下のステップに従う必要があります。
 
 1. [GitHub Appで利用できるAPIエンドポイントのレビュー](#review-the-available-api-endpoints-for-github-apps)
 1. [APIレート制限内に留まるための設計](#design-to-stay-within-api-rate-limits)
@@ -42,18 +41,18 @@ shortTitle: OAuth Appからの移行
 1. [様々な認証方法の理解](#understand-the-different-methods-of-authentication)
 1. [リポジトリにGitHub Appをインストールするようにユーザに指示](#direct-users-to-install-your-github-app-on-repositories)
 1. [不必要なリポジトリフックの削除](#remove-any-unnecessary-repository-hooks)
-1. [OAuth Appへのアクセスの取り消しをユーザに促す](#encourage-users-to-revoke-access-to-your-oauth-app)
-1. [OAuth Appの削除](#delete-the-oauth-app)
+1. [Encourage users to revoke access to your OAuth App](#encourage-users-to-revoke-access-to-your-oauth-app)
+1. [Delete the OAuth App](#delete-the-oauth-app)
 
 ### GitHub Appで利用できるAPIエンドポイントのレビュー
 
-[REST API](/rest)エンドポイントと[GraphQL]({% ifversion ghec %}/free-pro-team@latest{% endif %}/graphql)クエリの大部分は、今日GitHub Appから利用できますが、まだいくつかのエンドポイントは有効にする過程にあります。 [利用可能なRESTエンドポイント](/rest/overview/endpoints-available-for-github-apps)をレビューして、必要なエンドポイントがGitHub Appと互換性があることを確認してください。 GitHub Appで利用できるAPIエンドポイントの中には、ユーザの代わりにアプリケーションが動作できるようにするものがあることに注意してください。 GitHub Appがユーザとして認証されるようにするエンドポイントのリストについては、「[ユーザからサーバーへのリクエスト](/apps/building-github-apps/identifying-and-authorizing-users-for-github-apps/#user-to-server-requests)」を参照してください。
+[REST API](/rest)エンドポイントと[GraphQL](/graphql)クエリの大部分は、今日GitHub Appから利用できますが、まだいくつかのエンドポイントは有効にする過程にあります。 [利用可能なRESTエンドポイント](/rest/overview/endpoints-available-for-github-apps)をレビューして、必要なエンドポイントがGitHub Appと互換性があることを確認してください。 GitHub Appで利用できるAPIエンドポイントの中には、ユーザの代わりにアプリケーションが動作できるようにするものがあることに注意してください。 GitHub Appがユーザとして認証されるようにするエンドポイントのリストについては、「[ユーザからサーバーへのリクエスト](/apps/building-github-apps/identifying-and-authorizing-users-for-github-apps/#user-to-server-requests)」を参照してください。
 
-必要なAPIエンドポイントのリストのレビューは、できるだけ早く行うことをおすすめします。 まだ{% data variables.product.prodname_github_apps %}から利用できないエンドポイントで必要なものがある場合は、サポートにお知らせください。
+必要なAPIエンドポイントのリストのレビューは、できるだけ早く行うことをおすすめします。 Please let Support know if there is an endpoint you require that is not yet enabled for {% data variables.product.prodname_github_apps %}.
 
 ### APIレート制限内に留まるための設計
 
-GitHub Appは[レート制限に対するスライディングルール](/apps/building-github-apps/understanding-rate-limits-for-github-apps/)を利用します。これは、Organization中のリポジトリ及びユーザ数に基づいて増加できます。 また、GitHub Appは[GraphQL V4]({% ifversion ghec %}/free-pro-team@latest{% endif %}/graphql)を利用することで、[条件リクエスト](/rest/overview/resources-in-the-rest-api#conditional-requests)あるいは統合リクエストを利用することもできます。
+GitHub Appは[レート制限に対するスライディングルール](/apps/building-github-apps/understanding-rate-limits-for-github-apps/)を利用します。これは、Organization中のリポジトリ及びユーザ数に基づいて増加できます。 また、GitHub Appは[GraphQL V4](/graphql)を利用することで、[条件リクエスト](/rest/overview/resources-in-the-rest-api#conditional-requests)あるいは統合リクエストを利用することもできます。
 
 ### 新しいGitHub Appの登録
 
@@ -103,8 +102,8 @@ GitHub Appがリポジトリにインストールされたら、従来のOAuth A
 
 ### OAuth Appへのアクセスの取り消しをユーザに促す
 
-GitHub Appのインストールベースが増大してきたら、ユーザに従来のOAuthインテグレーションへのアクセスを取り消すように促すことを検討してください。 詳しい情報については、「[OAuth App を認証する](/github/authenticating-to-github/keeping-your-account-and-data-secure/authorizing-oauth-apps)」を参照してください。
+As your GitHub App installation base grows, consider encouraging your users to revoke access to the legacy OAuth integration. 詳しい情報については、「[OAuth App を認証する](/github/authenticating-to-github/keeping-your-account-and-data-secure/authorizing-oauth-apps)」を参照してください。
 
-### OAuth Appの削除
+### Delete the OAuth App
 
-OAuth App認証情報の不正利用を避けるには、OAuth Appの削除を検討してください。 このアクションは、OAuth Appの残りの権限もすべて取り消します。 詳しい情報については、「[OAuth App を削除する](/developers/apps/managing-oauth-apps/deleting-an-oauth-app)」を参照してください。
+To avoid abuse of the OAuth App's credentials, consider deleting the OAuth App. This action will also revoke all of the OAuth App's remaining authorizations. For more information, see "[Deleting an OAuth App](/developers/apps/managing-oauth-apps/deleting-an-oauth-app)."

@@ -9,20 +9,20 @@ from https://unpkg.com/highlight.js@9.15.8/styles/github.css
   display: block;
   overflow-x: auto;
   padding: 0.5em;
-  color: var(--color-fg-default);
-  background: var(--color-canvas-subtle);
+  color: var(--color-auto-gray-9);
+  background: var(--color-auto-gray-0);
 }
 
 .hljs-comment,
 .hljs-quote {
-  color: var(--color-fg-muted);
+  color: var(--color-auto-gray-5);
   font-style: italic;
 }
 
 .hljs-keyword,
 .hljs-selector-tag,
 .hljs-subst {
-  color: var(--color-fg-default);
+  color: var(--color-auto-gray-9);
   font-weight: bold;
 }
 
@@ -31,18 +31,18 @@ from https://unpkg.com/highlight.js@9.15.8/styles/github.css
 .hljs-variable,
 .hljs-template-variable,
 .hljs-tag .hljs-attr {
-  color: var(--color-success-fg);
+  color: var(--color-auto-green-7);
 }
 
 .hljs-string,
 .hljs-doctag {
-  color: var(--color-accent-fg);
+  color: var(--color-auto-blue-6);
 }
 
 .hljs-title,
 .hljs-section,
 .hljs-selector-id {
-  color: var(--color-danger-fg);
+  color: var(--color-auto-red-8);
   font-weight: bold;
 }
 
@@ -52,43 +52,43 @@ from https://unpkg.com/highlight.js@9.15.8/styles/github.css
 
 .hljs-type,
 .hljs-class .hljs-title {
-  color: var(--color-accent-fg);
+  color: var(--color-auto-blue-7);
   font-weight: bold;
 }
 
 .hljs-tag,
 .hljs-name,
 .hljs-attribute {
-  color: var(--color-accent-fg);
+  color: var(--color-auto-blue-7);
   font-weight: normal;
 }
 
 .hljs-regexp,
 .hljs-link {
-  color: var(--color-success-fg);
+  color: var(--color-auto-green-7);
 }
 
 .hljs-symbol,
 .hljs-bullet {
-  color: var(--color-done-fg);
+  color: var(--color-auto-purple-5);
 }
 
 .hljs-built_in,
 .hljs-builtin-name {
-  color: var(--color-accent-fg);
+  color: var(--color-auto-blue-7);
 }
 
 .hljs-meta {
-  color: var(--color-fg-subtle);
+  color: var(--color-auto-gray-5);
   font-weight: bold;
 }
 
 .hljs-deletion {
-  background: var(--color-danger-subtle);
+  background: var(--color-auto-red-2);
 }
 
 .hljs-addition {
-  background: var(--color-success-subtle);
+  background: var(--color-auto-green-2);
 }
 
 .hljs-emphasis {

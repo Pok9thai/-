@@ -10,7 +10,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 children:
   - /getting-started-with-writing-and-formatting-on-github
   - /working-with-advanced-formatting

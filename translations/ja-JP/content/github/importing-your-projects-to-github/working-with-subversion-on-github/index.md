@@ -6,7 +6,6 @@ redirect_from:
 versions:
   fpt: '*'
   ghes: '*'
-  ghec: '*'
 children:
   - /what-are-the-differences-between-subversion-and-git
   - /support-for-subversion-clients

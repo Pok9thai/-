@@ -8,7 +8,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 intro: 当您忘记命令或不想在 CLI 中使用帮助时，此 Git 备忘清单可节省时间。
 ---
 

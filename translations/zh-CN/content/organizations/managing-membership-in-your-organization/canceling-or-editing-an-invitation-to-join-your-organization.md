@@ -6,7 +6,6 @@ redirect_from:
   - /github/setting-up-and-managing-organizations-and-teams/canceling-or-editing-an-invitation-to-join-your-organization
 versions:
   fpt: '*'
-  ghec: '*'
 topics:
   - Organizations
   - Teams
@@ -26,7 +25,7 @@ shortTitle: 取消或编辑邀请
 
 ## 延伸阅读
 
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 - “[邀请用户加入您的组织](/articles/inviting-users-to-join-your-organization)”
 {% endif %}
 - "[向团队添加组织成员](/articles/adding-organization-members-to-a-team)"

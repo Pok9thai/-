@@ -45,9 +45,7 @@ export const PlaygroundContentBlock = ({ sectionIndex, contentBlock }: Props) =>
     <div
       className={cx(
         'root p-4',
-        isActive
-          ? 'color-bg-default color-shadow-medium rounded-2 color-border-accent-emphasis'
-          : '',
+        isActive ? 'color-bg-canvas color-shadow-medium rounded-2 color-border-info' : '',
         showDivider && 'border-bottom'
       )}
       style={{
@@ -65,7 +63,7 @@ export const PlaygroundContentBlock = ({ sectionIndex, contentBlock }: Props) =>
             contentBlock.type === 'sub-section' && 'h4'
           )}
         >
-          <a className="d-flex color-fg-default" href={`#${anchorLink}`}>
+          <a className="d-flex color-text-primary" href={`#${anchorLink}`}>
             {contentBlock.title}
           </a>
         </h3>

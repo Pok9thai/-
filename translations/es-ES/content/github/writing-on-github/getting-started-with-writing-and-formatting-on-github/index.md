@@ -9,7 +9,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 children:
   - /about-writing-and-formatting-on-github
   - /basic-writing-and-formatting-syntax

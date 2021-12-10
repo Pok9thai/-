@@ -7,12 +7,8 @@ redirect_from:
   - /admin/installation/installing-github-enterprise-server-on-hyper-v
 versions:
   ghes: '*'
-type: tutorial
 topics:
-  - Administrator
   - Enterprise
-  - Infrastructure
-  - Set up
 shortTitle: Instalar en Hyper-V
 ---
 
@@ -70,5 +66,5 @@ shortTitle: Instalar en Hyper-V
 
 ## Leer más
 
-- "[Resumen del sistema](/enterprise/admin/guides/installation/system-overview)"{% ifversion ghes %}
+- "[Resumen del sistema](/enterprise/admin/guides/installation/system-overview)"{% ifversion ghes > 2.22 %}
 - "[Acerca de las mejoras a los lanzamientos nuevos](/admin/overview/about-upgrades-to-new-releases)"{% endif %}

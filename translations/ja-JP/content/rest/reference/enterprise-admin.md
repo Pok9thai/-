@@ -9,14 +9,13 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - API
 miniTocMaxHeadingLevel: 3
 shortTitle: Enterprise管理
 ---
 
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 
 {% note %}
 
@@ -61,7 +60,7 @@ Enterprise の現在のバージョンは、すべての API のレスポンス�
 
 {% endif %}
 
-{% ifversion fpt or ghec or ghes > 3.2 %}
+{% ifversion fpt %}
 
 ## Audit log
 
@@ -71,7 +70,7 @@ Enterprise の現在のバージョンは、すべての API のレスポンス�
 
 {% endif %}
 
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 ## 支払い
 
 {% for operation in currentRestOperations %}

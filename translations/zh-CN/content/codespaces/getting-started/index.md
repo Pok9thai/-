@@ -4,7 +4,6 @@ intro: '了解如何开始使用 {% data variables.product.prodname_codespaces %
 product: '{% data reusables.gated-features.codespaces %}'
 versions:
   fpt: '*'
-  ghec: '*'
 children:
   - /quickstart
   - /deep-dive

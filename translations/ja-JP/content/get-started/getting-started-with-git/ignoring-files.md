@@ -12,7 +12,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 ---
 
 ## 単一リポジトリについて無視するファイルを設定する
@@ -27,8 +26,6 @@ GitHub は、一般的なオペレーティング システム、環境、言語
    ```shell
    $ touch .gitignore
   ```
-
-   If the command succeeds, there will be no output.
 
 たとえば *.gitignore* ファイルは、Octocat リポジトリで 「[一般的な .gitignore 設定](https://gist.github.com/octocat/9257657)」を参照してください。
 

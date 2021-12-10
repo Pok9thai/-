@@ -11,11 +11,10 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 shortTitle: Fazer push de commits para um controle remoto
 ---
 
-## Sobre `git push`
+## About `git push`
 O comando `git push` usa dois argumentos:
 
 * Um nome de remote, por exemplo, `origin`
@@ -94,14 +93,14 @@ git fetch upstream
 >  * [new branch]      main     -> upstream/main
 ```
 
-Quando finalizar as alterações locais, você pode fazer push do seu branch local para o GitHub e [iniciar uma pull request](/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests).
+Quando finalizar as alterações locais, você pode fazer push do seu branch local para o GitHub e [iniciar uma pull request](/articles/about-pull-requests).
 
-Para obter mais informações sobre como trabalhar com bifurcações, consulte "[Sincronizar uma bifurcação](/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork)".
+Para obter mais informações sobre como trabalhar com bifurcações, consulte "[Sincronizar uma bifurcação](/articles/syncing-a-fork)".
 
 ## Leia mais
 
 - [Capítulo "Remotes" do livro "Pro Git"](https://git-scm.com/book/ch5-2.html)
-- [Página principal do `git remote`](https://git-scm.com/docs/git-remote.html)
+- [Página do manual `git remote`](https://git-scm.com/docs/git-remote.html)
 - "[Folha de consultas Git](/articles/git-cheatsheet)"
 - "[Fluxos de trabalho Git](/github/getting-started-with-github/git-workflows)"
 - "[Manual do Git](https://guides.github.com/introduction/git-handbook/)"

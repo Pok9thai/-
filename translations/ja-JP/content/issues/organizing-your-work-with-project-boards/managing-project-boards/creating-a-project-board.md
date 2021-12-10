@@ -10,13 +10,8 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - Pull requests
-  - Issues
-  - Projects
-  - Project management
-type: how_to
 ---
 
 {% data reusables.projects.project_boards_old %}
@@ -92,7 +87,7 @@ type: how_to
 ## 参考リンク
 
 - "[プロジェクトボードについて](/articles/about-project-boards)"
-- [プロジェクトボードの編集](/articles/editing-a-project-board){% ifversion fpt or ghec %}
+- [プロジェクトボードの編集](/articles/editing-a-project-board){% ifversion fpt %}
 - [プロジェクトボードのコピー](/articles/copying-a-project-board)
 {% endif %}
 - "[プロジェクトボードをクローズする](/articles/closing-a-project-board)"
